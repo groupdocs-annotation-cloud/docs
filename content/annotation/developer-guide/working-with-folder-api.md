@@ -22,7 +22,7 @@ This API allows you to get a list of all files of a specific folder from the 
 [GroupDocs.Annotation Cloud API Reference](https://apireference.groupdocs.cloud/annotation/) lets you to try out [List Files in a Folder API](https://apireference.groupdocs.cloud/conversion/#/Folder/GetFilesList) right away in your browser. It allows you to effortlessly interact and try out every single operation that our APIs exposes.
 |---|---|---|---
 
-### Request parameters ###
+###Request parameters ###
 
 |Parameter|Description
 |---|---
@@ -38,19 +38,19 @@ Required. Can be passed as query string parameter or as part of the URL
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/conversion/storage/folder/annotationdocs?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 {
   "value": [
     {
@@ -113,7 +113,7 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/conversion/storage/folder/annotati
 }
 
 
- ```
+```
 
 
 
@@ -223,7 +223,7 @@ This API allows you to create a new Folder in the specified Cloud Storage. If yo
 |---|---|---|---
 
 
-### Request parameters ###
+###Request parameters ###
 
 |Parameter|Description
 |---|---
@@ -239,24 +239,24 @@ Required. Can be passed as query string parameter or as part of the URL
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X POST "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/annotationdocs?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 {  
   "code": 200,
   "status": "OK"
 }
- ```
+```
 
 
 
@@ -356,7 +356,7 @@ Our API is completely independent of your operating system, database system or d
 
 # Delete a Particular Folder #
 
-This API allows you to delete a particular Folder in the specified Cloud Storage. If you do not pass storage name API will create new Folder in default Cloud Storage. To remove recursively inner folder/files you need to pass true value to recursive parameter in Request. If it is set to false and folder contains data then API throws the exception.
+This API allows you to delete a particular Folder in the specified Cloud Storage. If you do not pass storage name API will create new Folder in default Cloud Storage. To remove recursively inner folder/files you need to pass true value to recursive parameter inRequest. If it is set to false and folder contains data then API throws the exception.
 
 ## API Explorer ##
 
@@ -364,7 +364,7 @@ This API allows you to delete a particular Folder in the specified Cloud Storage
 |---|---|---|---
 
 
-### Request parameters ###
+###Request parameters ###
 
 |Parameter|Description
 |---|---
@@ -380,24 +380,24 @@ Required. Can be passed as query string parameter or as part of the URL
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X DELETE "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/annotationdocs?storageName#MyStorage&#x26;recursive#true" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 {  
   "code": 200,
   "status": "OK"
 }
- ```
+```
 
 
 
@@ -504,7 +504,7 @@ This API allows you to copy a Folder to another location in the GroupDocs Cloud 
 [GroupDocs.Annotation Cloud API Reference](https://apireference.groupdocs.cloud/annotation/#/) lets you to try out [Copy Folder API](https://apireference.groupdocs.cloud/annotation/#/Folder/CopyFolder) right away in your browser. It allows you to effortlessly interact and try out every single operation that our APIs exposes.
 |---|---|---|---
 
-### Request parameters ###
+###Request parameters ###
 
 |Parameter|Description
 |---|---
@@ -522,24 +522,24 @@ Required. Can be passed as query string parameter or as part of the URL
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/copy/annotationdocs?destPath#conversiondocs1&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 {  
   "code": 200,
   "status": "OK"
 }
- ```
+```
 
 
 
@@ -646,7 +646,7 @@ This API allows you to move a Folder to another location in the GroupDocs Cloud 
 [GroupDocs.Annotation Cloud API Reference](https://apireference.groupdocs.cloud/annotation/#/) lets you to try out [Move a Folder API](https://apireference.groupdocs.cloud/annotation/#/Folder/MoveFolder) right away in your browser. It allows you to effortlessly interact and try out every single operation that our APIs exposes.
 |---|---|---|---
 
-### Request parameters ###
+###Request parameters ###
 
 |Parameter|Description
 |---|---
@@ -664,23 +664,23 @@ Required. Can be passed as query string parameter or as part of the URL
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/move/annotationdocs?destPath#annotationdocs&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"  
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 {  
   "code": 200,
   "status": "OK"
 }
- ```
+```
 
 
 

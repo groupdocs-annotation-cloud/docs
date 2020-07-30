@@ -7,14 +7,6 @@ weight: 9
 description: ""
 keywords: ""
 ---
-
-
-
-
-
-
-# Get Supported File Formats #
-
 GroupDocs.Annotation Cloud is a REST API provides methods to apply Text and Figure based annotations to documents & images of all popular formats.
 
 ## Resource ##
@@ -23,24 +15,15 @@ The following GroupDocs.Comparison Cloud REST API resource has been used in the 
 
 ## cURL Example ##
 
+Request
 
-
-
-
- Request
-
-```html 
+```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/formats" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
+```
 
+Response
 
- ```
-
-
-
-
- Response
-
-```html 
+```html
 {
   "formats": [
     {
@@ -189,12 +172,7 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/formats" -H  "accept: a
     }
   ]
 }
- ```
-
-
-
-
-
+```
 
 ## SDKs ##
 
@@ -202,85 +180,20 @@ The API is completely independent of your operating system, database system or d
 
 ### Get List of Supported File Formats ###
 
-
-
-
-
- C#
-
-
-
-
+C#  
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Get_Supported_Formats.cs >}}
 
-
-
-
-
-
-
- Java
-
-
-
-
+Java  
 {{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Get_Supported_Formats.java >}}
 
-
-
-
-
-
-
- PHP
-
-
-
-
+PHP  
 {{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Get_Supported_Formats.php >}}
 
-
-
-
-
-
-
- Node.Js
-
-
-
-
+Node.Js  
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Get_All_Supported_Formats.js >}}
 
-
-
-
-
-
-
- Ruby
-
-
-
-
+Ruby  
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Get_Supported_Formats.rb >}}
 
-
-
-
-
-
-
- Python
-
-
-
-
+Python  
 {{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Get_Supported_Formats.py >}}
-
-
-
-
-
-
-

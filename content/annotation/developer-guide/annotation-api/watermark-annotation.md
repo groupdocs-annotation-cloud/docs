@@ -27,21 +27,21 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to get 
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X POST "https://api.groupdocs.cloud/v2.0/annotation?filePath#annotationdocs%2F" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]" -H  "Content-Type: application/json" -d "[  {    \"guid\": null,    \"documentGuid\": 0,    \"text\": null,    \"creatorGuid\": null,    \"creatorName\": \"Anonym A.\",    \"creatorEmail\": null,    \"box\": {      \"x\": 375.892761,      \"y\": 59.3882637,      \"width\": 88.7330551,      \"height\": 37.7290154    },    \"pageNumber\": 0,    \"annotationPosition\": {      \"x\": 852,      \"y\": 59.38826291079812    },    \"svgPath\": null,    \"type\": 1,    \"access\": null,    \"replies\": null,    \"createdOn\": \"0001-01-01T00:00:00\",    \"fontColor\": null,    \"penColor\": 1201033,    \"penWidth\": 1,    \"penStyle\": 0,    \"backgroundColor\": null,    \"fieldText\": null,    \"fontFamily\": null,    \"fontSize\": null,    \"opacity\": null,    \"angle\": null  }]" 
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 code 200
 Adds annotations to document
- ```
+```
 
 
 

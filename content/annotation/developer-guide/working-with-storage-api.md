@@ -23,7 +23,7 @@ This API intended for checking existence of cloud storage with given name from [
 [GroupDocs.Annotation Cloud API Reference](https://apireference.groupdocs.cloud/annotation/#/) lets you to try out [Storage existence API](https://apireference.groupdocs.cloud/annotation/#/Storage/StorageExists) right away in your browser! It allows you to effortlessly interact and try out every single operation our APIs exposes.
 |---|---|---|---
 
-### Request parameters ###
+###Request parameters ###
 
 |Parameter|Description
 |---|---
@@ -36,23 +36,23 @@ This API intended for checking existence of cloud storage with given name from [
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/storage/MyStorage/exist" -H  "accept: application/json" -H  "authorization: Bearer  [Access Token]"
     
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 {
   "exists": true
 }
- ```
+```
 
 
 
@@ -160,7 +160,7 @@ This API intended for checking existence of file or folder in [GroupDocs Cloud S
 [GroupDocs.Annotation Cloud API Reference](https://apireference.groupdocs.cloud/annotation/#/) lets you to try out [Storage existence API](https://apireference.groupdocs.cloud/annotation/#/Storage/StorageExists) right away in your browser! It allows you to effortlessly interact and try out every single operation our APIs exposes.
 |---|---|---|---
 
-### Request parameters ###
+###Request parameters ###
 
 |Parameter|Description
 |---|---
@@ -177,23 +177,23 @@ Required. Can be passed as query string parameter or as part of the URL
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/storage/exist/annotationdocs?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 {
   "exists": true,
   "isFolder": true
 }
- ```
+```
 
 
 
@@ -301,7 +301,7 @@ This API intended for getting total and used space of the[ GroupDocs Cloud Stora
 [GroupDocs.Annotation Cloud API Reference](https://apireference.groupdocs.cloud/annotation/#/) lets you to try out [storage space usage API](https://apireference.groupdocs.cloud/annotation/#/Storage/GetDiscUsage) right away in your browser! It allows you to effortlessly interact and try out every single operation our APIs exposes.
 |---|---|---|---
 
-### Request parameters ###
+###Request parameters ###
 
 |Parameter|Description
 |---|---
@@ -314,23 +314,23 @@ This API intended for getting total and used space of the[ GroupDocs Cloud Stora
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/storage/disc?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 {
   "usedSize": 31032368,
   "totalSize": 3221225472
 }
- ```
+```
 
 
 
@@ -438,7 +438,7 @@ This API intended for getting the list of file versions, stored in the [GroupDoc
 [GroupDocs.Annotation Cloud API Reference](https://apireference.groupdocs.cloud/annotation/#/) lets you to try out [Storage File Versions API](https://apireference.groupdocs.cloud/annotation/#/Storage/GetFileVersions) right away in your browser! It allows you to effortlessly interact and try out every single operation our APIs exposes.
 |---|---|---|---
 
-### Request parameters ###
+###Request parameters ###
 
 |Parameter|Description
 |---|---
@@ -456,18 +456,18 @@ Required. Can be passed as query string parameter or as part of the URL
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/storage/version/one-page.docx?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 {
   "value": [
     {
@@ -481,7 +481,7 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/storage/version/one-pag
     }
   ]
 }
- ```
+```
 
 
 

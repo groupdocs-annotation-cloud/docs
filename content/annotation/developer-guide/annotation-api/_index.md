@@ -33,21 +33,21 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to get 
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X POST "https://api.groupdocs.cloud/v2.0/annotation?filePath#annotationdocs%2F" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]" -H  "Content-Type: application/json" -d "[  {    \"guid\": null,    \"documentGuid\": 0,    \"text\": null,    \"creatorGuid\": null,    \"creatorName\": \"Anonym A.\",    \"creatorEmail\": null,    \"box\": {      \"x\": 375.892761,      \"y\": 59.3882637,      \"width\": 88.7330551,      \"height\": 37.7290154    },    \"pageNumber\": 0,    \"annotationPosition\": {      \"x\": 852,      \"y\": 59.38826291079812    },    \"svgPath\": null,    \"type\": 1,    \"access\": null,    \"replies\": null,    \"createdOn\": \"0001-01-01T00:00:00\",    \"fontColor\": null,    \"penColor\": 1201033,    \"penWidth\": 1,    \"penStyle\": 0,    \"backgroundColor\": null,    \"fieldText\": null,    \"fontFamily\": null,    \"fontSize\": null,    \"opacity\": null,    \"angle\": null  }]" 
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 code 200
 Adds annotations to document
- ```
+```
 
 
 
@@ -158,24 +158,24 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to [De
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X Delete "https://api.groupdocs.cloud/v2.0/annotation?filePath#annotationdocs%2Fone-page.docx" -H  "accept: application/json" -H  "authorization: Bearer [Access token]"
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 Http status code: 200
 
 <Binary file stream>
 
 
- ```
+```
 
 
 
@@ -274,7 +274,7 @@ The API is completely independent of your operating system, database system or d
 
 # Get Annotations with Result as File Path #
 
-This API gets an annotated document and retrieves the resultant document as a file. Request body parameters are  listed in **[AnnotationInfo]({{< ref "annotation/developer-guide/annotationinfo.md" >}}))**.
+This API gets an annotated document and retrieves the resultant document as a file.Request body parameters are  listed in **[AnnotationInfo]({{< ref "annotation/developer-guide/annotationinfo.md" >}}))**.
 
 ## Resource ##
 
@@ -286,20 +286,20 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to [ge
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X DELETE "https://api.groupdocs.cloud/v2.0/annotation?filePath#viewerdocs%2Fone-page.docx" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 Http status code: 204
- ```
+```
 
 
 
@@ -410,20 +410,20 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to [ge
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X DELETE "https://api.groupdocs.cloud/v2.0/annotation?filePath#viewerdocs%2Fone-page.docx" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 Http status code: 204
- ```
+```
 
 
 
@@ -522,7 +522,7 @@ The API is completely independent of your operating system, database system or d
 
 # Get Document as PDF with Annotation Result as Stream #
 
-This API gets an annotated PDF document and retrieves the resultant document as a stream. Request body parameters listed are in **[AnnotationInfo]({{< ref "annotation/developer-guide/annotationinfo.md" >}}))**.
+This API gets an annotated PDF document and retrieves the resultant document as a stream.Request body parameters listed are in **[AnnotationInfo]({{< ref "annotation/developer-guide/annotationinfo.md" >}}))**.
 
 ## Resource ##
 
@@ -534,20 +534,20 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to get[
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X DELETE "https://api.groupdocs.cloud/v2.0/annotation?filePath#viewerdocs%2Fone-page.docx" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 Http status code: 204
- ```
+```
 
 
 

@@ -7,72 +7,56 @@ weight: 5
 description: ""
 keywords: ""
 ---
-
-## AnnotationInfo ##
-
 AnnotationInfo data structure describes annotation properties.
 
-##### AnnotationInfo example #####
+## AnnotationInfo example ##
 
-
-
- 
-
-```html 
-
+```html
 {
-    "Guid": "string",
-    "DocumentGuid": 0,
-    "Text": "string",
-    "CreatorGuid": "string",
-    "CreatorName": "string",
-    "CreatorEmail": "string",
-    "Box": {
-      "X": 0,
-      "Y": 0,
-      "Width": 0,
-      "Height": 0
-    },
-    "PageNumber": 0,
-    "AnnotationPosition": {
-      "X": 0,
-      "Y": 0
-    },
-    "SvgPath": "string",
-    "Replies": [
-      {
-        "Guid": "string",
-        "UserGuid": "string",
-        "UserName": "string",
-        "UserEmail": "string",
-        "Message": "string",
-        "RepliedOn": "2019-05-02T08:07:33.447Z",
-        "ParentReplyGuid": "string"
-      }
-    ],
-    "CreatedOn": "2019-05-02T08:07:33.447Z",
-    "FontColor": 0,
-    "PenColor": 0,
-    "PenWidth": 0,
-    "PenStyle": 0,
-    "BackgroundColor": 0,
-    "FieldText": "string",
-    "FontFamily": "string",
-    "FontSize": 0,
-    "Opacity": 0,
-    "Angle": 0
-  }
+  "Guid": "string",
+  "DocumentGuid": 0,
+  "Text": "string",
+  "CreatorGuid": "string",
+  "CreatorName": "string",
+  "CreatorEmail": "string",
+  "Box": {
+    "X": 0,
+    "Y": 0,
+    "Width": 0,
+    "Height": 0
+  },
+  "PageNumber": 0,
+  "AnnotationPosition": {
+    "X": 0,
+    "Y": 0
+  },
+  "SvgPath": "string",
+  "Replies": [
+    {
+      "Guid": "string",
+      "UserGuid": "string",
+      "UserName": "string",
+      "UserEmail": "string",
+      "Message": "string",
+      "RepliedOn": "2019-05-02T08:07:33.447Z",
+      "ParentReplyGuid": "string"
+    }
+  ],
+  "CreatedOn": "2019-05-02T08:07:33.447Z",
+  "FontColor": 0,
+  "PenColor": 0,
+  "PenWidth": 0,
+  "PenStyle": 0,
+  "BackgroundColor": 0,
+  "FieldText": "string",
+  "FontFamily": "string",
+  "FontSize": 0,
+  "Opacity": 0,
+  "Angle": 0
+}
+```
 
- ```
-
- 
-
-##### AnnotationInfo fields #####
-
-
-
-
- 
+## AnnotationInfo fields ###
 
 |Name|Description
 |---|---
@@ -101,38 +85,24 @@ AnnotationInfo data structure describes annotation properties.
 |Text|Gets or sets the annotation text
 |Type|Gets or sets the annotation type
 
-
- 
-
-
 ## AnnotationReplyInfo ##
 
 AnnotationReplyInfo data structure describes annotation reply properties.
 
-```html 
+```html
 
-  {
-    "Guid": "string",
-    "UserGuid": "string",
-    "UserName": "string",
-    "UserEmail": "string",
-    "Message": "string",
-    "RepliedOn": "2019-05-02T08:07:33.447Z",
-    "ParentReplyGuid": "string"
-  }
+{
+  "Guid": "string",
+  "UserGuid": "string",
+  "UserName": "string",
+  "UserEmail": "string",
+  "Message": "string",
+  "RepliedOn": "2019-05-02T08:07:33.447Z",
+  "ParentReplyGuid": "string"
+}
+```
 
- ```
-
-
-
-\\
-
-##### AnnotationReplyInfo fields #####
-
-
-
-
- 
+## AnnotationReplyInfo fields ##
 
 |Name|Description
 |---|---
@@ -143,5 +113,3 @@ AnnotationReplyInfo data structure describes annotation reply properties.
 |UserEmail|Gets or sets the user email
 |UserGuid|Gets or sets the user's unique identifier
 |UserName|Gets or sets the user's name
-
-

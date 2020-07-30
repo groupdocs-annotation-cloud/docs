@@ -168,7 +168,7 @@ public enum AnnotationType : byte
         Distance # 12
     }
 
- ```
+```
 
  
 
@@ -187,21 +187,21 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to get�
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/annotations" \
 -X GET \
 -H "Content-Type: application/json" \
 -H "authorization: Bearer 0v7TK3UGYjVBEcEIS9aaO0dsXAlt-KriIDnJGkDIPktFmuu6xIuou2-eVUD4-Td9TcToDvShk9w02pWIXvyEdstxDqjSa8L2K4Pk2zgNkAoEDgDeFlpWf0k7lZ8guqUm43eAKQf43MVNyr3L6P3w1e2l9j-RJx-btpPorcZ90xY8S_b1vySsKsUxOlnwYtWc01JEXlO7TNrmfD3Eek4ch-xzi-qe4V8nofmy7RbqwHNczeP7O_9bMi1eQ68b3Rprqd4UvDCj3gqTMyAaqd-I58lJzZsHRnbZoM7icIjVQyu02bRgx7meoXB8fIWmOkUfUkiGTT3IjI4NSmARxrPPwgp2LAv-N_9H0q3nxxfZDV1vHZQP--I6vgC2UHo-YPw-mB4WRVHsUKqq04L4pdR4pCIWuluus_ydjVH_ndJlqP843eL3glt1XJez3DgXQIbHiAnqBBDqZqSZZDVUYhLDq1jN9eM" 
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 [  
    {  
       "guid":null,
@@ -261,7 +261,7 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/annotations" \
       "parentReplyGuid":null
    }
 ] 
- ```
+```
 
 
 
@@ -348,25 +348,25 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to [ad
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/annotations" \
 -X PUT \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d "[{"creatorName":"Anonym A.","box":{ "x":173.0, "y":154.89, "width":142.5, "height":9.0 },"pageNumber":0,"annotationPosition":{ "x":173.0, "y":154.88999938964844 },"svgPath":"[{'x':173.2986,'y':687.5769},'x':315.7985,'y':687.5769},{'x':173.2986,'y':678.5769},{'x':315.7985,'y':678.5769}]","type":0,"replies":[{ "userName":"Admin", "message":"reply text", "repliedOn":"2017-03-16T18:19:14" },{ "userName":"Commentator", "message":"reply2 text", "repliedOn":"2017-03-16T18:19:14" }]}]" \
 -H "authorization: Bearer 0v7TK3UGYjVBEcEIS9aaO0dsXAlt-KriIDnJGkDIPktFmuu6xIuou2-eVUD4-Td9TcToDvShk9w02pWIXvyEdstxDqjSa8L2K4Pk2zgNkAoEDgDeFlpWf0k7lZ8guqUm43eAKQf43MVNyr3L6P3w1e2l9j-RJx-btpPorcZ90xY8S_b1vySsKsUxOlnwYtWc01JEXlO7TNrmfD3Eek4ch-xzi-qe4V8nofmy7RbqwHNczeP7O_9bMi1eQ68b3Rprqd4UvDCj3gqTMyAaqd-I58lJzZsHRnbZoM7icIjVQyu02bRgx7meoXB8fIWmOkUfUkiGTT3IjI4NSmARxrPPwgp2LAv-N_9H0q3nxxfZDV1vHZQP--I6vgC2UHo-YPw-mB4WRVHsUKqq04L4pdR4pCIWuluus_ydjVH_ndJlqP843eL3glt1XJez3DgXQIbHiAnqBBDqZqSZZDVUYhLDq1jN9eM" 
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 Returns Binary data
- ```
+```
 
 
 
@@ -453,23 +453,23 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to [re
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/annotations" \
 -X DELETE \
 -H "Content-Type: application/json" \
 -H "authorization: Bearer 0v7TK3UGYjVBEcEIS9aaO0dsXAlt-KriIDnJGkDIPktFmuu6xIuou2-eVUD4-Td9TcToDvShk9w02pWIXvyEdstxDqjSa8L2K4Pk2zgNkAoEDgDeFlpWf0k7lZ8guqUm43eAKQf43MVNyr3L6P3w1e2l9j-RJx-btpPorcZ90xY8S_b1vySsKsUxOlnwYtWc01JEXlO7TNrmfD3Eek4ch-xzi-qe4V8nofmy7RbqwHNczeP7O_9bMi1eQ68b3Rprqd4UvDCj3gqTMyAaqd-I58lJzZsHRnbZoM7icIjVQyu02bRgx7meoXB8fIWmOkUfUkiGTT3IjI4NSmARxrPPwgp2LAv-N_9H0q3nxxfZDV1vHZQP--I6vgC2UHo-YPw-mB4WRVHsUKqq04L4pdR4pCIWuluus_ydjVH_ndJlqP843eL3glt1XJez3DgXQIbHiAnqBBDqZqSZZDVUYhLDq1jN9eM"" 
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 Returns Binary data
- ```
+```
 
 
 

@@ -23,7 +23,7 @@ This API allows you to download a file from [GroupDocs Cloud Storage](https://da
 [GroupDocs.Annotation Cloud API Reference](https://apireference.groupdocs.cloud/annotation/#/) lets you to try out [Download a File API](https://apireference.groupdocs.cloud/annotation/#/File/DownloadFile) right away in your browser! It allows you to effortlessly interact and try out every single operation our APIs exposes.
 |---|---|---|---
 
-### Request parameters ###
+###Request parameters ###
 
 |Parameter|Description
 |---|---
@@ -40,24 +40,24 @@ This API allows you to download a file from [GroupDocs Cloud Storage](https://da
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/storage/file/one-page.docx?storageName#MyStorage" -H  "accept: multipart/form-data" -H  "authorization: Bearer [Access Token]"
     
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 {
   "Code": 200,
   "Status": "OK"
 }
- ```
+```
 
 
 
@@ -166,7 +166,7 @@ This API allows you to upload files to the [GroupDocs Cloud Storage](https://
 |---|---|---|---
 
 
-### Request Body parameters ###
+###Request Body parameters ###
 
 |Parameter|Description
 |---|---
@@ -183,19 +183,19 @@ This API allows you to upload files to the [GroupDocs Cloud Storage](https://
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X POST "https://api.groupdocs.cloud/v2.0/annotation/storage/file/annotationdocs/Fone-page2.docx?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 Http status code: 200 (Returns OK and list of errors, which is empty if success.)
 {
   "Uploaded": [
@@ -215,7 +215,7 @@ Http status code: 200 (Returns OK and list of errors, which is empty if success.
 }
 
 
- ```
+```
 
 
 
@@ -324,7 +324,7 @@ This API allows you to delete specific file from [GroupDocs Cloud Storage](htt
 |---|---|---|---
 
 
-### Request parameters ###
+###Request parameters ###
 
 |Parameter|Description
 |---|---
@@ -341,24 +341,24 @@ This API allows you to delete specific file from [GroupDocs Cloud Storage](htt
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X DELETE "https://api.groupdocs.cloud/v2.0/annotation/storage/file/annotationdocs%2Fone-page1.docx?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 {
   "Code": 200,
   "Status": "OK"
 }
- ```
+```
 
 
 
@@ -466,7 +466,7 @@ This API allows you to copy specific file from [GroupDocs Cloud Storage](https
 [GroupDocs.Annotation Cloud API Reference](https://apireference.groupdocs.cloud/annotation/#/) lets you to try out [Copy File](https://apireference.groupdocs.cloud/annotation/#/File/CopyFile) right away in your browser! It allows you to effortlessly interact and try out every single operation our APIs exposes. 
 |---|---|---|---
 
-###  Request parameters ###
+### Request parameters ###
 
 |Parameter|Description
 |---|---
@@ -485,24 +485,24 @@ Required. Can be passed as query string parameter or as part of the URL
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/file/copy/annotationdocs%2Fone-page1.docx?destPath#conversiondocs1%2Fone-page1.docx'&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
     
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 {
   "Code": 200,
   "Status": "OK"
 }
- ```
+```
 
 
 
@@ -610,7 +610,7 @@ This API allows you to copy specific file from [GroupDocs Cloud Storage](https:
 [GroupDocs.Annotation Cloud API Reference](https://apireference.groupdocs.cloud/annotation/#/) lets you to try out [Move File](https://apireference.groupdocs.cloud/annotation/#/File/MoveFile) right away in your browser! It allows you to effortlessly interact and try out every single operation our APIs exposes. 
 |---|---|---|---
 
-###  Request parameters ###
+### Request parameters ###
 
 |Parameter|Description
 |---|---
@@ -629,24 +629,24 @@ Required. Can be passed as query string parameter or as part of the URL
 
 
 
- Request
+Request
 
-```html 
+```html
 curl -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/file/move/annotationdocs%2Fone-page1.docx?destPath#conversiondocs1%2Fone-page1.docx'&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
     
- ```
+```
 
 
 
 
- Response
+Response
 
-```html 
+```html
 {
   "Code": 200,
   "Status": "OK"
 }
- ```
+```
 
 
 
