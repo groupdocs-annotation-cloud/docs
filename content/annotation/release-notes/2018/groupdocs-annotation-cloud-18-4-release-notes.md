@@ -37,15 +37,10 @@ Below the list of the most notable features improvements and fixes for GroupDocs
 * Fixed issue when images cleanup leaves artifacts after annotations removing
 * Fixed wrong annotation range if other annotation has already been created in the same location for Words documents
 
-## Full List of Issues Covering all Changes in this Release ##
+## Full List of Issues Covering all Changes in this Release ## 
 
-  
-
-|Key
-|---
-|Summary
-|Issue Type
-
+|Key|Summary|Issue Type
+|---|---|---
 |ANNOTATIONCLOUD-49|[Add PHP SDK for GroupDocs.Annotation Cloud](https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-php)|New Feature
 |ANNOTATIONNET-583|Add text redaction annotation in Slides|New Feature
 |ANNOTATIONNET-643|Implement creating annotations in headerfooter in Words document|New Feature
@@ -85,9 +80,6 @@ Below the list of the most notable features improvements and fixes for GroupDocs
 |ANNOTATIONNET-595|The sample hangs while importing distance annotation for slides.|Bug
 |ANNOTATIONNET-648|Wrong annotation range if other annotation has already been created in the same location|Bug
 |ANNOTATIONNET-646|Cleanup leaves artifacts after deletion annotations in images|Bug
-
-
- 
 
 ## Public API and Backward Incompatible Changes ##
 

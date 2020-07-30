@@ -19,11 +19,11 @@ GroupDocs.Annotation Cloud API supports to render the document pages to images a
 
 This API generates images of the document pages and returns links to generated images.
 
-## Resource ##
+### Resource ###
 
 The following GroupDocs.Annotation Cloud REST API resource has been used to generate [images of document pages](https://apireference.groupdocs.cloud/annotation/#!/ImagePages/PostPages).
 
-## cURL REST Example ##
+### cURL REST Example ###
 
 Request
 
@@ -87,11 +87,11 @@ Ruby
 
 This API retrieves links to previously generated images of document pages.
 
-## Resource ##
+### Resource ###
 
 The following GroupDocs.Annotation Cloud REST API resource has been used to get [links to previously generated images of document pages](https://apireference.groupdocs.cloud/annotation/#!/ImagePages/GetPages).
 
-## cURL REST Example ##
+### cURL REST Example ###
 
 Request
 
@@ -227,7 +227,7 @@ Response
 
 The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](https://github.com/groupdocs-annotation-cloud).
 
-###  Clear Images Cache of Document Pages ###
+### Clear Images Cache of Document Pages ###
 
 C#  
 {{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Delete_Image_Pages.cs >}}

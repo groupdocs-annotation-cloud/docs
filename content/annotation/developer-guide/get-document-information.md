@@ -9,7 +9,7 @@ keywords: ""
 ---
 This API retrieves document information. It returns an object that contains the document description with metadata and coordinates of text on pages.
 
-## Resource ##
+### Resource ###
 
 The following GroupDocs.Annotation Cloud REST API resource has been used to get [document information](https://apireference.groupdocs.cloud/annotation/#/Info/GetInfo).
 

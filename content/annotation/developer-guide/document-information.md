@@ -47,11 +47,11 @@ This API retrieves document information. It returns an object that contains the
 |text|string|The row text.
 |texCoordinates|List\<double\>|The text line coordinates.
 
-## Resource ##
+### Resource ###
 
 The following GroupDocs.Annotation Cloud REST API resource has been used to get [document information(Image representation)](https://apireference.groupdocs.cloud/annotation/#!/ImageInfo/GetInfo).
 
-## cURL REST Example ##
+### cURL REST Example ###
 
 Request
 

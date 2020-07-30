@@ -7,7 +7,6 @@ weight: 1
 description: ""
 keywords: ""
 ---
-
 {{< alert style="info" >}}
 This page contains release notes for GroupDocs.Annotation Cloud 19.5
 {{< /alert >}}
@@ -18,21 +17,14 @@ GroupDocs.Annotation Cloud is a REST API provides methods to apply Text and Figu
 
 The difference of V2 version from V1 is more simplified API with less methods and options. Also, it has more optimized and refined internal architecture. In this version, the API includes methods for working with cloud storage, which is an important part: main annotation API methods take input documents from storage and put results there.
 
-
- 
-
-## API Sections Overview ##
-
- 
+## API Sections Overview ## 
 
 |Api section|Description
 |---|---
-|**Annotation API**|Main API methods for Annotating supported document formats.
+|Annotation API|Main API methods for Annotating supported document formats.
 |File API|Methods for upload, download, copy, move, delete files : input documents and converted results, in the cloud storage
 |Folder API|Methods for create, copy, move, delete folders in the cloud storage
 |Storage API|Methods for getting storage information and file information
-
-
 
 ## Major Features ##
 
@@ -42,5 +34,4 @@ The difference of V2 version from V1 is more simplified API with less methods an
 
 ## Public API Examples ##
 
-* GroupDocs.Annotation Cloud [Documentation]({{< ref "annotation/getting-started/_index.md" >}}))
-|---|---
+* GroupDocs.Annotation Cloud [Documentation]({{< ref "annotation/getting-started/_index.md" >}})

@@ -9,7 +9,7 @@ keywords: ""
 ---
 GroupDocs.Annotation Cloud is a REST API provides methods to apply Text and Figure based annotations to documents & images of all popular formats.
 
-## Resource ##
+### Resource ###
 
 The following GroupDocs.Comparison Cloud REST API resource has been used in the [Supported File Formats](https://apireference.groupdocs.cloud/annotation/#/Info/GetSupportedFileFormats) example.
 
@@ -196,4 +196,4 @@ Ruby
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Get_Supported_Formats.rb >}}
 
 Python  
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Get_Supported_Formats.py >}}
+{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Get_All_Supported_Formats.py >}}
