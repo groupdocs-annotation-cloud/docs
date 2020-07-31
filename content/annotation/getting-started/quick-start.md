@@ -9,7 +9,7 @@ keywords: ""
 ---
 ## Create an account ##
 
-Creating an account is very simple. Go to [https://dashboard.groupdocs.cloud](https://dashboard.groupdocs.cloud/#/) to create a free account.  
+Creating an account is very simple. Go to [Dashboard](https://dashboard.groupdocs.cloud/#/) to create a free account.  
 
 ## Create an API client app ##
 
