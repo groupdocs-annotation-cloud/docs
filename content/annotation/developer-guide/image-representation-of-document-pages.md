@@ -25,7 +25,8 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to gene
 
 ### cURL REST Example ###
 
-Request
+{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}}
+{{< tab tabNum="1" >}}
 
 ```html
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages" \
@@ -35,7 +36,8 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages" \
 -H "authorization: Bearer 0v7TK3UGYjVBEcEIS9aaO0dsXAlt-KriIDnJGkDIPktFmuu6xIuou2-eVUD4-Td9TcToDvShk9w02pWIXvyEdstxDqjSa8L2K4Pk2zgNkAoEDgDeFlpWf0k7lZ8guqUm43eAKQf43MVNyr3L6P3w1e2l9j-RJx-btpPorcZ90xY8S_b1vySsKsUxOlnwYtWc01JEXlO7TNrmfD3Eek4ch-xzi-qe4V8nofmy7RbqwHNczeP7O_9bMi1eQ68b3Rprqd4UvDCj3gqTMyAaqd-I58lJzZsHRnbZoM7icIjVQyu02bRgx7meoXB8fIWmOkUfUkiGTT3IjI4NSmARxrPPwgp2LAv-N_9H0q3nxxfZDV1vHZQP--I6vgC2UHo-YPw-mB4WRVHsUKqq04L4pdR4pCIWuluus_ydjVH_ndJlqP843eL3glt1XJez3DgXQIbHiAnqBBDqZqSZZDVUYhLDq1jN9eM"
 ```
 
-Response
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 ```html
 {
@@ -63,25 +65,38 @@ Response
 }
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 ## SDKs ##
 
 The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs listÂ [here](https://github.com/groupdocs-annotation-cloud).
 
 ### Generate Images of Document Pages ###
 
-C#  
+{{< tabs tabTotal="6" tabID="2" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Ruby" >}}
+{{< tab tabNum="1" >}}
+
 {{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Post_Generate_Image_Pages.cs >}}
 
-PHP  
-
-{{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Post_Generate_Image_Pages.php >}}
-
-Java
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 {{< gist groupdocscloud dd069ea3659b158b48e2239356aea189 Annotation_Java_Post_Generate_Image_Pages.java >}}
 
-Ruby  
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
+{{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Post_Generate_Image_Pages.php >}}
+
+{{< /tab >}}
+{{< tab tabNum="4" >}}
+
 {{< gist groupdocscloud 6a14ecd45b4278c014689b688ec34d21 Annotation_Ruby_Generate_Pages.rb >}}
+
+{{< /tab >}}
+{{< /tabs >}}
+
 
 ## Get Links to Images of Document Pages ##
 
@@ -93,7 +108,8 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to getÂ
 
 ### cURL REST Example ###
 
-Request
+{{< tabs tabTotal="2" tabID="3" tabName1="Request" tabName2="Response" >}}
+{{< tab tabNum="1" >}}
 
 ```html
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages" \
@@ -102,7 +118,8 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages" \
 -H "authorization: Bearer 0v7TK3UGYjVBEcEIS9aaO0dsXAlt-KriIDnJGkDIPktFmuu6xIuou2-eVUD4-Td9TcToDvShk9w02pWIXvyEdstxDqjSa8L2K4Pk2zgNkAoEDgDeFlpWf0k7lZ8guqUm43eAKQf43MVNyr3L6P3w1e2l9j-RJx-btpPorcZ90xY8S_b1vySsKsUxOlnwYtWc01JEXlO7TNrmfD3Eek4ch-xzi-qe4V8nofmy7RbqwHNczeP7O_9bMi1eQ68b3Rprqd4UvDCj3gqTMyAaqd-I58lJzZsHRnbZoM7icIjVQyu02bRgx7meoXB8fIWmOkUfUkiGTT3IjI4NSmARxrPPwgp2LAv-N_9H0q3nxxfZDV1vHZQP--I6vgC2UHo-YPw-mB4WRVHsUKqq04L4pdR4pCIWuluus_ydjVH_ndJlqP843eL3glt1XJez3DgXQIbHiAnqBBDqZqSZZDVUYhLDq1jN9eM"
 ```
 
-Response
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 ```html
 {
@@ -130,23 +147,38 @@ Response
 }
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 ## SDKs ##
 
 The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs listÂ [here](https://github.com/groupdocs-annotation-cloud).
 
 ### Get Links to Images of Document Pages ###
 
-C#  
+
+{{< tabs tabTotal="6" tabID="4" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Ruby" >}}
+{{< tab tabNum="1" >}}
+
 {{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Get_Image_Pages.cs >}}
 
-PHP  
-{{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Get_Image_Pages.php >}}
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
-Java
 {{< gist groupdocscloud dd069ea3659b158b48e2239356aea189 Annotation_Java_Get_Image_Pages.java >}}
 
-Ruby  
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
+{{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Get_Image_Pages.php >}}
+
+{{< /tab >}}
+{{< tab tabNum="4" >}}
+
 {{< gist groupdocscloud 6a14ecd45b4278c014689b688ec34d21 Annotation_Ruby_Get_Image_Pages.rb >}}
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Get Link to Image of Specific Page ##
 
@@ -158,7 +190,8 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to getÂ
 
 ### cURL REST Example ###
 
-Request
+{{< tabs tabTotal="2" tabID="5" tabName1="Request" tabName2="Response" >}}
+{{< tab tabNum="1" >}}
 
 ```html
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages/1" \
@@ -167,7 +200,8 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages/1" 
 -H "authorization: Bearer 0v7TK3UGYjVBEcEIS9aaO0dsXAlt-KriIDnJGkDIPktFmuu6xIuou2-eVUD4-Td9TcToDvShk9w02pWIXvyEdstxDqjSa8L2K4Pk2zgNkAoEDgDeFlpWf0k7lZ8guqUm43eAKQf43MVNyr3L6P3w1e2l9j-RJx-btpPorcZ90xY8S_b1vySsKsUxOlnwYtWc01JEXlO7TNrmfD3Eek4ch-xzi-qe4V8nofmy7RbqwHNczeP7O_9bMi1eQ68b3Rprqd4UvDCj3gqTMyAaqd-I58lJzZsHRnbZoM7icIjVQyu02bRgx7meoXB8fIWmOkUfUkiGTT3IjI4NSmARxrPPwgp2LAv-N_9H0q3nxxfZDV1vHZQP--I6vgC2UHo-YPw-mB4WRVHsUKqq04L4pdR4pCIWuluus_ydjVH_ndJlqP843eL3glt1XJez3DgXQIbHiAnqBBDqZqSZZDVUYhLDq1jN9eM"
 ```
 
-Response
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 ```html
 {
@@ -181,22 +215,37 @@ Response
 }
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 ## SDKs ##
 The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs listÂ [here](https://github.com/groupdocs-annotation-cloud).
 
 ### Get Link to Specific Page of the Document ###
 
-C#  
+
+{{< tabs tabTotal="6" tabID="6" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Ruby" >}}
+{{< tab tabNum="1" >}}
+
 {{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Get_Image_Page.cs >}}
 
-PHP  
-{{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Get_Image_Page.php >}}
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
-Java  
 {{< gist groupdocscloud dd069ea3659b158b48e2239356aea189 Annotation_Java_Get_Image_Page.java >}}
 
-Ruby  
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
+{{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Get_Image_Page.php >}}
+
+{{< /tab >}}
+{{< tab tabNum="4" >}}
+
 {{< gist groupdocscloud 6a14ecd45b4278c014689b688ec34d21 Annotation_Ruby_Get_Image_Page.rb >}}
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Clear Document Image Pages Cache ##
 
@@ -208,7 +257,8 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to clea
 
 ### cURL REST Example ###
 
-Request
+{{< tabs tabTotal="2" tabID="7" tabName1="Request" tabName2="Response" >}}
+{{< tab tabNum="1" >}}
 
 ```html
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages?folder#Output" \
@@ -217,11 +267,15 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages?fol
 -H "authorization: Bearer 0v7TK3UGYjVBEcEIS9aaO0dsXAlt-KriIDnJGkDIPktFmuu6xIuou2-eVUD4-Td9TcToDvShk9w02pWIXvyEdstxDqjSa8L2K4Pk2zgNkAoEDgDeFlpWf0k7lZ8guqUm43eAKQf43MVNyr3L6P3w1e2l9j-RJx-btpPorcZ90xY8S_b1vySsKsUxOlnwYtWc01JEXlO7TNrmfD3Eek4ch-xzi-qe4V8nofmy7RbqwHNczeP7O_9bMi1eQ68b3Rprqd4UvDCj3gqTMyAaqd-I58lJzZsHRnbZoM7icIjVQyu02bRgx7meoXB8fIWmOkUfUkiGTT3IjI4NSmARxrPPwgp2LAv-N_9H0q3nxxfZDV1vHZQP--I6vgC2UHo-YPw-mB4WRVHsUKqq04L4pdR4pCIWuluus_ydjVH_ndJlqP843eL3glt1XJez3DgXQIbHiAnqBBDqZqSZZDVUYhLDq1jN9eM"
 ```
 
-Response
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 ```html
 204 No Content
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## SDKs ##
 
@@ -229,14 +283,27 @@ The API is completely independent of your operating system, database system or d
 
 ### Clear Images Cache of Document Pages ###
 
-C#  
+
+
+{{< tabs tabTotal="6" tabID="8" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Ruby" >}}
+{{< tab tabNum="1" >}}
+
 {{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Delete_Image_Pages.cs >}}
 
-PHP  
-{{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Delete_Image_Pages.php >}}
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
-Java  
 {{< gist groupdocscloud dd069ea3659b158b48e2239356aea189 Annotation_Java_Delete_Image_Pages.java >}}
 
-Ruby  
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
+{{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Delete_Image_Pages.php >}}
+
+{{< /tab >}}
+{{< tab tabNum="4" >}}
+
 {{< gist groupdocscloud 6a14ecd45b4278c014689b688ec34d21 Annotation_Ruby_Get_Delete_Annotation.rb >}}
+
+{{< /tab >}}
+{{< /tabs >}}

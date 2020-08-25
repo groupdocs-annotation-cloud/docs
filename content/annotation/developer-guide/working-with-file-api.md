@@ -26,13 +26,15 @@ This API allows you to download a file from [GroupDocs Cloud Storage](https://da
 
 ## cURL Example ##
 
-Request
+{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}}
+{{< tab tabNum="1" >}}
 
 ```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/storage/file/one-page.docx?storageName#MyStorage" -H  "accept: multipart/form-data" -H  "authorization: Bearer [Access Token]"
 ```
 
-Response
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 ```html
 {
@@ -41,29 +43,47 @@ Response
 }
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 ## SDKs ##
 
 Our API is completely independent of your operating system, database system or development language. You can use any language and platform that supports HTTP to interact with our API. However, manually writing client code can be difficult, error-prone and time-consuming. Therefore, we have provided and support API [SDKs](https://github.com/groupdocs-annotation-cloud) in many development languages in order to make it easier to integrate with us. If you use [SDK](https://github.com/groupdocs-annotation-cloud), it hides the [File API](https://apireference.groupdocs.cloud/annotation/#/) calls and lets you use GroupDocs Cloud features in a native way for your preferred language.
 
 ### SDK Examples ###
 
-C#  
+{{< tabs tabTotal="6" tabID="2" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Python" tabName6="Ruby" >}}
+{{< tab tabNum="1" >}}
+
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Download_File.cs >}}
 
-Java  
+{{< /tab >}}
+{{< tab tabNum="2" >}}
+
 {{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Download_File.java >}}
 
-PHP  
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
 {{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Download_File.php >}}
 
-Node.Js  
+{{< /tab >}}
+{{< tab tabNum="4" >}}
+
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Download_File.js >}}
 
-Ruby  
+{{< /tab >}}
+{{< tab tabNum="5" >}}
+
+{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Download_File.py >}}
+
+{{< /tab >}}
+{{< tab tabNum="6" >}}
+
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Download_File.rb >}}
 
-Python  
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Download_File.py >}}
+{{< /tab >}}
+{{< /tabs >}}
 
 ##  Upload File API ##
 
@@ -83,13 +103,15 @@ This API allows you to upload files to the [GroupDocs Cloud Storage](https://
 
 ## cURL Example ##
 
-Request
+{{< tabs tabTotal="2" tabID="3" tabName1="Request" tabName2="Response" >}}
+{{< tab tabNum="1" >}}
 
 ```html
 curl -X POST "https://api.groupdocs.cloud/v2.0/annotation/storage/file/annotationdocs/Fone-page2.docx?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 ```
 
-Response
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 ```html
 Http status code: 200 (Returns OK and list of errors, which is empty if success.)
@@ -111,29 +133,47 @@ Http status code: 200 (Returns OK and list of errors, which is empty if success.
 }
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 ## SDKs ##
 
 Our API is completely independent of your operating system, database system or development language. You can use any language and platform that supports HTTP to interact with our API. However, manually writing client code can be difficult, error-prone and time-consuming. Therefore, we have provided and support API [SDKs](https://github.com/groupdocs-annotation-cloud) in many development languages in order to make it easier to integrate with us. If you use [SDK](https://github.com/groupdocs-annotation-cloud), it hides the [File API](https://apireference.groupdocs.cloud/annotation/#/File) calls and lets you use GroupDocs for Cloud features in a native way for your preferred language.
 
 ### SDK Examples ###
 
-C#  
+{{< tabs tabTotal="6" tabID="4" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Python" tabName6="Ruby" >}}
+{{< tab tabNum="1" >}}
+
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Upload_File.cs >}}
 
-Java  
+{{< /tab >}}
+{{< tab tabNum="2" >}}
+
 {{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Upload_File.java >}}
 
-PHP  
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
 {{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Upload_File.php >}}
 
-Node.Js  
+{{< /tab >}}
+{{< tab tabNum="4" >}}
+
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Upload_File.js >}}
 
-Ruby  
+{{< /tab >}}
+{{< tab tabNum="5" >}}
+
+{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Upload_File.py >}}
+
+{{< /tab >}}
+{{< tab tabNum="6" >}}
+
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Upload_File.rb >}}
 
-Python  
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Upload_File.py >}}
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Delete File API ##
 
@@ -154,13 +194,15 @@ This API allows you to delete specific file from [GroupDocs Cloud Storage](htt
 
 ## cURL Example ##
 
-Request
+{{< tabs tabTotal="2" tabID="5" tabName1="Request" tabName2="Response" >}}
+{{< tab tabNum="1" >}}
 
 ```html
 curl -X DELETE "https://api.groupdocs.cloud/v2.0/annotation/storage/file/annotationdocs%2Fone-page1.docx?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 ```
 
-Response
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 ```html
 {
@@ -169,29 +211,47 @@ Response
 }
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 ## SDKs ##
 
 Our API is completely independent of your operating system, database system or development language. You can use any language and platform that supports HTTP to interact with our API. However, manually writing client code can be difficult, error-prone and time-consuming. Therefore, we have provided and support API [SDKs](https://github.com/groupdocs-annotation-cloud) in many development languages in order to make it easier to integrate with us. If you use [SDK](https://github.com/groupdocs-annotation-cloud), it hides the [File API](https://apireference.groupdocs.cloud/annotation/#/File) calls and lets you use GroupDocs Cloud features in a native way for your preferred language.
 
 ### SDK Examples ###
 
-C#  
+{{< tabs tabTotal="6" tabID="6" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Python" tabName6="Ruby" >}}
+{{< tab tabNum="1" >}}
+
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Delete_File.cs >}}
 
-Java  
+{{< /tab >}}
+{{< tab tabNum="2" >}}
+
 {{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Delete_File.java >}}
 
-PHP  
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
 {{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Delete_File.php >}}
 
-Node.Js  
+{{< /tab >}}
+{{< tab tabNum="4" >}}
+
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Delete_File.js >}}
 
-Ruby  
+{{< /tab >}}
+{{< tab tabNum="5" >}}
+
+{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Delete_File.py >}}
+
+{{< /tab >}}
+{{< tab tabNum="6" >}}
+
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Delete_File.rb >}}
 
-Python  
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Delete_File.py >}}
+{{< /tab >}}
+{{< /tabs >}}
 
 ## File Copy API ##
 
@@ -213,13 +273,15 @@ This API allows you to copy specific file from [GroupDocs Cloud Storage](https
 
 ## cURL Example ##
 
-Request
+{{< tabs tabTotal="2" tabID="7" tabName1="Request" tabName2="Response" >}}
+{{< tab tabNum="1" >}}
 
 ```html
 curl -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/file/copy/annotationdocs%2Fone-page1.docx?destPath#conversiondocs1%2Fone-page1.docx'&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 ```
 
-Response
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 ```html
 {
@@ -228,29 +290,48 @@ Response
 }
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
+
 ## SDKs ##
 
 Our API is completely independent of your operating system, database system or development language. You can use any language and platform that supports HTTP to interact with our API. However, manually writing client code can be difficult, error-prone and time-consuming. Therefore, we have provided and support API [SDKs](https://github.com/groupdocs-annotation-cloud) in many development languages in order to make it easier to integrate with us. If you use [SDK](https://github.com/groupdocs-annotation-cloud), it hides the [File API](https://apireference.groupdocs.cloud/annotation/#/File) calls and lets you use GroupDocs Cloud features in a native way for your preferred language.
 
 ### SDK Examples ###
 
-C#  
+{{< tabs tabTotal="6" tabID="8" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Python" tabName6="Ruby" >}}
+{{< tab tabNum="1" >}}
+
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Copy_File.cs >}}
 
-Java  
+{{< /tab >}}
+{{< tab tabNum="2" >}}
+
 {{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Copy_File.java >}}
 
-PHP  
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
 {{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Copy_File.php >}}
 
-Node.Js  
+{{< /tab >}}
+{{< tab tabNum="4" >}}
+
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Copy_File.js >}}
 
-Ruby  
+{{< /tab >}}
+{{< tab tabNum="5" >}}
+
+{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Copy_File.py >}}
+
+{{< /tab >}}
+{{< tab tabNum="6" >}}
+
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Copy_File.rb >}}
 
-Python  
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Copy_File.py >}}
+{{< /tab >}}
+{{< /tabs >}}
 
 ## File Move API ##
 
@@ -272,12 +353,15 @@ This API allows you to copy specific file from [GroupDocs Cloud Storage](https:
 
 ## cURL Example ##
 
-Request
+{{< tabs tabTotal="2" tabID="9" tabName1="Request" tabName2="Response" >}}
+{{< tab tabNum="1" >}}
 
 ```html
 curl -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/file/move/annotationdocs%2Fone-page1.docx?destPath#conversiondocs1%2Fone-page1.docx'&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 ```
-Response
+
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 ```html
 {
@@ -286,26 +370,44 @@ Response
 }
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 ## SDKs ##
 
 Our API is completely independent of your operating system, database system or development language. You can use any language and platform that supports HTTP to interact with our API. However, manually writing client code can be difficult, error-prone and time-consuming. Therefore, we have provided and support API [SDKs](https://github.com/groupdocs-annotation-cloud) in many development languages in order to make it easier to integrate with us. If you use [SDK](https://github.com/groupdocs-annotation-cloud), it hides the [File API](https://apireference.groupdocs.cloud/annotation/#/File) calls and lets you use GroupDocs for Cloud features in a native way for your preferred language.
 
 ### SDK Examples ###
 
-C#  
+{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Python" tabName6="Ruby" >}}
+{{< tab tabNum="1" >}}
+
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Move_File.cs >}}
 
-Java  
+{{< /tab >}}
+{{< tab tabNum="2" >}}
+
 {{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Move_File.java >}}
 
-PHP  
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
 {{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Move_File.php >}}
 
-Node.Js  
+{{< /tab >}}
+{{< tab tabNum="4" >}}
+
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Move_File.js >}}
 
-Ruby  
+{{< /tab >}}
+{{< tab tabNum="5" >}}
+
+{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Move_File.py >}}
+
+{{< /tab >}}
+{{< tab tabNum="6" >}}
+
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Move_File.rb >}}
 
-Python  
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Move_File.py >}}
+{{< /tab >}}
+{{< /tabs >}}

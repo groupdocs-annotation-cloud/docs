@@ -25,17 +25,25 @@ Use the **App SID** and **App key (secret key)** from the API app client you
 
 {{< alert style="info" >}}The GitHub repository for [GroupDocs.Annotation Cloud](https://github.com/groupdocs-annotation-cloud) has a complete set of examples, demonstrating our API capabilities.{{< /alert >}}  
   
-C#  
-{{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Get_Document_Info.cs >}}
-  
-PHP  
-  
-{{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Get_Document_Info.php >}}
+{{< tabs tabTotal="6" tabID="2" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Ruby" >}}
+{{< tab tabNum="1" >}}
 
-Java
+{{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Get_Document_Info.cs >}}
+
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 {{< gist groupdocscloud dd069ea3659b158b48e2239356aea189 Annotation_Java_Get_Document_Info.java >}}
 
-Ruby
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
+{{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Get_Document_Info.php >}}
+
+{{< /tab >}}
+{{< tab tabNum="4" >}}
 
 {{< gist groupdocscloud 6a14ecd45b4278c014689b688ec34d21 Annotation_Ruby_Get_Info.rb >}}
+
+{{< /tab >}}
+{{< /tabs >}}

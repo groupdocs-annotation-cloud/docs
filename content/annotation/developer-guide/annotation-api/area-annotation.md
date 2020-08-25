@@ -39,7 +39,7 @@ The API is completely independent of your operating system, database system or d
 
 ### Add Area Annotation ###
 
-{{< tabs tabTotal="6" tabID="2" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Ruby" tabName6="Python" >}}
+{{< tabs tabTotal="6" tabID="2" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Python" tabName6="Ruby" >}}
 {{< tab tabNum="1" >}}
 
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Add_Area_Annotation.cs >}}
@@ -60,19 +60,14 @@ The API is completely independent of your operating system, database system or d
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Add_Area_Annotation.js >}}
 
 {{< /tab >}}
-{{< tab tabNum="4" >}}
-
-{{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Add_Area_Annotation.js >}}
-
-{{< /tab >}}
 {{< tab tabNum="5" >}}
 
-{{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Add_Area_Annotation.rb >}}
+{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Add_Area_Annotation.py >}}
 
 {{< /tab >}}
 {{< tab tabNum="6" >}}
 
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Add_Area_Annotation.py >}}
+{{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Add_Area_Annotation.rb >}}
 
 {{< /tab >}}
 {{< /tabs >}}

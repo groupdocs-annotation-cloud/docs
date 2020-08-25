@@ -15,13 +15,15 @@ The following GroupDocs.Comparison Cloud REST API resource has been used in the 
 
 ## cURL Example ##
 
-Request
+{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}}
+{{< tab tabNum="1" >}}
 
 ```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/formats" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 ```
 
-Response
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 ```html
 {
@@ -174,26 +176,44 @@ Response
 }
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 ## SDKs ##
 
 The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](https://github.com/groupdocs-annotation-cloud).
 
 ### Get List of Supported File Formats ###
 
-C#  
+{{< tabs tabTotal="6" tabID="2" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Python" tabName6="Ruby" >}}
+{{< tab tabNum="1" >}}
+
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Get_Supported_Formats.cs >}}
 
-Java  
+{{< /tab >}}
+{{< tab tabNum="2" >}}
+
 {{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Get_Supported_Formats.java >}}
 
-PHP  
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
 {{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Get_Supported_Formats.php >}}
 
-Node.Js  
+{{< /tab >}}
+{{< tab tabNum="4" >}}
+
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Get_All_Supported_Formats.js >}}
 
-Ruby  
+{{< /tab >}}
+{{< tab tabNum="5" >}}
+
+{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Get_All_Supported_Formats.py >}}
+
+{{< /tab >}}
+{{< tab tabNum="6" >}}
+
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Get_Supported_Formats.rb >}}
 
-Python  
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Get_All_Supported_Formats.py >}}
+{{< /tab >}}
+{{< /tabs >}}

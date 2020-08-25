@@ -24,18 +24,23 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to get 
 
 ### cURL REST Example ###
 
-Request
+{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}}
+{{< tab tabNum="1" >}}
 
 ```html
 curl -X POST "https://api.groupdocs.cloud/v2.0/annotation?filePath#annotationdocs%2F" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]" -H  "Content-Type: application/json" -d "[  {    \"guid\": null,    \"documentGuid\": 0,    \"text\": null,    \"creatorGuid\": null,    \"creatorName\": \"Anonym A.\",    \"creatorEmail\": null,    \"box\": {      \"x\": 375.892761,      \"y\": 59.3882637,      \"width\": 88.7330551,      \"height\": 37.7290154    },    \"pageNumber\": 0,    \"annotationPosition\": {      \"x\": 852,      \"y\": 59.38826291079812    },    \"svgPath\": null,    \"type\": 1,    \"access\": null,    \"replies\": null,    \"createdOn\": \"0001-01-01T00:00:00\",    \"fontColor\": null,    \"penColor\": 1201033,    \"penWidth\": 1,    \"penStyle\": 0,    \"backgroundColor\": null,    \"fieldText\": null,    \"fontFamily\": null,    \"fontSize\": null,    \"opacity\": null,    \"angle\": null  }]"
 ```
 
-Response
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 ```html
 code 200
 Adds annotations to document
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## SDKs ##
 
@@ -43,23 +48,38 @@ The API is completely independent of your operating system, database system or d
 
 ### Add Annotation ###
 
-C#  
+{{< tabs tabTotal="6" tabID="2" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Python" tabName6="Ruby" >}}
+{{< tab tabNum="1" >}}
+
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Add_Area_Annotation.cs >}}
 
-Java  
+{{< /tab >}}
+{{< tab tabNum="2" >}}
+
 {{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Add_Area_Annotation.java >}}
 
-PHP  
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
 {{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Add_Area_Annotation.php >}}
 
-Node.Js  
+{{< /tab >}}
+{{< tab tabNum="4" >}}
+
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Add_Area_Annotation.js >}}
 
-Ruby  
+{{< /tab >}}
+{{< tab tabNum="5" >}}
+
+{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Add_Area_Annotation.py >}}
+
+{{< /tab >}}
+{{< tab tabNum="6" >}}
+
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Add_Area_Annotation.rb >}}
 
-Python  
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Add_Area_Annotation.py >}}
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Delete Annotation ##
 
@@ -71,18 +91,23 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to [De
 
 ### cURL REST Example ###
 
-Request
+{{< tabs tabTotal="2" tabID="3" tabName1="Request" tabName2="Response" >}}
+{{< tab tabNum="1" >}}
 
 ```html
 curl -X Delete "https://api.groupdocs.cloud/v2.0/annotation?filePath#annotationdocs%2Fone-page.docx" -H  "accept: application/json" -H  "authorization: Bearer [Access token]"
 ```
 
-Response
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 ```html
 Http status code: 200  
 <Binary file stream>
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## SDKs ##
 
@@ -90,23 +115,38 @@ The API is completely independent of your operating system, database system or d
 
 ### Delete Annotation ###
 
-C#  
+{{< tabs tabTotal="6" tabID="4" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Python" tabName6="Ruby" >}}
+{{< tab tabNum="1" >}}
+
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Delete_Annotation.cs >}}
 
-Java  
+{{< /tab >}}
+{{< tab tabNum="2" >}}
+
 {{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Delete_Annotation.java >}}
 
-PHP  
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
 {{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Delete_Annotation.php >}}
 
-Node.Js  
+{{< /tab >}}
+{{< tab tabNum="4" >}}
+
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Delete_Annotation.js >}}
 
-Ruby  
+{{< /tab >}}
+{{< tab tabNum="5" >}}
+
+{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Delete_Annotation.py >}}
+
+{{< /tab >}}
+{{< tab tabNum="6" >}}
+
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Delete_Annotation.rb >}}
 
-Python  
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Delete_Annotation.py >}}
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Get Annotations with Result as File Path ##
 
@@ -118,17 +158,22 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to [ge
 
 ### cURL REST Example ###
 
-Request
+{{< tabs tabTotal="2" tabID="5" tabName1="Request" tabName2="Response" >}}
+{{< tab tabNum="1" >}}
 
 ```html
 curl -X DELETE "https://api.groupdocs.cloud/v2.0/annotation?filePath#viewerdocs%2Fone-page.docx" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 ```
 
-Response
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 ```html
 Http status code: 204
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## SDKs ##
 
@@ -136,23 +181,38 @@ The API is completely independent of your operating system, database system or d
 
 ### Get Annotations with Result as File ###
 
-C#  
+{{< tabs tabTotal="6" tabID="6" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Python" tabName6="Ruby" >}}
+{{< tab tabNum="1" >}}
+
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Get_Annotation.cs >}}
 
-Java  
+{{< /tab >}}
+{{< tab tabNum="2" >}}
+
 {{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Get_Annotation.java >}}
 
-PHP  
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
 {{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Get_Annotation.php >}}
 
-Node.Js  
+{{< /tab >}}
+{{< tab tabNum="4" >}}
+
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Get_Annotation.js >}}
 
-Ruby  
+{{< /tab >}}
+{{< tab tabNum="5" >}}
+
+{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Get_Annotation.py >}}
+
+{{< /tab >}}
+{{< tab tabNum="6" >}}
+
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Get_Annotation.rb >}}
 
-Python  
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Get_Annotation.py >}}
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Get Annotations with Result as Stream ##
 
@@ -164,17 +224,22 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to [ge
 
 ### cURL REST Example ###
 
-Request
+{{< tabs tabTotal="2" tabID="7" tabName1="Request" tabName2="Response" >}}
+{{< tab tabNum="1" >}}
 
 ```html
 curl -X DELETE "https://api.groupdocs.cloud/v2.0/annotation?filePath#viewerdocs%2Fone-page.docx" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 ```
 
-Response
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 ```html
 Http status code: 204
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## SDKs ##
 
@@ -182,23 +247,38 @@ The API is completely independent of your operating system, database system or d
 
 ### Get Annotations with Result as Stream ###
 
-C#  
+{{< tabs tabTotal="6" tabID="8" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Python" tabName6="Ruby" >}}
+{{< tab tabNum="1" >}}
+
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Get_Export_Document.cs >}}
 
-Java  
+{{< /tab >}}
+{{< tab tabNum="2" >}}
+
 {{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Get_Export_Document.java >}}
 
-PHP  
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
 {{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Get_Export_Document.php >}}
 
-Node.Js  
+{{< /tab >}}
+{{< tab tabNum="4" >}}
+
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Get_Export_Document.js >}}
 
-Ruby  
+{{< /tab >}}
+{{< tab tabNum="5" >}}
+
+{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Get_Export_Document.py >}}
+
+{{< /tab >}}
+{{< tab tabNum="6" >}}
+
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Get_Export_Document.rb >}}
 
-Python  
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Get_Export_Document.py >}}
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Get Document as PDF with Annotation Result as Stream ##
 
@@ -210,17 +290,22 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to get 
 
 ### cURL REST Example ###
 
-Request
+{{< tabs tabTotal="2" tabID="9" tabName1="Request" tabName2="Response" >}}
+{{< tab tabNum="1" >}}
 
 ```html
 curl -X DELETE "https://api.groupdocs.cloud/v2.0/annotation?filePath#viewerdocs%2Fone-page.docx" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 ```
 
-Response
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 ```html
 Http status code: 204
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## SDKs ##
 
@@ -228,20 +313,35 @@ The API is completely independent of your operating system, database system or d
 
 ### Get Document as PDF with Annotation Result as Stream ###
 
-C#  
+{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Python" tabName6="Ruby" >}}
+{{< tab tabNum="1" >}}
+
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Get_PDF.cs >}}
 
-Java  
+{{< /tab >}}
+{{< tab tabNum="2" >}}
+
 {{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Get_PDF.java >}}
 
-PHP  
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
 {{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Get_PDF.php >}}
 
-Node.Js  
+{{< /tab >}}
+{{< tab tabNum="4" >}}
+
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Get_PDF.js >}}
 
-Ruby  
+{{< /tab >}}
+{{< tab tabNum="5" >}}
+
+{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Get_PDF.py >}}
+
+{{< /tab >}}
+{{< tab tabNum="6" >}}
+
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Get_PDF.rb >}}
 
-Python  
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Get_PDF.py >}}
+{{< /tab >}}
+{{< /tabs >}}
