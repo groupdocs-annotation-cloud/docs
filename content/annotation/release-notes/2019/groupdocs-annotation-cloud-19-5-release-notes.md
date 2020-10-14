@@ -17,7 +17,7 @@ GroupDocs.Annotation Cloud is a REST API provides methods to apply Text and Figu
 
 The difference of V2 version from V1 is more simplified API with less methods and options. Also, it has more optimized and refined internal architecture. In this version, the API includes methods for working with cloud storage, which is an important part: main annotation API methods take input documents from storage and put results there.
 
-## API Sections Overview ## 
+## API Sections Overview ##
 
 |Api section|Description
 |---|---

@@ -1,7 +1,7 @@
 ---
-id: "2017"
-url: "annotation/2017"
-title: "Release Notes - 2017"
+id: "data-structures"
+url: "annotation/data-structures"
+title: "Data structures"
 productName: "GroupDocs.Annotation Cloud"
 weight: 4
 description: ""

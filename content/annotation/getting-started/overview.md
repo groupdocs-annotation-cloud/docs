@@ -14,26 +14,26 @@ GroupDocs.Annotation Cloud REST API supports following type of Annotations:
 
 **Text annotations:**
 
-**Text annotation** – add comments to selected text.  
-**Text replacement** – highlight which text should be replaced with what.  
-**Text redaction** – hide confidential text.  
-**Strikeout/underline** – highlight text with strikethroughs/underlines.  
-**Typewriter** – add sticky notes with rich text.  
+**Text annotation** – add comments to selected text.
+**Text replacement** – highlight which text should be replaced with what.
+**Text redaction** – hide confidential text.
+**Strikeout/underline** – highlight text with strikethroughs/underlines.
+**Typewriter** – add sticky notes with rich text.
 
 **Figure annotations:**
 
-**Area annotation** – add notes to an area highlighted with a rectangle.  
-**Point annotation** – add notes to any point in the document.  
-**Area redaction** – hide confidential parts of an image or text.  
-**Polyline** – draw freehand lines and shapes.  
-**Pointer/arrow** – drop arrows pointing to an object.  
-**Watermark** – create text-based watermark overlays.  
-**Distance** – measure the distance between any objects in a document.  
+**Area annotation** – add notes to an area highlighted with a rectangle.
+**Point annotation** – add notes to any point in the document.
+**Area redaction** – hide confidential parts of an image or text.
+**Polyline** – draw freehand lines and shapes.
+**Pointer/arrow** – drop arrows pointing to an object.
+**Watermark** – create text-based watermark overlays.
+**Distance** – measure the distance between any objects in a document.
 {{< /alert >}}
 
 ## Supported Formats ##
 
-* Microsoft Word: DOC, DOCM, DOCX, DOT, DOTM, DOTX 
+* Microsoft Word: DOC, DOCM, DOCX, DOT, DOTM, DOTX
 * OpenDocument Formats: ODT, OTT, ODP, OTP
 * Rich Text Format: RTF
 * Plain Text Format: TXT
@@ -51,7 +51,7 @@ The GroupDocs.Annotation Cloud API is secured and requires authentication. Devel
 
 ## SDKs ##
 
-GroupDocs.Annotation Cloud comes with SDKs for different platforms to use this REST API in your specific project effortlessly. Checkout our GitHub [repository](https://github.com/groupdocs-annotation-cloud) for a complete list of GroupDocs.Annotation SDKs along with working examples, to get you started in no time.  
+GroupDocs.Annotation Cloud comes with SDKs for different platforms to use this REST API in your specific project effortlessly. Checkout our GitHub [repository](https://github.com/groupdocs-annotation-cloud) for a complete list of GroupDocs.Annotation SDKs along with working examples, to get you started in no time.
 
 ## API Explorer ##
 

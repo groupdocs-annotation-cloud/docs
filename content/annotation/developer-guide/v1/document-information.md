@@ -67,22 +67,22 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated_docx.docx/image/inf
 {{< tab tabNum="2" >}}
 
 ```html
-{  
+{
    "name":"Annotated_docx.docx",
    "folder":null,
    "extension":"docx",
    "fileFormat":"Docx",
    "size":11590,
    "dateModified":"2017-03-21T14:51:06.8720237Z",
-   "pages":[  
-      {  
+   "pages":[
+      {
          "number":1,
          "width":612,
          "height":792,
          "visible":false,
-         "rows":[  
-            {  
-               "characterCoordinates":[  
+         "rows":[
+            {
+               "characterCoordinates":[
                   85.05,
                   90.099,
                   92.629,
@@ -98,7 +98,7 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated_docx.docx/image/inf
                "lineTop":58.033,
                "lineWidth":43.494,
                "text":"First Page",
-               "textCoordinates":[  
+               "textCoordinates":[
                   85.05,
                   19.404,
                   106.94,
@@ -107,14 +107,14 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated_docx.docx/image/inf
             }
          ]
       },
-      {  
+      {
          "number":2,
          "width":612,
          "height":792,
          "visible":false,
-         "rows":[  
-            {  
-               "characterCoordinates":[  
+         "rows":[
+            {
+               "characterCoordinates":[
                   85.05,
                   90.099,
                   95.577,
@@ -131,7 +131,7 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated_docx.docx/image/inf
                "lineTop":58.033,
                "lineWidth":56.727,
                "text":"Second page",
-               "textCoordinates":[  
+               "textCoordinates":[
                   85.05,
                   32.538,
                   120.074,

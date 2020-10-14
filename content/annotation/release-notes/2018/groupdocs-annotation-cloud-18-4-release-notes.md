@@ -12,7 +12,7 @@ keywords: ""
 
 Below the list of the most notable features improvements and fixes for GroupDocs.Annotation Cloud 18.4:
 
-* Introduction of PHP SDK for GroupDocs.Annotation Cloud 
+* Introduction of PHP SDK for GroupDocs.Annotation Cloud
 * Improved Replacement annotation for text in different paragraphs
 * Fixed import text field for Diagram documents
 * Fixed bug with import text annotations from PDF
@@ -37,7 +37,7 @@ Below the list of the most notable features improvements and fixes for GroupDocs
 * Fixed issue when images cleanup leaves artifacts after annotations removing
 * Fixed wrong annotation range if other annotation has already been created in the same location for Words documents
 
-## Full List of Issues Covering all Changes in this Release ## 
+## Full List of Issues Covering all Changes in this Release ##
 
 |Key|Summary|Issue Type
 |---|---|---

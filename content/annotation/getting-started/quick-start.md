@@ -9,7 +9,7 @@ keywords: ""
 ---
 ## Create an account ##
 
-Creating an account is very simple. Go to [Dashboard](https://dashboard.groupdocs.cloud/#/) to create a free account.  
+Creating an account is very simple. Go to [Dashboard](https://dashboard.groupdocs.cloud/#/) to create a free account.
 
 ## Create an API client app ##
 
@@ -21,29 +21,105 @@ GroupDocs for Cloud SDK is written in different languages, all you need to get s
 
 ## Make an API request from the SDK of your choice ##
 
-Use the **App SID** and **App key (secret key)** from the API app client you created in step one and replace in the corresponding code. Below is an example demonstrating using Formats API to get all supported file formats in GroupDocs.Annotation Cloud.
+Use the **App SID** and **App key (secret key)** from the API app client you created in step one and replace in the corresponding code. Below is an example demonstrating using Formats API to get all supported file formats in GroupDocs.Annotation Cloud using SDKs for supported languages.
 
-{{< alert style="info" >}}The GitHub repository for [GroupDocs.Annotation Cloud](https://github.com/groupdocs-annotation-cloud) has a complete set of examples, demonstrating our API capabilities.{{< /alert >}}  
-  
-{{< tabs tabTotal="6" tabID="2" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Ruby" >}}
-{{< tab tabNum="1" >}}
+{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java & Android" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
 
-{{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Get_Document_Info.cs >}}
+```csharp
 
-{{< /tab >}}
-{{< tab tabNum="2" >}}
+// For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet-samples
+string MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+string MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-{{< gist groupdocscloud dd069ea3659b158b48e2239356aea189 Annotation_Java_Get_Document_Info.java >}}
+var configuration = new Configuration(MyAppSid, MyAppKey);
 
-{{< /tab >}}
-{{< tab tabNum="3" >}}
+var apiInstance = new InfoApi(configuration);
+var response = apiInstance.GetSupportedFileFormats();
 
-{{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Get_Document_Info.php >}}
+```
 
-{{< /tab >}}
-{{< tab tabNum="4" >}}
+{{< /tab >}} {{< tab tabNum="2" >}}
 
-{{< gist groupdocscloud 6a14ecd45b4278c014689b688ec34d21 Annotation_Ruby_Get_Info.rb >}}
+```java
 
-{{< /tab >}}
-{{< /tabs >}}
+// For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-java-samples
+String MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+String MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+
+Configuration configuration = new Configuration(MyAppSid, MyAppKey);
+
+InfoApi apiInstance = new InfoApi(configuration);
+FormatsResult response = apiInstance.getSupportedFileFormats();
+
+```
+
+{{< /tab >}} {{< tab tabNum="3" >}}
+
+```php
+
+// For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-php-samples
+use GroupDocs\Annotation\Model;
+use GroupDocs\Annotation\Model\Requests;
+
+$AppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$AppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+
+$configuration = new GroupDocs\Annotation\Configuration();
+$configuration->setAppSid($AppSid);
+$configuration->setAppKey($AppKey);
+
+$infoApi= new GroupDocs\Annotation\InfoApi($configuration);
+
+$response = $infoApi->getSupportedFileFormats();
+
+```
+
+{{< /tab >}} {{< tab tabNum="4" >}}
+
+```javascript
+
+// For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-node-samples
+global.annotation_cloud = require("groupdocs-annotation-cloud");
+
+global.appSid = "XXXX-XXXX-XXXX-XXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+global.appKey = "XXXXXXXXXXXXXXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+
+global.infoApi = annotation_cloud.InfoApi.fromKeys(appSid, appKey);
+
+let response = await infoApi.getSupportedFileFormats();
+
+```
+
+{{< /tab >}} {{< tab tabNum="5" >}}
+
+```python
+
+# For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-python-samples
+import groupdocs_annotation_cloud
+
+app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+
+infoApi = groupdocs_annotation_cloud.InfoApi.from_keys(app_sid, app_key)
+
+result = infoApi.get_supported_file_formats()
+
+```
+
+{{< /tab >}} {{< tab tabNum="6" >}}
+
+```ruby
+
+# For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-ruby-samples
+require 'groupdocs_annotation_cloud'
+
+$app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+
+infoApi = GroupDocsAnnotationCloud::InfoApi.from_keys($app_sid, $app_key)
+
+result = infoApi.get_supported_file_formats()
+
+```
+
+{{< /tab >}} {{< /tabs >}}

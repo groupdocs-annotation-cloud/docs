@@ -1,10 +1,9 @@
 ---
-id: "2017"
-url: "annotation/2017"
-title: "Release Notes - 2017"
+id: "v1"
+url: "annotation/developer-guide/v1"
+title: "V1"
 productName: "GroupDocs.Annotation Cloud"
-weight: 4
+weight: 20
 description: ""
 keywords: ""
 ---
-

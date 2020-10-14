@@ -21,12 +21,12 @@ Our supported SDKs are 100% tested and out of the box running. These SDKs are op
 
 **GroupDocs.Annotation Cloud SDK for .NET** allows you to incorporate GroupDocs.Annotation Cloud services in your .NET applications quickly and easily. Install [GroupDocs.Annotation-Cloud](https://www.nuget.org/packages/GroupDocs.Annotation-Cloud/) via NuGet from Package Manager:
 
-```bash  
+```bash
 PM> Install-Package GroupDocs.Annotation-Cloud
 ```
 
 {{< alert style="info" >}}
-Complete source code of GroupDocs.Annotation Cloud SDK for .Net is freely available on the [GitHub](https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet). Please see the GroupDocs.Annotation Cloud SDK for .NET [Examples here](https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet/tree/master/GroupDocs.Annotation.Cloud.Sdk.Test/Api).{{< /alert >}}  
+Complete source code of GroupDocs.Annotation Cloud SDK for .Net is freely available on the [GitHub](https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet). Please see the GroupDocs.Annotation Cloud SDK for .NET [Examples here](https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet/tree/master/GroupDocs.Annotation.Cloud.Sdk.Test/Api).{{< /alert >}}
 
 **GroupDocs.Annotation Cloud SDK for PHP** allows you to incorporate GroupDocs.Annotation Cloud services in your PHP applications quickly and easily. It is available on Packagist as the [groupdocs-annotation-cloud](https://packagist.org/packages/groupdocscloud/groupdocs-annotation-cloud) package. Run the following command:
 
@@ -50,9 +50,9 @@ Alternatively, you can use [**Maven**](https://repository.groupdocs.cloud/webapp
 ### GroupDocs Maven Repository ###
 
 ```bash
-<repository>  
-    <id>groupdocs-artifact-repository</id>  
-    <name>GroupDocs Artifact Repository</name>  
+<repository>
+    <id>groupdocs-artifact-repository</id>
+    <name>GroupDocs Artifact Repository</name>
     <url>http://repository.groupdocs.cloud/repo</url>
 </repository>
 ```
@@ -60,10 +60,10 @@ Alternatively, you can use [**Maven**](https://repository.groupdocs.cloud/webapp
 ### Maven Dependency ###
 
 ```bash
-<dependency>  
-    <groupId>com.groupdocs</groupId>  
-    <artifactId>groupdocs-annotation-cloud</artifactId>  
-    <version>18.4</version>  
+<dependency>
+    <groupId>com.groupdocs</groupId>
+    <artifactId>groupdocs-annotation-cloud</artifactId>
+    <version>18.4</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -87,16 +87,16 @@ $ mvn eclipse:eclipse -DdownloadSources#true -DdownloadJavadocs#false
 #### pom.xml ####
 
 ```bash
-<build>  
-    <plugins>  
-        <plugin>  
+<build>
+    <plugins>
+        <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-eclipse-plugin</artifactId>
             <configuration>
                 <downloadSources>true</downloadSources>
                 <downloadJavadocs>false</downloadJavadocs>
             </configuration>
-        </plugin>  
+        </plugin>
     </plugins>
 </build>
 ```

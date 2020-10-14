@@ -1,7 +1,7 @@
 ---
-id: "2018"
-url: "annotation/2018"
-title: "Release Notes - 2018"
+id: "advanced-usage"
+url: "annotation/advanced-usage"
+title: "Advanced usage"
 productName: "GroupDocs.Annotation Cloud"
 weight: 3
 description: ""

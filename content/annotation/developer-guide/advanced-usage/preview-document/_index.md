@@ -1,7 +1,7 @@
 ---
-id: "2017"
-url: "annotation/2017"
-title: "Release Notes - 2017"
+id: "preview-document"
+url: "annotation/preview-documente"
+title: "Preview Document"
 productName: "GroupDocs.Annotation Cloud"
 weight: 4
 description: ""

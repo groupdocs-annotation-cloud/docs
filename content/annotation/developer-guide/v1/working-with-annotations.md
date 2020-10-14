@@ -129,22 +129,22 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/annotations" \
 {{< tab tabNum="2" >}}
 
 ```html
-[  
-   {  
+[
+   {
       "guid":null,
       "documentGuid":0,
       "text":null,
       "creatorGuid":null,
       "creatorName":"Anonym A.",
       "creatorEmail":null,
-      "box":{  
+      "box":{
          "x":173.0,
          "y":154.89,
          "width":142.5,
          "height":9.0
       },
       "pageNumber":0,
-      "annotationPosition":{  
+      "annotationPosition":{
          "x":173.0,
          "y":154.8
       },
@@ -168,8 +168,8 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/annotations" \
       ]",
       "type":0,
 "access":null,
-"replies":[  
-   {  
+"replies":[
+   {
       "guid":null,
       "userGuid":null,
       "userName":"Admin",
@@ -178,7 +178,7 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/annotations" \
       "repliedOn":"2017-03-16T18:19:14",
       "parentReplyGuid":null
    },
-   {  
+   {
       "guid":null,
       "userGuid":null,
       "userName":"Commentator",
@@ -193,8 +193,8 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/annotations" \
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDKs ##  
-  
+## SDKs ##
+
 The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](https://github.com/groupdocs-annotation-cloud).
 
 ### Import Annotation Information ###

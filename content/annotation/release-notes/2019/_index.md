@@ -3,7 +3,7 @@ id: "2019"
 url: "annotation/2019"
 title: "Release Notes - 2019"
 productName: "GroupDocs.Annotation Cloud"
-weight: 1
+weight: 2
 description: ""
 keywords: ""
 ---

@@ -10,7 +10,7 @@ keywords: ""
 
 ## Get the File Listing of a Specific Folder ##
 
-This API allows you to get a list of all files of a specific folder from the specified Cloud Storage. If you do not pass storage name API will find folder in GroupDocs Cloud Storage. 
+This API allows you to get a list of all files of a specific folder from the specified Cloud Storage. If you do not pass storage name API will find folder in GroupDocs Cloud Storage.
 
 ## API Explorer ##
 
@@ -168,7 +168,7 @@ curl -X POST "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/annotat
 {{< tab tabNum="2" >}}
 
 ```html
-{  
+{
   "code": 200,
   "status": "OK"
 }
@@ -244,7 +244,7 @@ curl -X DELETE "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/annot
 {{< tab tabNum="2" >}}
 
 ```html
-{  
+{
   "code": 200,
   "status": "OK"
 }
@@ -322,7 +322,7 @@ curl -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/copy/ann
 {{< tab tabNum="2" >}}
 
 ```html
-{  
+{
   "code": 200,
   "status": "OK"
 }
@@ -393,14 +393,14 @@ This API allows you to move a Folder to another location in the GroupDocs Cloud 
 {{< tab tabNum="1" >}}
 
 ```html
-curl -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/move/annotationdocs?destPath#annotationdocs&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"  
+curl -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/move/annotationdocs?destPath#annotationdocs&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 ```
 
 {{< /tab >}}
 {{< tab tabNum="2" >}}
 
 ```html
-{  
+{
   "code": 200,
   "status": "OK"
 }

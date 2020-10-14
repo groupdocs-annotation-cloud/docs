@@ -17,7 +17,7 @@ keywords: ""
 
 ## Get App Key and App SID ##
 
-Each App has its own **App Key** and **App SID**.  
+Each App has its own **App Key** and **App SID**.
 {{< alert style="info" >}}
 Click on the lock icon to view your App Key.
 {{< /alert >}}
