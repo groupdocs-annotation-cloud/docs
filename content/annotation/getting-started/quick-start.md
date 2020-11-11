@@ -9,29 +9,30 @@ keywords: ""
 ---
 ## Create an account ##
 
-Creating an account is very simple. Go to [Dashboard](https://dashboard.groupdocs.cloud/#/) to create a free account.
+Creating an account is very simple. Go to [Dashboard](https://dashboard.groupdocs.cloud) to create a free account.\
+We're using Single Sign On across our websites, therefore, if you already have an account with our services, you can use it to also acccess the [Dashboard](https://dashboard.groupdocs.cloud).
 
 ## Create an API client app ##
 
-Before you can make any requests to GroupDocs for Cloud API you need to get APP SID and APP key (secret key). This will will be used to invoke GroupDocs for Cloud API. You can get it from default Application or create new Application from My Apps tab of [GroupDocs for Cloud Dashboard](https://dashboard.groupdocs.cloud).
+Before you can make any requests to GroupDocs Cloud API you need to get a **Client Id** and a **Client Secret**. This will will be used to invoke GroupDocs Cloud API. You can get it by creating a new [Application](https://dashboard.groupdocs.cloud/applications).
 
 ## Install the SDK of your choice ##
 
-GroupDocs for Cloud SDK is written in different languages, all you need to get started is adding our [SDK]({{< ref "annotation/getting-started/available-sdks.md" >}}) to your existing project.
+GroupDocs Cloud SDK is written in different languages, all you need to get started is adding our [SDK]({{< ref "annotation/getting-started/available-sdks.md" >}}) to your existing project.
 
 ## Make an API request from the SDK of your choice ##
 
-Use the **App SID** and **App key (secret key)** from the API app client you created in step one and replace in the corresponding code. Below is an example demonstrating using Formats API to get all supported file formats in GroupDocs.Annotation Cloud using SDKs for supported languages.
+Use the **Client Id** and the **Client Secret** from the API app client you have created previously and replace in the corresponding code. Below is an example demonstrating using Formats API to get all supported file formats in GroupDocs.Annotation Cloud using SDKs for supported languages.
 
 {{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java & Android" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
 
 ```csharp
 
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet-samples
-string MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-string MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+string ClientId = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+string ClientSecret = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-var configuration = new Configuration(MyAppSid, MyAppKey);
+var configuration = new Configuration(ClientId, ClientSecret);
 
 var apiInstance = new InfoApi(configuration);
 var response = apiInstance.GetSupportedFileFormats();
@@ -43,10 +44,10 @@ var response = apiInstance.GetSupportedFileFormats();
 ```java
 
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-java-samples
-String MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-String MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+String ClientId = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+String ClientSecret = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-Configuration configuration = new Configuration(MyAppSid, MyAppKey);
+Configuration configuration = new Configuration(ClientId, ClientSecret);
 
 InfoApi apiInstance = new InfoApi(configuration);
 FormatsResult response = apiInstance.getSupportedFileFormats();
@@ -61,12 +62,12 @@ FormatsResult response = apiInstance.getSupportedFileFormats();
 use GroupDocs\Annotation\Model;
 use GroupDocs\Annotation\Model\Requests;
 
-$AppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-$AppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$ClientId = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+$ClientSecret = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
 $configuration = new GroupDocs\Annotation\Configuration();
-$configuration->setAppSid($AppSid);
-$configuration->setAppKey($AppKey);
+$configuration->setAppSid($ClientId);
+$configuration->setAppKey($ClientSecret);
 
 $infoApi= new GroupDocs\Annotation\InfoApi($configuration);
 
@@ -81,10 +82,10 @@ $response = $infoApi->getSupportedFileFormats();
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-node-samples
 global.annotation_cloud = require("groupdocs-annotation-cloud");
 
-global.appSid = "XXXX-XXXX-XXXX-XXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-global.appKey = "XXXXXXXXXXXXXXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+global.clientId = "XXXX-XXXX-XXXX-XXXX"; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+global.clientSecret = "XXXXXXXXXXXXXXXX"; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-global.infoApi = annotation_cloud.InfoApi.fromKeys(appSid, appKey);
+global.infoApi = annotation_cloud.InfoApi.fromKeys(clientId, clientSecret);
 
 let response = await infoApi.getSupportedFileFormats();
 
@@ -97,10 +98,10 @@ let response = await infoApi.getSupportedFileFormats();
 # For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-python-samples
 import groupdocs_annotation_cloud
 
-app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+client_id = "XXXX-XXXX-XXXX-XXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+client_secret = "XXXXXXXXXXXXXXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-infoApi = groupdocs_annotation_cloud.InfoApi.from_keys(app_sid, app_key)
+infoApi = groupdocs_annotation_cloud.InfoApi.from_keys(client_id, client_secret)
 
 result = infoApi.get_supported_file_formats()
 
@@ -113,10 +114,10 @@ result = infoApi.get_supported_file_formats()
 # For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-ruby-samples
 require 'groupdocs_annotation_cloud'
 
-$app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-$app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$client_id = "XXXX-XXXX-XXXX-XXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+$client_secret = "XXXXXXXXXXXXXXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-infoApi = GroupDocsAnnotationCloud::InfoApi.from_keys($app_sid, $app_key)
+infoApi = GroupDocsAnnotationCloud::InfoApi.from_keys($client_id, $client_secret)
 
 result = infoApi.get_supported_file_formats()
 

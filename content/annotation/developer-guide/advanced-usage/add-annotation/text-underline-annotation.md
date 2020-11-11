@@ -31,7 +31,7 @@ HTTP POST ~/annotation
 
 ```javascript
 // First get JSON Web Token
-// Please get your App Key and App SID from https://dashboard.groupdocs.cloud/#/apps. Kindly place App Key in "client_secret" and App SID in "client_id" argument.
+// Please get your Client Id and Client Secret from https://dashboard.groupdocs.cloud/applications. Kindly place Client Id in the "client_id" and Client Secret in the "client_secret" arguments.
 curl -v "https://api.groupdocs.cloud/connect/token" \
 -X POST \
 -d "grant_type=client_credentials&client_id=xxxx&client_secret=xxxx" \
@@ -105,10 +105,10 @@ The API is completely independent of your operating system, database system or d
 ```csharp
 
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet-samples
-string MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-string MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+string MyClientSecret = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
+string MyClientId = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
 
-var configuration = new Configuration(MyAppSid, MyAppKey);
+var configuration = new Configuration(MyClientId, MyClientSecret);
 
 var apiInstance = new AnnotateApi(configuration);
 
@@ -154,10 +154,10 @@ Console.WriteLine("AddTextUnderlineAnnotation: Text Underline Annotation added."
 ```java
 
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-java-samples
-String MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-String MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+String MyClientSecret = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
+String MyClientId = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
 
-Configuration configuration = new Configuration(MyAppSid, MyAppKey);
+Configuration configuration = new Configuration(MyClientId, MyClientSecret);
 
 AnnotateApi apiInstance = new AnnotateApi(configuration);
 
@@ -204,12 +204,12 @@ System.out.println("AddTextUnderlineAnnotation: TextUnderline Annotation added."
 use GroupDocs\Annotation\Model;
 use GroupDocs\Annotation\Model\Requests;
 
-$AppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-$AppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$ClientId = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
+$ClientSecret = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
 
 $configuration = new GroupDocs\Annotation\Configuration();
-$configuration->setAppSid($AppSid);
-$configuration->setAppKey($AppKey);
+$configuration->setAppSid($ClientId);
+$configuration->setAppKey($ClientSecret);
 
 $apiInstance = new GroupDocs\Annotation\AnnotateApi($configuration);
 
@@ -249,10 +249,10 @@ echo "AddTextUnderlineAnnotation: Text Underline Annotation added.";
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-node-samples
 global.annotation_cloud = require("groupdocs-annotation-cloud");
 
-global.appSid = "XXXX-XXXX-XXXX-XXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-global.appKey = "XXXXXXXXXXXXXXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+global.clientId = "XXXX-XXXX-XXXX-XXXX"; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
+global.clientSecret = "XXXXXXXXXXXXXXXX"; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
 
-global.annotateApi = annotation_cloud.AnnotateApi.fromKeys(appSid, appKey);
+global.annotateApi = annotation_cloud.AnnotateApi.fromKeys(clientId, clientSecret);
 
 let a1 = new annotation_cloud.AnnotationInfo();
 let p1 = new annotation_cloud.Point();
@@ -287,10 +287,10 @@ console.log("AddTextUnderlineAnnotation: Text Underline Annotation added.");
 # For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-python-samples
 import groupdocs_annotation_cloud
 
-app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+client_id = "XXXX-XXXX-XXXX-XXXX" # Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
+client_secret = "XXXXXXXXXXXXXXXX" # Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
 
-api = groupdocs_annotation_cloud.AnnotateApi.from_keys(app_sid, app_key)
+api = groupdocs_annotation_cloud.AnnotateApi.from_keys(client_id, client_secret)
 
 a1 = groupdocs_annotation_cloud.AnnotationInfo()
 p1 = groupdocs_annotation_cloud.Point()
@@ -326,10 +326,10 @@ print("AddTextUnderlineAnnotation: Text Underline Annotation added.")
 # For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-ruby-samples
 require 'groupdocs_annotation_cloud'
 
-$app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-$app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$client_id = "XXXX-XXXX-XXXX-XXXX" # Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
+$client_secret = "XXXXXXXXXXXXXXXX" # Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
 
-$api = GroupDocsAnnotationCloud::AnnotateApi.from_keys($app_sid, $app_key)
+$api = GroupDocsAnnotationCloud::AnnotateApi.from_keys($client_id, $client_secret)
 
 $a1 = GroupDocsAnnotationCloud::AnnotationInfo.new
 $p1 = GroupDocsAnnotationCloud::Point.new

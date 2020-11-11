@@ -26,7 +26,7 @@ PM> Install-Package GroupDocs.Annotation-Cloud
 ```
 
 {{< alert style="info" >}}
-Complete source code of GroupDocs.Annotation Cloud SDK for .Net is freely available on the [GitHub](https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet). Please see the GroupDocs.Annotation Cloud SDK for .NET [Examples here](https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet/tree/master/GroupDocs.Annotation.Cloud.Sdk.Test/Api).{{< /alert >}}
+Complete source code of GroupDocs.Annotation Cloud SDK for .NET is freely available on the [GitHub](https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet). Please see the GroupDocs.Annotation Cloud SDK for .NET [Examples here](https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet/tree/master/GroupDocs.Annotation.Cloud.Sdk.Test/Api).{{< /alert >}}
 
 **GroupDocs.Annotation Cloud SDK for PHP** allows you to incorporate GroupDocs.Annotation Cloud services in your PHP applications quickly and easily. It is available on Packagist as the [groupdocs-annotation-cloud](https://packagist.org/packages/groupdocscloud/groupdocs-annotation-cloud) package. Run the following command:
 

@@ -14,20 +14,20 @@ GroupDocs.Annotation Cloud REST API supports following type of Annotations:
 
 **Text annotations:**
 
-**Text annotation** – add comments to selected text.
-**Text replacement** – highlight which text should be replaced with what.
-**Text redaction** – hide confidential text.
-**Strikeout/underline** – highlight text with strikethroughs/underlines.
+**Text annotation** – add comments to selected text.\
+**Text replacement** – highlight which text should be replaced with what.\
+**Text redaction** – hide confidential text.\
+**Strikeout/underline** – highlight text with strikethroughs/underlines.\
 **Typewriter** – add sticky notes with rich text.
 
 **Figure annotations:**
 
-**Area annotation** – add notes to an area highlighted with a rectangle.
-**Point annotation** – add notes to any point in the document.
-**Area redaction** – hide confidential parts of an image or text.
-**Polyline** – draw freehand lines and shapes.
-**Pointer/arrow** – drop arrows pointing to an object.
-**Watermark** – create text-based watermark overlays.
+**Area annotation** – add notes to an area highlighted with a rectangle.\
+**Point annotation** – add notes to any point in the document.\
+**Area redaction** – hide confidential parts of an image or text.\
+**Polyline** – draw freehand lines and shapes.\
+**Pointer/arrow** – drop arrows pointing to an object.\
+**Watermark** – create text-based watermark overlays.\
 **Distance** – measure the distance between any objects in a document.
 {{< /alert >}}
 
@@ -47,7 +47,7 @@ GroupDocs.Annotation Cloud REST API supports following type of Annotations:
 
 ## Security and Authentication ##
 
-The GroupDocs.Annotation Cloud API is secured and requires authentication. Developers can [create]({{< ref "total/getting-started/ui-topics/create-new-app-and-get-app-key-and-sid.md" >}}) an app access key ID (appSID) and app secret access key when they [register]({{< ref "total/getting-started/ui-topics/creating-and-managing-account.md" >}}). Authenticated requests require a signature and AppSID query parameters or OAuth 2.0 authorization header. You can see complete detail [here]({{< ref "total/getting-started/overview-rest-api/authenticating-api-requests.md" >}}).
+The GroupDocs.Annotation Cloud API is secured and requires authentication. Developers can [generate]({{< ref "total/getting-started/ui-topics/creating-and-managing-application.md" >}}) a new application with an unique Client Id and Client Secret combination after [registering]({{< ref "total/getting-started/ui-topics/creating-and-managing-account.md" >}}) to our [dashboard](https://dashboard.groupdocs.cloud). Authenticated requests require a Bearer authorization header with a JWT Token obtained by using the previously specified Cliend Id + Client Secret credentials. You can check complete details about authenticating your calls to our API [here]({{< ref "total/getting-started/overview-rest-api/authenticating-api-requests.md" >}}).
 
 ## SDKs ##
 
@@ -55,4 +55,5 @@ GroupDocs.Annotation Cloud comes with SDKs for different platforms to use this R
 
 ## API Explorer ##
 
-The easiest way to try out our API right away in your browser! With the [GroupDocs for Cloud Web API explorer](https://apireference.groupdocs.cloud/annotation/). This is a collection of Swagger documentation for the GroupDocs for Cloud APIs. You can get information about all the resources in the API. It also provides testing and interactivity to our API endpoint documentation.
+The easiest way to try out our API right away in your browser! With the [GroupDocs.Cloud Web API Explorer](https://apireference.groupdocs.cloud/annotation/).\
+This is a collection of Swagger documentation for the GroupDocs.Cloud APIs. You can get information about all the resources in the API. It also provides testing and interactivity to our API endpoint documentation.

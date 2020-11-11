@@ -21,7 +21,7 @@ This API allows you to download a file from [GroupDocs Cloud Storage](https://da
 |Parameter|Description
 |---|---
 |**path**|Path of the file including file name and extension e.g. */Folder1/file.ext*. Required. Can be passed as query string parameter or as part of the URL
-|storageName|Name of the storage. If not set, then default storage used
+|storageName|Name of the storage. If not set, then the API will use the default storage of the Application used to authenticate with
 |versionId|File version id
 
 ## cURL Example ##
@@ -98,7 +98,7 @@ This API allows you to upload files to the [GroupDocs Cloud Storage](https://
 |Parameter|Description
 |---|---
 |**path**|Path of the file including file name and extension e.g. */Folder1/file.ext*. Required. Can be passed as query string parameter or as part of the URL
-|storageName|Name of the storage. If not set, then default storage used
+|storageName|Name of the storage. If not set, then the API will use the default storage of the Application used to authenticate with
 |File|File content
 
 ## cURL Example ##
@@ -189,7 +189,7 @@ This API allows you to delete specific file from [GroupDocs Cloud Storage](htt
 |Parameter|Description
 |---|---
 |**path**|Path of the file including file name and extension e.g. */Folder1/file.ext*. Required. Can be passed as query string parameter or as part of the URL
-|storageName|Name of the storage. If not set, then default storage used
+|storageName|Name of the storage. If not set, then the API will use the default storage of the Application used to authenticate with
 |versionId|File version id
 
 ## cURL Example ##
@@ -267,8 +267,8 @@ This API allows you to copy specific file from [GroupDocs Cloud Storage](https
 |---|---
 |**srcPath**|Path of the source file including file name and extension e.g. */Folder1/file.ext*. Required. Can be passed as query string parameter or as part of the URL
 |**destPath**|Path of the destination file. Required.
-|srcStorageName|Name of the storage of source file. If not set, then default storage used
-|destStorageName|Name of the storage of destination file. If not set, then default storage used
+|srcStorageName|Name of the storage of source file. If not set, then the API will use the default storage of the Application used to authenticate with
+|destStorageName|Name of the storage of destination file. If not set, then the API will use the default storage of the Application used to authenticate with
 |versionId|Source file version id
 
 ## cURL Example ##
@@ -347,8 +347,8 @@ This API allows you to copy specific file from [GroupDocs Cloud Storage](https:
 |---|---
 |**srcPath**|Path of the source file including file name and extension e.g. */Folder1/file.ext*. Required. Can be passed as query string parameter or as part of the URL
 |**destPath**|Path of the destination file. Required.
-|srcStorageName|Name of the storage of source file. If not set, then default storage used
-|destStorageName|Name of the storage of destination file. If not set, then default storage used
+|srcStorageName|Name of the storage of source file. If not set, then the API will use the default storage of the Application used to authenticate with
+|destStorageName|Name of the storage of destination file. If not set, then the API will use the default storage of the Application used to authenticate with
 |versionId|Source file version id
 
 ## cURL Example ##
