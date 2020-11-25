@@ -14,7 +14,8 @@ We're using Single Sign On across our websites, therefore, if you already have a
 
 ## Create an API client app ##
 
-Before you can make any requests to GroupDocs Cloud API you need to get a **Client Id** and a **Client Secret**. This will will be used to invoke GroupDocs Cloud API. You can get it by creating a new [Application](https://dashboard.groupdocs.cloud/applications).
+Before you can make any requests to GroupDocs Cloud API you need to get a **Client Id** and a **Client Secret**.
+This will will be used to invoke GroupDocs Cloud API. You can get it by creating a new [Application](https://dashboard.groupdocs.cloud/applications).
 
 ## Install the SDK of your choice ##
 
