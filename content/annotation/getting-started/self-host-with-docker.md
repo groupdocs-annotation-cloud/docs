@@ -41,12 +41,12 @@ In case you don't have license keys you can omit LICENSE_PUBLIC_KEY and LICENSE_
 ```powershell
 
 docker run `
-В  В  -p 8080:80 `
-В  В  -v "${pwd}/data:/data" `
-В  В  -e "LICENSE_PUBLIC_KEY#public_key" `
-В  В  -e "LICENSE_PRIVATE_KEY#private_key" `
-В  В  --name annotation_cloud `
-В  В  groupdocs/annotation-cloud
+      -p 8080:80 `
+      -v "${pwd}/data:/data" `
+      -e "LICENSE_PUBLIC_KEY#public_key" `
+      -e "LICENSE_PRIVATE_KEY#private_key" `
+      --name annotation_cloud `
+      groupdocs/annotation-cloud
 
 ```
 
@@ -55,12 +55,12 @@ docker run `
 ```bash
 
 docker run \
-В В В В -p 8080:80 \
-В В В В -v $(pwd)/data:/data \
-В В В В -e LICENSE_PUBLIC_KEY#public_key \
-В В В В -e LICENSE_PRIVATE_KEY#private_key \
-В В В В --name annotation_cloud \
-В В В В groupdocs/annotation-cloud
+      -p 8080:80 \
+      -v $(pwd)/data:/data \
+      -e LICENSE_PUBLIC_KEY#public_key \
+      -e LICENSE_PRIVATE_KEY#private_key \
+      --name annotation_cloud \
+      groupdocs/annotation-cloud
 
 ```
 
@@ -120,28 +120,28 @@ If you don't find your language in the SKD list, feel free to request for it on 
 
 ```powershell
 docker run `
-В В В В -p 8080:80 `
-В В В В -v "${pwd}/data:/data" `
-В В В В -e "LICENSE_PUBLIC_KEY#public_key" `
-В В В В -e "LICENSE_PRIVATE_KEY#private_key" `
-В В В В -e "client_id=client_id" `
-В В В В -e "client_secret=client_secret" `
-В В В В --name annotation_cloud `
-В В В В groupdocs/annotation-cloud
+      -p 8080:80 `
+      -v "${pwd}/data:/data" `
+      -e "LICENSE_PUBLIC_KEY#public_key" `
+      -e "LICENSE_PRIVATE_KEY#private_key" `
+      -e "client_id=client_id" `
+      -e "client_secret=client_secret" `
+      --name annotation_cloud `
+      groupdocs/annotation-cloud
 ```
 
 {{< /tab >}} {{< tab tabNum="2" >}}
 
 ```bash
 docker run \
-В В В В -p 8080:80 \
-В В В В -v $(pwd)/data:/data \
-В В В В -e LICENSE_PUBLIC_KEY#public_key \
-В В В В -e LICENSE_PRIVATE_KEY#private_key \
-В В В В -e client_id=client_id \
-В В В В -e client_secret=client_secret \
-В В В В --name annotation_cloud \
-В В В В groupdocs/annotation-cloud
+      -p 8080:80 \
+      -v $(pwd)/data:/data \
+      -e LICENSE_PUBLIC_KEY#public_key \
+      -e LICENSE_PRIVATE_KEY#private_key \
+      -e client_id=client_id \
+      -e client_secret=client_secret \
+      --name annotation_cloud \
+      groupdocs/annotation-cloud
 ```
 
 {{< /tab >}} {{< /tabs >}}
@@ -161,4 +161,4 @@ GroupDocs.Annotation Cloud can be started in trial and licensed modes. When Grou
 * You can convert only two first pages of the document
 * Evaluation watermarks added to the output
 
-You can find more information about evaluation atВ [Evaluate GroupDocs.Annotation]({{< ref "annotation/getting-started/evaluate-groupdocs-annotation.md" >}}).
+You can find more information about evaluation at [Evaluate GroupDocs.Annotation]({{< ref "annotation/getting-started/evaluate-groupdocs-annotation.md" >}}).

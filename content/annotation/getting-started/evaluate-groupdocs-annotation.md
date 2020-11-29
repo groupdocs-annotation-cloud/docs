@@ -8,7 +8,7 @@ description: ""
 keywords: ""
 ---
 {{< alert style="info" >}}
-You can easily create a trial account on GroupDocs.Annotation Cloud for evaluation. Please visit our [Trial for GroupDocs.Cloud document page](https://purchase.groupdocs.cloud/trial)
+You can easily create a trial account on GroupDocs Cloud for evaluation. Please visit our [Trial for GroupDocs.Cloud document page](https://purchase.groupdocs.cloud/trial)
 {{< /alert >}}
 
 ## Evaluating GroupDocs.Annotation Cloud ##

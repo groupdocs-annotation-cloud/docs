@@ -10,11 +10,12 @@ keywords: ""
 
 ## Storage existence API ##
 
-This API intended for checking existence of cloud storage with given name from [GroupDocs Cloud Storage](https://dashboard.groupdocs.cloud).
+This API intended for checking existence of cloud storage with given name from [GroupDocs Cloud Storage](https://dashboard.groupdocs.cloud/storages).
 
 ## API Explorer ##
 
-[GroupDocs.Annotation Cloud API Reference](https://apireference.groupdocs.cloud/annotation/#/) lets you to try out [Storage existence API](https://apireference.groupdocs.cloud/annotation/#/Storage/StorageExists) right away in your browser! It allows you to effortlessly interact and try out every single operation our APIs exposes.
+[GroupDocs.Annotation Cloud API Reference](https://apireference.groupdocs.cloud/annotation/#/) lets you to try out [Storage existence API](https://apireference.groupdocs.cloud/annotation/#/Storage/StorageExists) right away in your browser!\
+It allows you to effortlessly interact and try out every single operation our APIs exposes.
 
 ### Request parameters ###
 
@@ -84,7 +85,7 @@ Our API is completely independent of your operating system, database system or d
 
 ## Storage object existence API ##
 
-This API intended for checking existence of file or folder in [GroupDocs Cloud Storage](https://dashboard.groupdocs.cloud).
+This API intended for checking existence of file or folder in [GroupDocs Cloud Storage](https://dashboard.groupdocs.cloud/storages).
 
 ## API Explorer ##
 
@@ -95,7 +96,7 @@ This API intended for checking existence of file or folder in [GroupDocs Cloud S
 |Parameter|Description
 |---|---
 |**path**|Path of the file or folder. Required. Can be passed as query string parameter or as part of the URL
-|storageName|Name of the storage. If not set, then default storage used
+|storageName|Name of the storage. If not set, then the API will use the default storage of the Application used to authenticate with
 |versionId|File version id
 
 ## cURL Example ##
@@ -171,7 +172,7 @@ This API intended for getting total and used space of the[ GroupDocs Cloud Stora
 
 |Parameter|Description
 |---|---
-|storageName|Name of the storage. If not set, then default storage used
+|storageName|Name of the storage. If not set, then the API will use the default storage of the Application used to authenticate with
 
 ## cURL Example ##
 
@@ -237,7 +238,7 @@ Our API is completely independent of your operating system, database system or d
 
 # Storage File Versions API #
 
-This API intended for getting the list of file versions, stored in the [GroupDocs Cloud Storage](https://dashboard.groupdocs.cloud)
+This API intended for getting the list of file versions, stored in the [GroupDocs Cloud Storage](https://dashboard.groupdocs.cloud/storages)
 
 ## API Explorer ##
 
@@ -248,7 +249,7 @@ This API intended for getting the list of file versions, stored in the [GroupDoc
 |Parameter|Description
 |---|---
 |**path**|Path of the file including file name and extension e.g. */Folder1/file.ext*. Required. Can be passed as query string parameter or as part of the URL
-|storageName|Name of the storage. If not set, then default storage used
+|storageName|Name of the storage. If not set, then the API will use the default storage of the Application used to authenticate with
 
 ## cURL Example ##
 
