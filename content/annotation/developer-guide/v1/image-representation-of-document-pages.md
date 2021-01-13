@@ -70,7 +70,7 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages" \
 
 ## SDKs ##
 
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](https://github.com/groupdocs-annotation-cloud).
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
 
 ### Generate Images of Document Pages ###
 
@@ -152,7 +152,7 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages" \
 
 ## SDKs ##
 
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](https://github.com/groupdocs-annotation-cloud).
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
 
 ### Get Links to Images of Document Pages ###
 
@@ -219,7 +219,7 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages/1" 
 {{< /tabs >}}
 
 ## SDKs ##
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](https://github.com/groupdocs-annotation-cloud).
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
 
 ### Get Link to Specific Page of the Document ###
 
@@ -279,7 +279,7 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages?fol
 
 ## SDKs ##
 
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](https://github.com/groupdocs-annotation-cloud).
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
 
 ### Clear Images Cache of Document Pages ###
 
