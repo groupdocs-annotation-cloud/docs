@@ -14,12 +14,12 @@ This REST API allows to add multiple annotations to the document
 
 There are steps that usage of GroupDocs.Annotation Cloud consists of:
 
-1. Upload input document into cloud storage and other files, like image annotation
-1. Add annotation
-1. Export document with annotations
+1. Upload input document into cloud storage and other files, like image annotation (using File API)
+1. Add annotation(s)
+1. Download document with annotations (using File API)
 
 ```html
-HTTP POST ~/annotation
+HTTP POST ~/annotation/add
 ```
 
 [Swagger UI](https://apireference.groupdocs.cloud/annotation/) lets you call this REST API directly from the browser.
@@ -38,14 +38,19 @@ curl -v "https://api.groupdocs.cloud/connect/token" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -H "Accept: application/json"
 
-// cURL example to get document information
-curl -v "https://api.groupdocs.cloud/v2.0/annotation/?filePath=annotationdocs%2Fone-page.docx" \
+// cURL example to add annotations into document
+curl -v "https://api.groupdocs.cloud/v2.0/annotation/add" \
 -X POST \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -H "Authorization: Bearer <jwt token>" \
 -d "
-[
+{
+  'FileInfo': {
+    'FilePath': 'annotationdocs/ten-pages.docx'
+  },
+  'OutputPath': "Output/output.docx",
+  'Annotations': [
   {
     'Type': 'Area',
     'Text': 'This is area annotation',
@@ -84,6 +89,7 @@ curl -v "https://api.groupdocs.cloud/v2.0/annotation/?filePath=annotationdocs%2F
     'PenWidth': 3
   }
 ]
+}
 "
 ```
 
@@ -91,7 +97,12 @@ curl -v "https://api.groupdocs.cloud/v2.0/annotation/?filePath=annotationdocs%2F
 {{< tab tabNum="2" >}}
 
 ```html
-code 200 OK
+{
+  "href": "https://api.groupdocs.cloud/v2.0/annotation/storage/file/Output/output.docx",
+  "rel": "self",
+  "type": "file",
+  "title": "output.docx"
+}
 ```
 
 {{< /tab >}}
@@ -106,17 +117,16 @@ The API is completely independent of your operating system, database system or d
 {{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java  & Android" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
 
 ```csharp
-
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet-samples
-string MyClientSecret = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-string MyClientId = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-
-var configuration = new Configuration(MyClientId, MyClientSecret);
-
+string MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+string MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+  
+var configuration = new Configuration(MyAppSid, MyAppKey);
+  
 var apiInstance = new AnnotateApi(configuration);
-
-var request = new PostAnnotationsRequest();
-request.filePath = "ten-pages.pdf";
+ 
+var fileInfo = new FileInfo { FilePath = "ten-pages.pdf" };
+ 
 AnnotationInfo[] annotations =
 {
     new AnnotationInfo
@@ -176,42 +186,47 @@ AnnotationInfo[] annotations =
         CreatorName = "Anonym A."
     }
 };
-request.annotations = annotations.ToList();
-apiInstance.PostAnnotations(request);
-Console.WriteLine("AddMultipleAnnotations: Multiple Annotation added.");
-
+ 
+var options = new AnnotateOptions
+{
+    FileInfo = fileInfo,
+    Annotations = annotations.ToList(),
+    OutputPath = "Output/output.pdf"
+};
+ 
+var link = apiInstance.Annotate(new AnnotateRequest(options));
+Console.WriteLine("AddMultipleAnnotations: Multiple Annotation added: " + link.Title);
 ```
 
 {{< /tab >}} {{< tab tabNum="2" >}}
 
 ```java
-
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-java-samples
-String MyClientSecret = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-String MyClientId = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-
-Configuration configuration = new Configuration(MyClientId, MyClientSecret);
-
+String MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+String MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+  
+Configuration configuration = new Configuration(MyAppSid, MyAppKey);
+  
 AnnotateApi apiInstance = new AnnotateApi(configuration);
-
+ 
 // Create annotation/s.
 AnnotationInfo[] annotations = new AnnotationInfo[4];
 annotations[0] = new AnnotationInfo();
-
+ 
 Point pt = new Point();
-pt.setX(852.0);
-pt.setY(59.388262910798119);
+pt.setX(1.0);
+pt.setY(1.0);
 annotations[0].setAnnotationPosition(pt);
-
+ 
 Rectangle r = new Rectangle();
-r.setX(375.89276123046875);
-r.setY(59.388262910798119);
-r.setWidth(88.7330551147461);
-r.setHeight(37.7290153503418);
-
+r.setX(100.0);
+r.setY(100.0);
+r.setWidth(200.0);
+r.setHeight(100.0);
+ 
 annotations[0].setBox(r);
-
-annotations[0].setPageNumber(1);
+ 
+annotations[0].setPageNumber(0);
 annotations[0].setPenColor(1201033);
 annotations[0].setPenStyle(PenStyleEnum.SOLID);
 annotations[0].setPenWidth(1);
@@ -219,9 +234,9 @@ annotations[0].setOpacity(0.7);
 annotations[0].setType(TypeEnum.DISTANCE);
 annotations[0].setText("This is distance annotation");
 annotations[0].setCreatorName("Anonym A.");
-
+ 
 annotations[1] = new AnnotationInfo();
-
+ 
 annotations[1].setAnnotationPosition(pt);
 annotations[1].setBox(r);
 annotations[1].setPageNumber(2);
@@ -232,7 +247,7 @@ annotations[0].setOpacity(0.7);
 annotations[1].setType(TypeEnum.AREA);
 annotations[1].setText("This is area annotation");
 annotations[1].setCreatorName("Anonym A.");
-
+ 
 annotations[2] = new AnnotationInfo();
 annotations[2].setAnnotationPosition(pt);
 annotations[2].setBox(r);
@@ -241,7 +256,7 @@ annotations[0].setOpacity(0.7);
 annotations[2].setType(TypeEnum.POINT);
 annotations[0].setText("This is point annotation");
 annotations[2].setCreatorName("Anonym A.");
-
+ 
 annotations[3] = new AnnotationInfo();
 annotations[3].setAnnotationPosition(pt);
 annotations[3].setBox(r);
@@ -253,46 +268,52 @@ annotations[0].setOpacity(0.7);
 annotations[3].setType(TypeEnum.ARROW);
 annotations[0].setText("This is arrow annotation");
 annotations[3].setCreatorName("Anonym A.");
-
+ 
 // Create request object.
-PostAnnotationsRequest request = new PostAnnotationsRequest("Annotationdocs\\ten-pages.docx", Arrays.asList(annotations));
-
+FileInfo fileInfo = new FileInfo();
+fileInfo.setFilePath("Annotationdocs\\ten-pages.docx");
+ 
+AnnotateOptions options = new AnnotateOptions();
+options.setFileInfo(fileInfo);
+options.setAnnotations(Arrays.asList(annotations));
+options.setOutputPath("Output/ten-pages-annotated.docx");
+ 
+AnnotateRequest request = new AnnotateRequest(options);
+ 
 // Executing api method.
-apiInstance.postAnnotations(request);
-
-System.out.println("AddMultipleAnnotations: Multiple Annotation added.");
-
+AnnotationApiLink result = apiInstance.annotate(request);
+ 
+System.out.println("AddMultipleAnnotations: Multiple Annotation added: " + result.getTitle());
 ```
 
 {{< /tab >}} {{< tab tabNum="3" >}}
 
 ```php
-
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-php-samples
 use GroupDocs\Annotation\Model;
 use GroupDocs\Annotation\Model\Requests;
-
-$ClientId = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-$ClientSecret = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-
+ 
+$AppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$AppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+  
 $configuration = new GroupDocs\Annotation\Configuration();
-$configuration->setAppSid($ClientId);
-$configuration->setAppKey($ClientSecret);
-
+$configuration->setAppSid($AppSid);
+$configuration->setAppKey($AppKey);
+ 
 $apiInstance = new GroupDocs\Annotation\AnnotateApi($configuration);
-
+ 
 $a = new GroupDocs\Annotation\Model\AnnotationInfo();
 $pt = new GroupDocs\Annotation\Model\Point();
-$pt->setX(852);
-$pt->setY(59.388262910798119);
+$pt->setX(1);
+$pt->setY(1);
 $a->setAnnotationPosition($pt);
 $box = new GroupDocs\Annotation\Model\Rectangle();
-$box->setX(375.89276123046875);
-$box->setY(59.388263702392578);
-$box->setWidth(88.7330551147461);
-$box->setHeight(37.7290153503418);
+$box->setX(100);
+$box->setY(100);
+$box->setWidth(200);
+$box->setHeight(100);
 $a->setBox($box);
-$a->setPageNumber(1);
+$a->setPageNumber(0);
 $a->setPenColor(1201033);
 $a->setPenStyle(GroupDocs\Annotation\Model\AnnotationInfo::PEN_STYLE_SOLID);
 $a->setPenWidth(1);
@@ -300,17 +321,17 @@ $a->setOpacity(0.7);
 $a->setType(GroupDocs\Annotation\Model\AnnotationInfo::TYPE_DISTANCE);
 $a->setText("This is distance annotation");
 $a->setCreatorName("Anonym A.");
-
+ 
 $a1 = new GroupDocs\Annotation\Model\AnnotationInfo();
 $pt = new GroupDocs\Annotation\Model\Point();
-$pt->setX(852);
-$pt->setY(59.388262910798119);
+$pt->setX(1);
+$pt->setY(1);
 $a1->setAnnotationPosition($pt);
 $box = new GroupDocs\Annotation\Model\Rectangle();
-$box->setX(375.89276123046875);
-$box->setY(59.388263702392578);
-$box->setWidth(88.7330551147461);
-$box->setHeight(37.7290153503418);
+$box->setX(100);
+$box->setY(100);
+$box->setWidth(200);
+$box->setHeight(100);
 $a1->setBox($box);
 $a1->setPageNumber(2);
 $a1->setPenColor(1201033);
@@ -319,35 +340,35 @@ $a1->setPenWidth(1);
 $a1->setOpacity(0.7);
 $a1->setType(GroupDocs\Annotation\Model\AnnotationInfo::TYPE_AREA);
 $a1->setText("This is area annotation");
-$a1->setCreatorName("Anonym A.");
-
+$a1->setCreatorName("Anonym A.");   
+ 
 $a2 = new GroupDocs\Annotation\Model\AnnotationInfo();
 $pt = new GroupDocs\Annotation\Model\Point();
-$pt->setX(852);
-$pt->setY(59.388262910798119);
+$pt->setX(1);
+$pt->setY(1);
 $a2->setAnnotationPosition($pt);
 $box = new GroupDocs\Annotation\Model\Rectangle();
-$box->setX(375.89276123046875);
-$box->setY(59.388263702392578);
-$box->setWidth(88.7330551147461);
-$box->setHeight(37.7290153503418);
+$box->setX(100);
+$box->setY(100);
+$box->setWidth(200);
+$box->setHeight(100);
 $a2->setBox($box);
 $a2->setPageNumber(4);
 $a2->setOpacity(0.7);
 $a2->setType(GroupDocs\Annotation\Model\AnnotationInfo::TYPE_POINT);
 $a2->setText("This is point annotation");
 $a2->setCreatorName("Anonym A.");
-
+ 
 $a3 = new GroupDocs\Annotation\Model\AnnotationInfo();
 $pt = new GroupDocs\Annotation\Model\Point();
-$pt->setX(852);
-$pt->setY(59.388262910798119);
+$pt->setX(1);
+$pt->setY(1);
 $a3->setAnnotationPosition($pt);
 $box = new GroupDocs\Annotation\Model\Rectangle();
-$box->setX(375.89276123046875);
-$box->setY(59.388263702392578);
-$box->setWidth(88.7330551147461);
-$box->setHeight(37.7290153503418);
+$box->setX(100);
+$box->setY(100);
+$box->setWidth(200);
+$box->setHeight(100);
 $a3->setBox($box);
 $a1->setPageNumber(5);
 $a1->setPenColor(1201033);
@@ -356,120 +377,131 @@ $a1->setPenWidth(1);
 $a3->setOpacity(0.7);
 $a3->setType(GroupDocs\Annotation\Model\AnnotationInfo::TYPE_ARROW);
 $a3->setText("This is arrow annotation");
-$a3->setCreatorName("Anonym A.");
-
-$request = new GroupDocs\Annotation\Model\Requests\postAnnotationsRequest("annotationdocs\\ten-pages.docx", [$a, $a1, $a2, $a3]);
-$apiInstance->postAnnotations($request);
-
+$a3->setCreatorName("Anonym A."); 
+ 
+$fileInfo = new GroupDocs\Annotation\Model\FileInfo();
+$fileInfo->setFilePath("annotationdocs\\ten-pages.docx");
+ 
+$options = new GroupDocs\Annotation\Model\AnnotateOptions();
+$options->setFileInfo($fileInfo);
+$options->setAnnotations([$a, $a1, $a2, $a3]);
+$options->setOutputPath("Output\\output.docx");
+ 
+$request = new GroupDocs\Annotation\Model\Requests\annotateRequest($options);
+$result = $apiInstance->annotate($request);
+ 
 echo "AddMultipleAnnotations: Multiple Annotations added.";
-
 ```
 
 {{< /tab >}} {{< tab tabNum="4" >}}
 
 ```javascript
-
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-node-samples
 global.annotation_cloud = require("groupdocs-annotation-cloud");
-
-global.clientId = "XXXX-XXXX-XXXX-XXXX"; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-global.clientSecret = "XXXXXXXXXXXXXXXX"; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-
-global.annotateApi = annotation_cloud.AnnotateApi.fromKeys(clientId, clientSecret);
-
+ 
+global.appSid = "XXXX-XXXX-XXXX-XXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+global.appKey = "XXXXXXXXXXXXXXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+  
+global.annotateApi = annotation_cloud.AnnotateApi.fromKeys(appSid, appKey);
+ 
 let a1 = new annotation_cloud.AnnotationInfo();
 a1.annotationPosition = new annotation_cloud.Point();
-a1.annotationPosition.x = 852;
-a1.annotationPosition.y = 59.388262910798119;
+a1.annotationPosition.x = 1;
+a1.annotationPosition.y = 1;
 a1.box = new annotation_cloud.Rectangle();
-a1.box.x = 375.89276123046875;
-a1.box.y = 59.388263702392578;
-a1.box.width = 88.7330551147461;
-a1.box.height = 37.7290153503418;
-a1.pageNumber = 1;
+a1.box.x = 100;
+a1.box.y = 100;
+a1.box.width = 200;
+a1.box.height = 100;
+a1.pageNumber = 0;
 a1.penColor = 1201033;
 a1.penStyle = annotation_cloud.AnnotationInfo.PenStyleEnum.Solid;
 a1.penWidth = 1;
 a1.type = annotation_cloud.AnnotationInfo.TypeEnum.Distance;
 a1.text = "This is distance annotation";
 a1.creatorName = "Anonym A.";
-
+ 
 let a2 = new annotation_cloud.AnnotationInfo();
 a2.annotationPosition = new annotation_cloud.Point();
-a2.annotationPosition.x = 852;
-a2.annotationPosition.y = 59.388262910798119;
+a2.annotationPosition.x = 1;
+a2.annotationPosition.y = 1;
 a2.box = new annotation_cloud.Rectangle();
-a2.box.x = 375.89276123046875;
-a2.box.y = 59.388263702392578;
-a2.box.width = 88.7330551147461;
-a2.box.height = 37.7290153503418;
+a2.box.x = 100;
+a2.box.y = 100;
+a2.box.width = 200;
+a2.box.height = 100;
 a2.pageNumber = 2;
 a2.penColor = 1201033;
-a2.penStyle = 0;
+a2.penStyle = annotation_cloud.AnnotationInfo.PenStyleEnum.Solid;
+a1.pageNumber = 2;
 a2.penWidth = 1;
 a2.type = annotation_cloud.AnnotationInfo.TypeEnum.Area;
 a1.text = "This is area annotation";
 a2.creatorName = "Anonym A.";
-
+ 
 let a3 = new annotation_cloud.AnnotationInfo();
 a3.annotationPosition = new annotation_cloud.Point();
-a3.annotationPosition.x = 852;
-a3.annotationPosition.y = 59.388262910798119;
+a3.annotationPosition.x = 1;
+a3.annotationPosition.y = 1;
 a3.box = new annotation_cloud.Rectangle();
-a3.box.x = 375.89276123046875;
-a3.box.y = 59.388263702392578;
-a3.box.width = 88.7330551147461;
-a3.box.height = 37.7290153503418;
+a3.box.x = 100;
+a3.box.y = 100;
+a3.box.width = 200;
+a3.box.height = 100;
 a3.pageNumber = 4;
 a3.type = annotation_cloud.AnnotationInfo.TypeEnum.Point;
 a1.text = "This is point annotation";
 a3.creatorName = "Anonym A.";
-
+ 
 let a4 = new annotation_cloud.AnnotationInfo();
 a4.annotationPosition = new annotation_cloud.Point();
-a4.annotationPosition.x = 852;
-a4.annotationPosition.y = 59.388262910798119;
+a4.annotationPosition.x = 1;
+a4.annotationPosition.y = 1;
 a4.box = new annotation_cloud.Rectangle();
-a4.box.x = 375.89276123046875;
-a4.box.y = 59.388263702392578;
-a4.box.width = 88.7330551147461;
-a4.box.height = 37.7290153503418;
+a4.box.x = 100;
+a4.box.y = 100;
+a4.box.width = 200;
+a4.box.height = 100;
 a4.pageNumber = 5;
 a4.penColor = 1201033;
-a4.penStyle = 0;
+a2.penStyle = annotation_cloud.AnnotationInfo.PenStyleEnum.Solid;
 a4.penWidth = 1;
 a4.type = annotation_cloud.AnnotationInfo.TypeEnum.Arrow;
 a1.text = "This is arrow annotation";
 a4.creatorName = "Anonym A.";
-
-var request = new annotation_cloud.PostAnnotationsRequest("Annotationdocs\\one-page.docx", [a1, a2, a3, a4]);
-await annotateApi.postAnnotations(request);
+ 
+let fileInfo = new annotation_cloud.FileInfo();
+fileInfo.filePath = "annotationdocs\\ten-pages.docx";
+let options = new annotation_cloud.AnnotateOptions();
+options.fileInfo = fileInfo;
+options.annotations = [a1, a2, a3, a4];
+options.outputPath = "Output/output.docx";
+let result = await annotateApi.annotate(new annotation_cloud.AnnotateRequest(options));     
+ 
 console.log("AddMultipleAnnotations: Multiple Annotations added.");
-
 ```
 
 {{< /tab >}} {{< tab tabNum="5" >}}
 
 ```python
-
 # For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-python-samples
 import groupdocs_annotation_cloud
-
-client_id = "XXXX-XXXX-XXXX-XXXX" # Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-client_secret = "XXXXXXXXXXXXXXXX" # Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-
-api = groupdocs_annotation_cloud.AnnotateApi.from_keys(client_id, client_secret)
-
+ 
+app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+  
+api = groupdocs_annotation_cloud.AnnotateApi.from_keys(app_sid, app_key)
+ 
 a1 = groupdocs_annotation_cloud.AnnotationInfo()
 a1.annotation_position = groupdocs_annotation_cloud.Point()
-a1.annotation_position.x = 852
-a1.annotation_position.y = 59.388262910798119
+a1.annotation_position.x = 1
+a1.annotation_position.y = 1
 a1.box = groupdocs_annotation_cloud.Rectangle()
-a1.box.x = 375.89276123046875
-a1.box.y = 59.388263702392578
-a1.box.width = 88.7330551147461
-a1.box.height = 37.7290153503418
-a1.page_number = 1
+a1.box.x = 100
+a1.box.y = 100
+a1.box.width = 200
+a1.box.height = 100
+a1.page_number = 0
 a1.pen_color = 1201033
 a1.pen_style = "Solid"
 a1.pen_width = 1
@@ -477,86 +509,92 @@ a1.opacity = 0.7
 a1.type = "Distance"
 a1.text = "This is distance annotation"
 a1.creator_name = "Anonym A."
-
+ 
 a2 = groupdocs_annotation_cloud.AnnotationInfo()
 a2.annotation_position = groupdocs_annotation_cloud.Point()
-a2.annotation_position.x = 852
-a2.annotation_position.y = 59.388262910798119
+a2.annotation_position.x = 1
+a2.annotation_position.y = 1
 a2.box = groupdocs_annotation_cloud.Rectangle()
-a2.box.x = 375.89276123046875
-a2.box.y = 59.388263702392578
-a2.box.width = 88.7330551147461
-a2.box.height = 37.7290153503418
+a2.box.x = 100
+a2.box.y = 100
+a2.box.width = 200
+a2.box.height = 100
 a2.page_number = 2
 a2.pen_color = 1201033
-a2.pen_style = 0
+a2.pen_style = "Solid"
 a2.pen_width = 1
 a2.opacity = 0.7
 a2.type = "Area"
 a2.text = "This is area annotation"
 a2.creator_name = "Anonym A."
-
+ 
 a3 = groupdocs_annotation_cloud.AnnotationInfo()
 a3.annotation_position = groupdocs_annotation_cloud.Point()
-a3.annotation_position.x = 852
-a3.annotation_position.y = 59.388262910798119
+a3.annotation_position.x = 1
+a3.annotation_position.y = 1
 a3.box = groupdocs_annotation_cloud.Rectangle()
-a3.box.x = 375.89276123046875
-a3.box.y = 59.388263702392578
-a3.box.width = 88.7330551147461
-a3.box.height = 37.7290153503418
+a3.box.x = 100
+a3.box.y = 100
+a3.box.width = 200
+a3.box.height = 100
 a3.page_number = 4
 a3.opacity = 0.7
 a3.type = "Point"
 a3.text = "This is point annotation"
 a3.creator_name = "Anonym A."
-
+ 
 a4 = groupdocs_annotation_cloud.AnnotationInfo()
 a4.annotation_position = groupdocs_annotation_cloud.Point()
-a4.annotation_position.x = 852
-a4.annotation_position.y = 59.388262910798119
+a4.annotation_position.x = 1
+a4.annotation_position.y = 1
 a4.box = groupdocs_annotation_cloud.Rectangle()
-a4.box.x = 375.89276123046875
-a4.box.y = 59.388263702392578
-a4.box.width = 88.7330551147461
-a4.box.height = 37.7290153503418
+a4.box.x = 100
+a4.box.y = 100
+a4.box.width = 200
+a4.box.height = 100
 a4.page_number = 5
 a4.pen_color = 1201033
-a4.pen_style = 0
+a4.pen_style = "Solid"
 a4.pen_width = 1
 a4.opacity = 0.7
 a4.type = "Arrow"
 a4.text = "This is arrow annotation"
 a4.creator_name = "Anonym A."
-
-request = PostAnnotationsRequest("annotationdocs\\ten-pages.docx", [a1, a2, a3, a4])
-api.post_annotations(request)
-
-print("AddMultipleAnnotations: Multiple Annotations added.")
+ 
+file_info = FileInfo()
+file_info.file_path = "annotationdocs\\ten-pages.docx"
+options = AnnotateOptions()
+options.file_info = file_info
+options.annotations = [a1, a2, a3, a4]
+options.output_path = "Output\\output.docx"
+ 
+request = AnnotateRequest(options)
+result = api.annotate(request)         
+ 
+print("AddMultipleAnnotations: Multiple Annotations added: " + result['href'])
 ```
 
 {{< /tab >}} {{< tab tabNum="6" >}}
 
 ```ruby
-
 # For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-ruby-samples
 require 'groupdocs_annotation_cloud'
-
-$client_id = "XXXX-XXXX-XXXX-XXXX" # Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-$client_secret = "XXXXXXXXXXXXXXXX" # Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-
-$api = GroupDocsAnnotationCloud::AnnotateApi.from_keys($client_id, $client_secret)
-
+ 
+$app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+  
+$api = GroupDocsAnnotationCloud::AnnotateApi.from_keys($app_sid, $app_key)
+ 
 $a1 = GroupDocsAnnotationCloud::AnnotationInfo.new
 $a1.annotation_position = GroupDocsAnnotationCloud::Point.new
-$a1.annotation_position.x = 852
-$a1.annotation_position.y = 59.388262910798119
+$a1.annotation_position.x = 1
+$a1.annotation_position.y = 1
 $a1.box = GroupDocsAnnotationCloud::Rectangle.new
-$a1.box.x = 375.89276123046875
-$a1.box.y = 59.388263702392578
-$a1.box.width = 88.7330551147461
-$a1.box.height = 37.7290153503418
-$a1.page_number = 1
+$a1.box.x = 100
+$a1.box.y = 100
+$a1.box.width = 200
+$a1.box.height = 100
+$a1.page_number = 0
 $a1.pen_color = 1201033
 $a1.pen_style = "Solid"
 $a1.pen_width = 1
@@ -564,16 +602,16 @@ $a1.opacity = 0.7
 $a1.type = "Distance"
 $a1.text = "This is distance annotation"
 $a1.creator_name = "Anonym A."
-
+ 
 $a2 = GroupDocsAnnotationCloud::AnnotationInfo.new
 $a2.annotation_position = GroupDocsAnnotationCloud::Point.new
-$a2.annotation_position.x = 852
-$a2.annotation_position.y = 59.388262910798119
+$a2.annotation_position.x = 1
+$a2.annotation_position.y = 1
 $a2.box = GroupDocsAnnotationCloud::Rectangle.new
-$a2.box.x = 375.89276123046875
-$a2.box.y = 59.388263702392578
-$a2.box.width = 88.7330551147461
-$a2.box.height = 37.7290153503418
+$a2.box.x = 100
+$a2.box.y = 100
+$a2.box.width = 200
+$a2.box.height = 100
 $a2.page_number = 2
 $a2.pen_color = 1201033
 $a2.pen_style = "Solid"
@@ -582,31 +620,31 @@ $a2.opacity = 0.7
 $a2.type = "Area"
 $a2.text = "This is area annotation"
 $a2.creator_name = "Anonym A."
-
+ 
 $a3 = GroupDocsAnnotationCloud::AnnotationInfo.new
 $a3.annotation_position = GroupDocsAnnotationCloud::Point.new
-$a3.annotation_position.x = 852
-$a3.annotation_position.y = 59.388262910798119
+$a3.annotation_position.x = 1
+$a3.annotation_position.y = 1
 $a3.box = GroupDocsAnnotationCloud::Rectangle.new
-$a3.box.x = 375.89276123046875
-$a3.box.y = 59.388263702392578
-$a3.box.width = 88.7330551147461
-$a3.box.height = 37.7290153503418
+$a3.box.x = 100
+$a3.box.y = 100
+$a3.box.width = 200
+$a3.box.height = 100
 $a3.page_number = 4
 $a3.opacity = 0.7
 $a3.type = "Point"
 $a3.text = "This is point annotation"
 $a3.creator_name = "Anonym A."
-
+ 
 $a4 = GroupDocsAnnotationCloud::AnnotationInfo.new
 $a4.annotation_position = GroupDocsAnnotationCloud::Point.new
-$a4.annotation_position.x = 852
-$a4.annotation_position.y = 59.388262910798119
+$a4.annotation_position.x = 1
+$a4.annotation_position.y = 1
 $a4.box = GroupDocsAnnotationCloud::Rectangle.new
-$a4.box.x = 375.89276123046875
-$a4.box.y = 59.388263702392578
-$a4.box.width = 88.7330551147461
-$a4.box.height = 37.7290153503418
+$a4.box.x = 100
+$a4.box.y = 100
+$a4.box.width = 200
+$a4.box.height = 100
 $a4.page_number = 5
 $a4.pen_color = 1201033
 $a4.pen_style = "Solid"
@@ -614,15 +652,22 @@ $a4.pen_width = 1
 $a4.opacity = 0.7
 $a4.type = "Arrow"
 $a4.text = "This is arrow annotation"
-$a4.creator_name = "Anonym A."
-
-$request = GroupDocsAnnotationCloud::PostAnnotationsRequest.new("Annotationdocs\\ten-pages.docx", [$a1, $a2, $a3, $a4])
-
+$a4.creator_name = "Anonym A."     
+ 
+file_info = GroupDocsAnnotationCloud::FileInfo.new()
+file_info.file_path = "annotationdocs\\ten-pages.docx"
+ 
+options = GroupDocsAnnotationCloud::AnnotateOptions.new()
+options.file_info = file_info
+options.annotations = [$a1, $a2, $a3, $a4]
+options.output_path = "Output/output.docx"
+ 
+$request = GroupDocsAnnotationCloud::AnnotateRequest.new(options)
+ 
 # Executing an API.
-$api.post_annotations($request)
-
-puts("AddMultipleAnnotations: Multiple Annotations added.")
-
+result = $api.annotate($request)
+ 
+puts("AddMultipleAnnotations: Multiple Annotations added: " + result.href)
 ```
 
 {{< /tab >}} {{< /tabs >}}

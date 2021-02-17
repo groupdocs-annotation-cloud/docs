@@ -1,7 +1,7 @@
 ---
-id: "get-annotations"
-url: "annotation/get-annotations"
-title: "Get Annotations"
+id: "extract-annotations"
+url: "annotation/extract-annotations"
+title: "Extract Annotations"
 productName: "GroupDocs.Annotation Cloud"
 weight: 1
 description: ""
@@ -16,11 +16,11 @@ There are steps that usage of GroupDocs.Annotation Cloud consists of:
 
 1. Upload input document into cloud storage and other files, like image annotation
 1. Add annotation
-1. Export document with annotations
-1. Get or Delete annotations
+1. Download document with annotations
+1. Extract or Delete annotations
 
 ```html
-HTTP GET ~/annotation
+HTTP POST ~/annotation/extract
 ```
 
 [Swagger UI](https://apireference.groupdocs.cloud/annotation/) lets you call this REST API directly from the browser.
@@ -39,12 +39,13 @@ curl -v "https://api.groupdocs.cloud/connect/token" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -H "Accept: application/json"
   
-// cURL example to get document information
-curl -v "https://api.groupdocs.cloud/v2.0/annotation?filePath=annotationdocs%2Fone-page.docx" \
--X GET \
+// cURL example to extract annotations
+curl -v "https://api.groupdocs.cloud/v2.0/annotation/extract" \
+-X POST \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
--H "Authorization: Bearer <jwt token>"
+-H "Authorization: Bearer <jwt token>" \
+ -d "{ \"FilePath\": \"annotationdocs/input.docx\"}"
 ```
 
 {{< /tab >}}
@@ -120,128 +121,127 @@ The API is completely independent of your operating system, database system or d
 {{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java  & Android" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
 
 ```csharp
-
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet-samples
-string MyClientSecret = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-string MyClientId = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
+string MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+string MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
   
-var configuration = new Configuration(MyClientId, MyClientSecret);
+var configuration = new Configuration(MyAppSid, MyAppKey);
   
 var apiInstance = new AnnotateApi(configuration);
-
-// Set request.
-var request = new GetImportRequest
-{
-    filePath = "one-page.docx"
-};
-
-var response = apiInstance.GetImport(request);
-Console.WriteLine("GetAnnotations: annotations count = " + response.Count);
-
+ 
+var fileInfo = new FileInfo { FilePath = "input.docx" };
+ 
+var response = apiInstance.Extract(new ExtractRequest(fileInfo));
+ 
+Console.WriteLine("ExtractAnnotations: annotations count = " + response.Count);
 ```
 
 {{< /tab >}} {{< tab tabNum="2" >}}
 
 ```java
-
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-java-samples
-String MyClientSecret = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-String MyClientId = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
+String MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+String MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
   
-Configuration configuration = new Configuration(MyClientId, MyClientSecret);
+Configuration configuration = new Configuration(MyAppSid, MyAppKey);
   
 AnnotateApi apiInstance = new AnnotateApi(configuration);
-
+ 
 // Create request object.
-GetImportRequest request = new GetImportRequest();
-request.setfilePath("Annotationdocs\\one-page.docx");
-
+FileInfo fileInfo = new FileInfo();
+fileInfo.setFilePath("Annotationdocs\\input.docx");
+ 
+ExtractRequest request = new ExtractRequest();
+request.setfileInfo(fileInfo);
+ 
 // Executing api method.
-List<AnnotationInfo> response = apiInstance.getImport(request);
-
+List<AnnotationInfo> response = apiInstance.extract(request);
+ 
 System.out.println("GetAnnotations: annotations count = " + response.size());
-
 ```
 
 {{< /tab >}} {{< tab tabNum="3" >}}
 
 ```php
-
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-php-samples
 use GroupDocs\Annotation\Model;
 use GroupDocs\Annotation\Model\Requests;
-
-$ClientId = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-$ClientSecret = ""; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
+ 
+$AppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$AppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
   
 $configuration = new GroupDocs\Annotation\Configuration();
-$configuration->setAppSid($ClientId);
-$configuration->setAppKey($ClientSecret);
-
+$configuration->setAppSid($AppSid);
+$configuration->setAppKey($AppKey);
+ 
 $apiInstance = new GroupDocs\Annotation\AnnotateApi($configuration);
-
-$request = new GroupDocs\Annotation\Model\Requests\GetImportRequest("annotationdocs\\one-page.docx");
-$response = $apiInstance->getImport($request);
-
-echo "GetAnnotations: annotations count = ", count($response);
-
+ 
+$fileInfo = new GroupDocs\Annotation\Model\FileInfo();
+$fileInfo->setFilePath("input\\input.docx");
+ 
+$request = new GroupDocs\Annotation\Model\Requests\extractRequest($fileInfo);
+$result = $apiInstance->extract($request);
+ 
+echo "GetAnnotations: annotations count = ", count($result);
 ```
 
 {{< /tab >}} {{< tab tabNum="4" >}}
 
 ```javascript
-
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-node-samples
 global.annotation_cloud = require("groupdocs-annotation-cloud");
-
-global.clientId = "XXXX-XXXX-XXXX-XXXX"; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-global.clientSecret = "XXXXXXXXXXXXXXXX"; // Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
+ 
+global.appSid = "XXXX-XXXX-XXXX-XXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+global.appKey = "XXXXXXXXXXXXXXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
   
-global.annotateApi = annotation_cloud.AnnotateApi.fromKeys(clientId, clientSecret);
-
-var request = new annotation_cloud.GetImportRequest("Annotationdocs\\one-page.docx");
-let response = await annotateApi.getImport(request)
-console.log("GetAnnotations: annotations count = " + response.length);
-
+global.annotateApi = annotation_cloud.AnnotateApi.fromKeys(appSid, appKey);
+ 
+let fileInfo = new annotation_cloud.FileInfo();
+fileInfo.filePath = "input\\input.docx";
+let result = await annotateApi.extract(new annotation_cloud.ExtractRequest(fileInfo));   
+console.log("GetAnnotations: annotations count = " + result.length);
 ```
 
 {{< /tab >}} {{< tab tabNum="5" >}}
 
 ```python
-
 # For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-python-samples
 import groupdocs_annotation_cloud
-
-client_id = "XXXX-XXXX-XXXX-XXXX" # Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-client_secret = "XXXXXXXXXXXXXXXX" # Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
+ 
+app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
   
-api = groupdocs_annotation_cloud.AnnotateApi.from_keys(client_id, client_secret)
-
-request = GetImportRequest("annotationdocs\\one-page.docx")
-response = api.get_import(request)
-
-print("GetAnnotations: annotations count: " + str(len(response)))
+api = groupdocs_annotation_cloud.AnnotateApi.from_keys(app_sid, app_key)
+ 
+file_info = FileInfo()
+file_info.file_path = "annotationdocs\\input.docx"
+ 
+request = ExtractRequest(file_info)
+result = api.extract(request)        
+ 
+print("ExtractAnnotations: annotations count: " + str(len(result)))
 ```
 
 {{< /tab >}} {{< tab tabNum="6" >}}
 
 ```ruby
-
 # For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-ruby-samples
 require 'groupdocs_annotation_cloud'
-
-$client_id = "XXXX-XXXX-XXXX-XXXX" # Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
-$client_secret = "XXXXXXXXXXXXXXXX" # Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
+ 
+$app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
   
-$api = GroupDocsAnnotationCloud::AnnotateApi.from_keys($client_id, $client_secret)
-
-$request = GroupDocsAnnotationCloud::GetImportRequest.new("Annotationdocs\\one-page.docx")
-
+$api = GroupDocsAnnotationCloud::AnnotateApi.from_keys($app_sid, $app_key)
+ 
+file_info = GroupDocsAnnotationCloud::FileInfo.new()
+file_info.file_path = "annotationdocs\\input.docx"
+ 
+$request = GroupDocsAnnotationCloud::ExtractRequest.new(file_info)
+ 
 # Executing an API.
-$response = $api.get_import($request)
-
-puts("GetAnnotations: annotations count = " + $response.length.to_s)
-
+$response = $api.extract($request)
+ 
+puts("ExtractAnnotations: annotations count = " + $response.length.to_s)
 ```
 
 {{< /tab >}} {{< /tabs >}}

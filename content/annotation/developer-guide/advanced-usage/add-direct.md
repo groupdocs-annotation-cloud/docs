@@ -1,25 +1,24 @@
 ---
-id: "text-highlight-annotation"
-url: "annotation/text-highlight-annotation"
-title: "Text Highlight Annotation"
+id: "add-direct"
+url: "annotation/add-direct"
+title: "Add annotation with downloading output document at once"
 productName: "GroupDocs.Annotation Cloud"
-weight: 1
+weight: 2
 description: ""
 keywords: ""
 ---
 
-Text Highlight annotation highlights and comments selected text
+AnnotateDirect method allows to add annotations to the document and returns output document.
 
 ### API Usage ###
 
 There are steps that usage of GroupDocs.Annotation Cloud consists of:
 
-1. Upload input document into cloud storage and other files, like image annotation (using File API)
-1. Add annotation(s)
-1. Download document with annotations (using File API)
+1. Upload input document into cloud storage and other files, like image annotation
+1. Add annotation and get the result immediately
 
 ```html
-HTTP POST ~/annotation/add
+HTTP PUT ~/annotation/add
 ```
 
 [Swagger UI](https://apireference.groupdocs.cloud/annotation/) lets you call this REST API directly from the browser.
@@ -37,10 +36,10 @@ curl -v "https://api.groupdocs.cloud/connect/token" \
 -d "grant_type=client_credentials&client_id=xxxx&client_secret=xxxx" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -H "Accept: application/json"
-
-// cURL example to add annotation into document
+  
+// cURL example to add annotation into document with downloading output document
 curl -v "https://api.groupdocs.cloud/v2.0/annotation/add" \
--X POST \
+-X PUT \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -H "Authorization: Bearer <jwt token>" \
@@ -49,30 +48,22 @@ curl -v "https://api.groupdocs.cloud/v2.0/annotation/add" \
   'FileInfo': {
     'FilePath': 'annotationdocs/one-page.docx'
   },
-  'OutputPath': "Output/output.docx",
   'Annotations': [
   {
-    'Type': 'TextHighlight',
-    'Text': 'This is text highlight annotation',
+    'Type': 'Area',
+    'Text': 'This is area annotation',
     'CreatorName': 'Anonym A.',
-    'Points': [ {
-      'X': 80,
-      'Y': 730
-     },
-     {
-      'X': 240,
-      'Y': 730
-     },
-     {
-      'X': 80,
-      'Y': 760
-     },
-     {
-      'X': 240,
-      'Y': 650
-     }
-    ],
+    'Box': {
+      'X': 100,
+      'Y': 100,
+      'Width': 100,
+      'Height': 100
+    },
     'PageNumber': 0,
+    'AnnotationPosition': {
+      'X': 1,
+      'Y': 1
+    },
     'Replies': [
       {
         'Comment': 'First comment',
@@ -83,23 +74,20 @@ curl -v "https://api.groupdocs.cloud/v2.0/annotation/add" \
         'RepliedOn': '2020-10-02T06:52:01.376Z'
       }
     ],
-    'CreatedOn': '2020-10-02T06:52:01.376Z'
+    'CreatedOn': '2020-10-02T06:52:01.376Z',
+    'PenStyle': 'Solid',
+    'PenColor': 65535,
+    'PenWidth': 3,
+    'BackgroundColor': 65535,
+    'Opacity': 0.7
   }
 ]
 }
 "
-```
 
-{{< /tab >}}
-{{< tab tabNum="2" >}}
-
-```html
-{
-  "href": "https://api.groupdocs.cloud/v2.0/annotation/storage/file/Output/output.docx",
-  "rel": "self",
-  "type": "file",
-  "title": "output.docx"
-}
+```javascript
+200 OK
+<File stream>
 ```
 
 {{< /tab >}}
@@ -128,14 +116,15 @@ AnnotationInfo[] annotations =
 {
     new AnnotationInfo
     {
-        Points = new List<Point>
-        {
-            new Point {X = 80, Y = 730}, new Point {X=240, Y=730}, new Point {X=80, Y=650}, new Point {X=240, Y=650}
-        },
-        BackgroundColor = 65535,
+        AnnotationPosition = new Point { X = 1, Y = 1 },
+        Box = new Rectangle { X = 100, Y = 100, Width = 100, Height = 100 },
         PageNumber = 0,
-        Type = AnnotationInfo.TypeEnum.TextHighlight,
-        Text = "This is text highlight annotation",
+        BackgroundColor = 65535,
+        PenColor = 65535,
+        PenStyle = AnnotationInfo.PenStyleEnum.Solid,
+        PenWidth = 3,
+        Type = AnnotationInfo.TypeEnum.Area,
+        Text = "This is area annotation",
         CreatorName = "Anonym A.",
         CreatedOn = DateTime.Now,
         Replies = new List<AnnotationReplyInfo>
@@ -157,12 +146,11 @@ AnnotationInfo[] annotations =
 var options = new AnnotateOptions
 {
     FileInfo = fileInfo,
-    Annotations = annotations.ToList(),
-    OutputPath = "Output/output.docx"
+    Annotations = annotations.ToList()
 };
  
-var link = apiInstance.Annotate(new AnnotateRequest(options));
-Console.WriteLine("AddTextHighlightAnnotation: Text highlight Annotation added: " + link.Title);
+var stream = apiInstance.AnnotateDirect(new AnnotateDirectRequest(options));
+Console.WriteLine("AddAnnotationDirect: Area Annotation added. Stream size: " + stream.Length);
 ```
 
 {{< /tab >}} {{< tab tabNum="2" >}}
@@ -180,25 +168,27 @@ AnnotateApi apiInstance = new AnnotateApi(configuration);
 AnnotationInfo[] annotations = new AnnotationInfo[1];
 annotations[0] = new AnnotationInfo();
  
-Point[] pt = new Point[4];
-pt[0] = new Point();
-pt[0].setX(80.0);
-pt[0].setY(730.0);
-pt[1] = new Point();
-pt[1].setX(240.0);
-pt[1].setY(730.0);
-pt[2] = new Point();
-pt[2].setX(80.0);
-pt[2].setY(650.0);                          
-pt[3] = new Point();
-pt[3].setX(240.0);
-pt[3].setY(650.0);              
-annotations[0].setPoints(Arrays.asList(pt));
+Point pt = new Point();
+pt.setX(1.0);
+pt.setY(1.0);
+annotations[0].setAnnotationPosition(pt);
+ 
+Rectangle r = new Rectangle();
+r.setX(100.0);
+r.setY(100.0);
+r.setWidth(200.0);
+r.setHeight(100.0);
+ 
+annotations[0].setBox(r);
  
 annotations[0].setPageNumber(0);
+annotations[0].setPenColor(1201033);
+annotations[0].setPenStyle(PenStyleEnum.SOLID);         
+annotations[0].setPenWidth(1);
 annotations[0].setBackgroundColor(65535);
-annotations[0].setType(TypeEnum.TEXTHIGHLIGHT);
-annotations[0].setText("This is text highlight annotation");
+annotations[0].setOpacity(0.7);
+annotations[0].setType(TypeEnum.AREA);
+annotations[0].setText("This is area annotation");
 annotations[0].setCreatorName("Anonym A.");
  
 // Create request object.
@@ -208,14 +198,13 @@ fileInfo.setFilePath("Annotationdocs\\one-page.docx");
 AnnotateOptions options = new AnnotateOptions();
 options.setFileInfo(fileInfo);
 options.setAnnotations(Arrays.asList(annotations));
-options.setOutputPath("Output/one-page-annotated.docx");
  
-AnnotateRequest request = new AnnotateRequest(options);
+AnnotateDirectRequest request = new AnnotateDirectRequest(options);
  
 // Executing api method.
-AnnotationApiLink result = apiInstance.annotate(request);
+File response = apiInstance.annotateDirect(request);
  
-System.out.println("AddTextHighlightAnnotation: Text highlight Annotation added: " + result.getTitle());
+System.out.println("AddAnnotationsDirect: Document Length: " + response.getTotalSpace());
 ```
 
 {{< /tab >}} {{< tab tabNum="3" >}}
@@ -235,24 +224,23 @@ $configuration->setAppKey($AppKey);
 $apiInstance = new GroupDocs\Annotation\AnnotateApi($configuration);
  
 $a = new GroupDocs\Annotation\Model\AnnotationInfo();
-$pt1 = new GroupDocs\Annotation\Model\Point();
-$pt1->setX(80);
-$pt1->setY(730);
-$pt2 = new GroupDocs\Annotation\Model\Point();
-$pt2->setX(80);
-$pt2->setY(730);        
-$pt3 = new GroupDocs\Annotation\Model\Point();
-$pt3->setX(80);
-$pt3->setY(730);        
-$pt4 = new GroupDocs\Annotation\Model\Point();
-$pt4->setX(80);
-$pt4->setY(730);        
-$a->setPoints([$pt1, $pt2, $pt3, $pt4]);
- 
+$pt = new GroupDocs\Annotation\Model\Point();
+$pt->setX(1);
+$pt->setY(1);
+$a->setAnnotationPosition($pt);
+$box = new GroupDocs\Annotation\Model\Rectangle();
+$box->setX(100);
+$box->setY(100);
+$box->setWidth(200);
+$box->setHeight(100);
+$a->setBox($box);
 $a->setPageNumber(0);
-$a->setBackgroundColor(65535);
-$a->setType(GroupDocs\Annotation\Model\AnnotationInfo::TYPE_TEXT_HIGHLIGHT);
-$a->setText("This is text highlight annotation");
+$a->setPenColor(1201033);
+$a->setPenStyle(GroupDocs\Annotation\Model\AnnotationInfo::PEN_STYLE_SOLID);
+$a->setPenWidth(1);
+$a->setOpacity(0.7);
+$a->setType(GroupDocs\Annotation\Model\AnnotationInfo::TYPE_AREA);
+$a->setText("This is area annotation");
 $a->setCreatorName("Anonym A.");   
  
 $fileInfo = new GroupDocs\Annotation\Model\FileInfo();
@@ -261,54 +249,17 @@ $fileInfo->setFilePath("annotationdocs\\one-page.docx");
 $options = new GroupDocs\Annotation\Model\AnnotateOptions();
 $options->setFileInfo($fileInfo);
 $options->setAnnotations([$a]);
-$options->setOutputPath("Output\\output.docx");
  
-$request = new GroupDocs\Annotation\Model\Requests\annotateRequest($options);
-$result = $apiInstance->annotate($request);
+$request = new GroupDocs\Annotation\Model\Requests\annotateDirectRequest($options);
+$result = $apiInstance->annotateDirect($request);
  
-echo "AddTextHighlightAnnotation: Text highlight Annotation added: " . $result->getHref();
+echo "AddAnnotationDirect: File size: " . $result->getSize();
 ```
 
 {{< /tab >}} {{< tab tabNum="4" >}}
 
 ```javascript
-// For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-node-samples
-global.annotation_cloud = require("groupdocs-annotation-cloud");
- 
-global.appSid = "XXXX-XXXX-XXXX-XXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-global.appKey = "XXXXXXXXXXXXXXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-  
-global.annotateApi = annotation_cloud.AnnotateApi.fromKeys(appSid, appKey);
- 
-let a1 = new annotation_cloud.AnnotationInfo();
-let p1 = new annotation_cloud.Point();
-p1.x = 80;
-p1.y = 730;
-let p2 = new annotation_cloud.Point();
-p2.x = 240;
-p2.y = 730;
-let p3 = new annotation_cloud.Point();
-p3.x = 80;
-p3.y = 650;
-let p4 = new annotation_cloud.Point();
-p4.x = 240;
-p4.y = 650;
-a1.points = [p1, p2, p3, p4];
-a1.pageNumber = 0;
-a1.backgroundColor = 65535;
-a1.type = annotation_cloud.AnnotationInfo.TypeEnum.TextHighlight;
-a1.text = "This is text highlight annotation";
-a1.creatorName = "Anonym A.";
- 
-let fileInfo = new annotation_cloud.FileInfo();
-fileInfo.filePath = "annotationdocs\\one-page.docx";
-let options = new annotation_cloud.AnnotateOptions();
-options.fileInfo = fileInfo;
-options.annotations = [a1];
-options.outputPath = "Output/output.docx";
-let result = await annotateApi.annotate(new annotation_cloud.AnnotateRequest(options));
- 
-console.log("AddTextHighlightAnnotation: text highlight Annotation added: " + result.href);
+
 ```
 
 {{< /tab >}} {{< tab tabNum="5" >}}
@@ -323,23 +274,21 @@ app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.grou
 api = groupdocs_annotation_cloud.AnnotateApi.from_keys(app_sid, app_key)
  
 a1 = groupdocs_annotation_cloud.AnnotationInfo()
-p1 = groupdocs_annotation_cloud.Point()
-p1.x = 80
-p1.y = 730
-p2 = groupdocs_annotation_cloud.Point()
-p2.x = 240
-p2.y = 730
-p3 = groupdocs_annotation_cloud.Point()
-p3.x = 80
-p3.y = 650
-p4 = groupdocs_annotation_cloud.Point()
-p4.x = 240
-p4.y = 650
-a1.points = [p1, p2, p3, p4]
+a1.annotation_position = groupdocs_annotation_cloud.Point()
+a1.annotation_position.x = 1
+a1.annotation_position.y = 1
+a1.box = groupdocs_annotation_cloud.Rectangle()
+a1.box.x = 100
+a1.box.y = 100
+a1.box.width = 200
+a1.box.height = 100
 a1.page_number = 0
-a1.background_color = 65535
-a1.type = "TextHighlight"
-a1.text = "This is text highlight annotation"
+a1.pen_color = 1201033
+a1.pen_style = "Solid"
+a1.pen_width = 1
+a1.opacity = 0.7
+a1.type = "Area"
+a1.text = "This is area annotation"
 a1.creator_name = "Anonym A."
  
 file_info = FileInfo()
@@ -347,12 +296,11 @@ file_info.file_path = "annotationdocs\\one-page.docx"
 options = AnnotateOptions()
 options.file_info = file_info
 options.annotations = [a1]
-options.output_path = "Output\\output.docx"
  
-request = AnnotateRequest(options)
-result = api.annotate(request)         
+request = AnnotateDirectRequest(options)
+result = api.annotate_direct(request)         
  
-print("AddTextHighlightAnnotation: Text highlight Annotation added: " + result['href'])
+print("AddAnnotationDirect: Document Length: " + str(os.path.getsize(result)))
 ```
 
 {{< /tab >}} {{< tab tabNum="6" >}}
@@ -367,23 +315,21 @@ $app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.gro
 $api = GroupDocsAnnotationCloud::AnnotateApi.from_keys($app_sid, $app_key)
  
 $a1 = GroupDocsAnnotationCloud::AnnotationInfo.new
-$p1 = GroupDocsAnnotationCloud::Point.new
-$p1.x = 1
-$p1.y = 1
-$p2 = GroupDocsAnnotationCloud::Point.new
-$p2.x = 1
-$p2.y = 1
-$p3 = GroupDocsAnnotationCloud::Point.new
-$p3.x = 1
-$p3.y = 1
-$p4 = GroupDocsAnnotationCloud::Point.new
-$p4.x = 1
-$p4.y = 1
-$a1.points = [$p1, $p2, $p3, $p4]
+$a1.annotation_position = GroupDocsAnnotationCloud::Point.new
+$a1.annotation_position.x = 1
+$a1.annotation_position.y = 1
+$a1.box = GroupDocsAnnotationCloud::Rectangle.new
+$a1.box.x = 100
+$a1.box.y = 100
+$a1.box.width = 200
+$a1.box.height = 100
 $a1.page_number = 0
-$a1.background_color = 65535
-$a1.type = "TextHighlight"
-$a1.text = "This is text highlight annotation"
+$a1.pen_color = 1201033
+$a1.pen_style = "Solid"
+$a1.pen_width = 1
+$a1.opacity = 0.7
+$a1.type = "Area"
+$a1.text = "This is area annotation"
 $a1.creator_name = "Anonym A."     
  
 file_info = GroupDocsAnnotationCloud::FileInfo.new()
@@ -392,14 +338,13 @@ file_info.file_path = "annotationdocs\\one-page.docx"
 options = GroupDocsAnnotationCloud::AnnotateOptions.new()
 options.file_info = file_info
 options.annotations = [$a1]
-options.output_path = "Output/output.docx"
  
-$request = GroupDocsAnnotationCloud::AnnotateRequest.new(options)
+$request = GroupDocsAnnotationCloud::AnnotateDirectRequest.new(options)
  
 # Executing an API.
-result = $api.annotate($request)
+result = $api.annotate_direct($request)
  
-puts("AddTextHighlightAnnotation: Text highlight Annotation added: " + result.href)
+puts("AddAnnotationsDirect: file size = " + result.length.to_s)
 ```
 
 {{< /tab >}} {{< /tabs >}}
