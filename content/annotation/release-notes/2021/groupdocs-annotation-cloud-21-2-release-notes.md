@@ -4,7 +4,7 @@ url: "annotation/groupdocs-annotation-cloud-21-2-release-notes"
 title: "GroupDocs.Annotation Cloud 21.2 Release Notes"
 productName: "GroupDocs.Annotation Cloud"
 weight: 2
-description: ""
+description: "GroupDocs.Annotation Cloud 21.2 Release Notes"
 keywords: ""
 ---
 {{< alert style="info" >}}
