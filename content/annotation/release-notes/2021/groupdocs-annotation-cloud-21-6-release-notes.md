@@ -4,8 +4,8 @@ url: "annotation/groupdocs-annotation-cloud-21-6-release-notes"
 title: "GroupDocs.Annotation Cloud 21.6 Release Notes"
 productName: "GroupDocs.Annotation Cloud"
 weight: 1
-description: ""
-keywords: ""
+description: "GroupDocs.Annotation Cloud 21.6 Release Notes"
+keywords: "GroupDocs Annotation Cloud Release Notes"
 ---
 {{< alert style="info" >}}
 This page contains release notes for GroupDocs.Annotation Cloud 21.6
