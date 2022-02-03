@@ -41,12 +41,12 @@ In case you don't have license keys you can omit LICENSE_PUBLIC_KEY and LICENSE_
 ```powershell
 
 docker run `
-      -p 8080:80 `
-      -v "${pwd}/data:/data" `
-      -e "LICENSE_PUBLIC_KEY#public_key" `
-      -e "LICENSE_PRIVATE_KEY#private_key" `
-      --name annotation_cloud `
-      groupdocs/annotation-cloud
+    -p 8080:80 `
+    -v "${pwd}/data:/data" `
+    -e "LICENSE_PUBLIC_KEY#public_key" `
+    -e "LICENSE_PRIVATE_KEY#private_key" `
+    --name annotation_cloud `
+    groupdocs/annotation-cloud
 
 ```
 
@@ -55,12 +55,12 @@ docker run `
 ```bash
 
 docker run \
-      -p 8080:80 \
-      -v $(pwd)/data:/data \
-      -e LICENSE_PUBLIC_KEY#public_key \
-      -e LICENSE_PRIVATE_KEY#private_key \
-      --name annotation_cloud \
-      groupdocs/annotation-cloud
+    -p 8080:80 \
+    -v $(pwd)/data:/data \
+    -e LICENSE_PUBLIC_KEY#public_key \
+    -e LICENSE_PRIVATE_KEY#private_key \
+    --name annotation_cloud \
+    groupdocs/annotation-cloud
 
 ```
 
@@ -120,28 +120,28 @@ If you don't find your language in the SKD list, feel free to request for it on 
 
 ```powershell
 docker run `
-      -p 8080:80 `
-      -v "${pwd}/data:/data" `
-      -e "LICENSE_PUBLIC_KEY#public_key" `
-      -e "LICENSE_PRIVATE_KEY#private_key" `
-      -e "client_id=client_id" `
-      -e "client_secret=client_secret" `
-      --name annotation_cloud `
-      groupdocs/annotation-cloud
+    -p 8080:80 `
+    -v "${pwd}/data:/data" `
+    -e "LICENSE_PUBLIC_KEY#public_key" `
+    -e "LICENSE_PRIVATE_KEY#private_key" `
+    -e "client_id=client_id" `
+    -e "client_secret=client_secret" `
+    --name annotation_cloud `
+    groupdocs/annotation-cloud
 ```
 
 {{< /tab >}} {{< tab tabNum="2" >}}
 
 ```bash
 docker run \
-      -p 8080:80 \
-      -v $(pwd)/data:/data \
-      -e LICENSE_PUBLIC_KEY#public_key \
-      -e LICENSE_PRIVATE_KEY#private_key \
-      -e client_id=client_id \
-      -e client_secret=client_secret \
-      --name annotation_cloud \
-      groupdocs/annotation-cloud
+    -p 8080:80 \
+    -v $(pwd)/data:/data \
+    -e LICENSE_PUBLIC_KEY#public_key \
+    -e LICENSE_PRIVATE_KEY#private_key \
+    -e client_id=client_id \
+    -e client_secret=client_secret \
+    --name annotation_cloud \
+    groupdocs/annotation-cloud
 ```
 
 {{< /tab >}} {{< /tabs >}}
@@ -161,4 +161,34 @@ GroupDocs.Annotation Cloud can be started in trial and licensed modes. When Grou
 * You can convert only two first pages of the document
 * Evaluation watermarks added to the output
 
-You can find more information about evaluation at [Evaluate GroupDocs.Annotation]({{< ref "annotation/getting-started/evaluate-groupdocs-annotation.md" >}}).
+You can find more information about evaluation at [Evaluate GroupDocs.Annotation]({{< ref "annotation/getting-started/evaluate-groupdocs-annotation.md" >}}).
+
+### Enable Google Cloud Storage
+
+By default, a local storage used inside container for file operations. It's possible to connect a Google Cloud storage by setting GOOGLE_APPLICATION_CREDENTIALS and GOOGLE_STORAGE_BUCKET environment variables.
+
+{{< tabs tabTotal="2" tabID="3" tabName1="Windows (PowerShell)" tabName2="Linux (bash)" >}} {{< tab tabNum="1" >}}
+
+```powershell
+docker run `
+    -p 8080:80 `
+    -v "${pwd}/data:/data" `
+    -e "GOOGLE_APPLICATION_CREDENTIALS=/data/key.json" `
+    -e "GOOGLE_STORAGE_BUCKET=bucket_id" `
+    --name annotation_cloud `
+    groupdocs/annotation-cloud
+```
+
+{{< /tab >}} {{< tab tabNum="2" >}}
+
+```bash
+docker run \
+    -p 8080:80 \
+    -v $(pwd)/data:/data \
+    -e GOOGLE_APPLICATION_CREDENTIALS=/data/key.json \
+    -e GOOGLE_STORAGE_BUCKET=bucket_id \
+    --name annotation_cloud \
+    groupdocs/annotation-cloud
+```
+
+{{< /tab >}} {{< /tabs >}}
