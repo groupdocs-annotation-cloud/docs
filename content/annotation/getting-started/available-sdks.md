@@ -34,7 +34,7 @@ Complete source code of GroupDocs.Annotation Cloud SDK for .NET is freely avail
 
 Java SDK allows you to incorporate GroupDocs.Annotation Cloud services in your Java applications quickly and easily. You can directly include the source code of GroupDocs.Annotation Cloud SDK for Java in your own project, the source code is available from [here](https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-java).
 
-Alternatively, you can use [**Maven**](https://repository.groupdocs.cloud/webapp/#/artifacts/browse/tree/General/repo/com/groupdocs/groupdocs-annotation-cloud) to include in your Java project. Below are the steps for Maven.
+Alternatively, you can use [**Maven**](https://releases.groupdocs.cloud/java/repo/com/groupdocs/groupdocs-annotation-cloud/) to include in your Java project. Below are the steps for Maven.
 
 ### Connect SDK ###
 
@@ -44,7 +44,7 @@ Alternatively, you can use [**Maven**](https://repository.groupdocs.cloud/webapp
 <repository>
     <id>groupdocs-artifact-repository</id>
     <name>GroupDocs Artifact Repository</name>
-    <url>http://repository.groupdocs.cloud/repo</url>
+    <url>https://releases.groupdocs.cloud/java/repo/</url>
 </repository>
 ```
 
@@ -101,7 +101,7 @@ Complete source code of GroupDocs.Annotation Cloud SDK for Java is freely avail
 
 Android SDK allows you to incorporate GroupDocs.Annotation Cloud services in your Android applications quickly and easily. You can directly include the source code of GroupDocs.Annotation Cloud SDK for Android in your own project, the source code is available from [here](https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-android).
 
-Alternatively, you can use [**Maven**](https://repository.groupdocs.cloud/webapp/#/artifacts/browse/tree/General/repo/com/groupdocs/groupdocs-annotation-cloud-android) to include in your Android project. Below are the steps for Maven.
+Alternatively, you can use [**Maven**](https://releases.groupdocs.cloud/java/repo/com/groupdocs/groupdocs-annotation-cloud-android/) to include in your Android project. Below are the steps for Maven.
 
 ### Connect SDK ###
 
@@ -111,7 +111,7 @@ Alternatively, you can use [**Maven**](https://repository.groupdocs.cloud/webapp
 <repository>
     <id>groupdocs-artifact-repository</id>
     <name>GroupDocs Artifact Repository</name>
-    <url>http://repository.groupdocs.cloud/repo</url>
+    <url>http://releases.groupdocs.cloud/java/repo</url>
 </repository>
 ```
 
