@@ -308,3 +308,45 @@ docker run \
 ```
 
 {{< /tab >}} {{< /tabs >}}
+
+### Enable AWS S3 Cloud Storage
+
+By default, a local storage used inside container for file operations. It's possible to connect a AWS S3 Cloud storage by setting
+environment variables:
+
+|Name                |Description                                           |
+|------------------- |----------------------------------------------------- |
+|S3_STORAGE_BUCKET   |Bucket ID                                             |
+|S3_STORAGE_ACCESS_KEY|S3 API Access Key                                    |
+|S3_STORAGE_SECRET_KEY|S3 API Secret Key                                    |
+|S3_STORAGE_REGION   |AWS S3 Region                                         |
+
+{{< tabs tabTotal="2" tabID="3" tabName1="Windows (PowerShell)" tabName2="Linux (bash)" >}} {{< tab tabNum="1" >}}
+
+```powershell
+docker run `
+    -p 8080:80 `
+    -v "${pwd}/data:/data" `
+    -e "S3_STORAGE_BUCKET=main_bucket" `
+    -e "S3_STORAGE_ACCESS_KEY=XXXXXXXXXXXXXXXXXXX" `
+    -e "S3_STORAGE_SECRET_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" `
+    -e "S3_STORAGE_REGION=us-west-2" `
+    --name annotation_cloud `
+    groupdocs/annotation-cloud
+```
+
+{{< /tab >}} {{< tab tabNum="2" >}}
+
+```bash
+docker run \
+    -p 8080:80 \
+    -v $(pwd)/data:/data \
+    -e S3_STORAGE_BUCKET=main_bucket \
+    -e S3_STORAGE_ACCESS_KEY=XXXXXXXXXXXXXXXXXXX \
+    -e S3_STORAGE_SECRET_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
+    -e S3_STORAGE_REGION=us-west-2" \
+    --name annotation_cloud \
+    groupdocs/annotation-cloud
+```
+
+{{< /tab >}} {{< /tabs >}}
