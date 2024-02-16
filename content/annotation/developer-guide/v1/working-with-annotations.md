@@ -6,16 +6,17 @@ productName: "GroupDocs.Annotation Cloud"
 weight: 2
 description: ""
 keywords: ""
+toc: True
 ---
 {{< alert style="info" >}}
 Note:  The features listed in this page are working only with GroupDocs.Annotation Cloud V1
 {{< /alert >}}
 
-## Introduction ##
-
 GroupDocs.Annotation Cloud API provides annotation data from supported file formats as AnnotationInfo Object.
 
-### AnnotationInfo object fields ###
+## Object fields
+
+### AnnotationInfo object fields
 
 |Field Name|Type|Description
 |---|---|---
@@ -42,14 +43,14 @@ GroupDocs.Annotation Cloud API provides annotation data from supported file form
 |fontFamily|string|The annotaiton text font family.
 |fontSize|double|The annotaiton text font size.
 
-## Point object fields ##
+### Point object fields
 
 |Field Name|Type|Description
 |---|---|---
 |x|Double|The x coordinate.
 |y|Double|The y coordinate.
 
-## AnnotationReplyInfo object fields ##
+### AnnotationReplyInfo object fields
 
 |Field Name|Type|Description
 |---|---|---
@@ -61,7 +62,7 @@ GroupDocs.Annotation Cloud API provides annotation data from supported file form
 |RepliedOn|DateTime|The reply creation date.
 |ParentReplyGuid|string|The unique identifier of parent reply.
 
-## Rectangle object fields ##
+### Rectangle object fields
 
 |Field Name|Type|Description
 |---|---|---
@@ -70,7 +71,7 @@ GroupDocs.Annotation Cloud API provides annotation data from supported file form
 |width|float|The rectangle width.
 |height|float|The rectangle height.
 
-## The emuneration of Annotation types ##
+### The emuneration of Annotation types
 
 ```csharp
 public enum AnnotationType : byte
@@ -105,20 +106,20 @@ public enum AnnotationType : byte
 
 ```
 
-## Import Annotation Information ##
+## Import Annotation Information
 
 This API retrieves(imports) annotation information from the document. It returns the list of annotations which were imported from the document.
 
-### Resource ###
+### Resource
 
 The following GroupDocs.Annotation Cloud REST API resource has been used to get [annotation list from document](https://apireference.groupdocs.cloud/annotation/#!/Annotation/GetImport).
 
-### cURL REST Example ###
+### cURL example
 
-{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example1">}}
+{{< tab "Request" >}}
 
-```html
+```bash
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/annotations" \
 -X GET \
 -H "Content-Type: application/json" \
@@ -126,9 +127,9 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/annotations" \
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
-```html
+```json
 [
    {
       "guid":null,
@@ -193,49 +194,47 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/annotations" \
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDKs ##
+### SDK examples
 
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here]({{< ref "/annotation/getting-started/available-sdks.md" >}}).
 
-### Import Annotation Information ###
-
-{{< tabs tabTotal="6" tabID="2" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Ruby" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example2">}}
+{{< tab "C#" >}}
 
 {{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Get_Annotation_Info.cs >}}
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Java" >}}
 
 {{< gist groupdocscloud dd069ea3659b158b48e2239356aea189 Annotation_Java_Get_Annotation_Info.java >}}
 
 {{< /tab >}}
-{{< tab tabNum="3" >}}
+{{< tab "PHP" >}}
 
 {{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Get_Import_Annotation.php >}}
 
 {{< /tab >}}
-{{< tab tabNum="4" >}}
+{{< tab "Ruby" >}}
 
 {{< gist groupdocscloud 6a14ecd45b4278c014689b688ec34d21 Annotation_Ruby_Get_Import_Annotation.rb >}}
 
 {{< /tab >}}
 {{< /tabs >}}
 
-## Export Annotation ##
+## Export Annotation
 
 This API adds(exports) annotation to a document and retrieves the resultant document as stream. It expects AnnotaitonInfo object in request body.
 
-### Resource ###
+### Resource
 
 The following GroupDocs.Annotation Cloud REST API resource has been used to [add Annotation and get resultant document as stream](https://apireference.groupdocs.cloud/annotation/#!/Annotation/PutExport).
 
-### cURL REST Example ###
+### cURL example
 
-{{< tabs tabTotal="2" tabID="3" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example3">}}
+{{< tab "Request" >}}
 
-```html
+```bash
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/annotations" \
 -X PUT \
 -H "Content-Type: application/json" \
@@ -245,58 +244,56 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/annotations" \
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
-```html
+```json
 Returns Binary data
 ```
 
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDKs ##
+### SDK examples
 
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here]({{< ref "/annotation/getting-started/available-sdks.md" >}}).
 
-### Export Annotation and get Document as Stream ###
-
-{{< tabs tabTotal="6" tabID="4" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Ruby" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example4">}}
+{{< tab "C#" >}}
 
 {{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Put_Annotation.cs >}}
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Java" >}}
 
 {{< gist groupdocscloud dd069ea3659b158b48e2239356aea189 Annotation_Java_Put_Annotation.java >}}
 
 {{< /tab >}}
-{{< tab tabNum="3" >}}
+{{< tab "PHP" >}}
 
 {{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Get_Export_Annotation.php >}}
 
 {{< /tab >}}
-{{< tab tabNum="4" >}}
+{{< tab "Ruby" >}}
 
 {{< gist groupdocscloud 6a14ecd45b4278c014689b688ec34d21 Annotation_Ruby_Get_Export_Annotation.rb >}}
 
 {{< /tab >}}
 {{< /tabs >}}
 
-## Remove Annotation ##
+## Remove Annotation
 
 This API removes annotation from a document and retrieves the resultant document as stream.
 
-### Resource ###
+### Resource
 
 The following GroupDocs.Annotation Cloud REST API resource has been used to [remove Annotation and get resultant document as stream](https://apireference.groupdocs.cloud/annotation/#!/Annotation/DeleteCleanDocument).
 
-### cURL REST Example ###
+### cURL example
 
-{{< tabs tabTotal="2" tabID="5" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example5">}}
+{{< tab "Request" >}}
 
-```html
+```bash
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/annotations" \
 -X DELETE \
 -H "Content-Type: application/json" \
@@ -304,38 +301,36 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/annotations" \
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
-```html
+```json
 Returns Binary data
 ```
 
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDKs ##
+### SDK examples
 
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here]({{< ref "/annotation/getting-started/available-sdks.md" >}}).
 
-### Remove Annotation and get Document as Stream ###
-
-{{< tabs tabTotal="6" tabID="6" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Ruby" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example6">}}
+{{< tab "C#" >}}
 
 {{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Delete_Remove_Annotation.cs >}}
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Java" >}}
 
 {{< gist groupdocscloud dd069ea3659b158b48e2239356aea189 Annotation_Java_Delete_Remove_Annotation.java >}}
 
 {{< /tab >}}
-{{< tab tabNum="3" >}}
+{{< tab "PHP" >}}
 
 {{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Delete_Remove_Annotation.php >}}
 
 {{< /tab >}}
-{{< tab tabNum="4" >}}
+{{< tab "Ruby" >}}
 
 {{< gist groupdocscloud 6a14ecd45b4278c014689b688ec34d21 Annotation_Ruby_Get_Delete_Annotation.rb >}}
 

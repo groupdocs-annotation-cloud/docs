@@ -5,9 +5,8 @@ title: "Getting metered license consumption"
 productName: "GroupDocs.Annotation Cloud"
 description: ""
 keywords: ""
+toc: True
 ---
-### Introduction ###
-
 {{< alert style="info" >}}
 This example related to Docker version of GroupDocs.Annotation-Cloud only
 {{< /alert >}}
@@ -17,20 +16,20 @@ Here is an example how to retrieve metered license consumption.
 
 You can find more information about Docker version at [How to self-host GroupDocs.Annotation Cloud with Docker]({{< ref "annotation/getting-started/self-host-with-docker.md" >}})
 
-## Note about credits consumption when using metered license in docker version ##
+## Note about credits consumption when using metered license in docker version
 
 + Storage calls are not charged
 + Annotation API calls charge is based on document size: 1 credit per call per 20MB
 
-## Resource URI ##
+### Resource URI
 
 ```HTTP GET ~/annotation/consumption```
 
-## cURL Example ##
+### cURL example
 
-{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
+{{< tabs "example1">}} {{< tab "Request" >}}
 
-```html
+```bash
 
 * cURL example to get metered license consumption
 curl -v "http://<base url>/v2.0/annotation/consumption" \
@@ -39,16 +38,17 @@ curl -v "http://<base url>/v2.0/annotation/consumption" \
 -H "Authorization: Bearer <jwt token>"
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Response" >}}
 
-```html
+```json
 {
   "credit": 487848,
   "quantity": 6061570985.37938
 }
+```
 {{< /tab >}} {{< /tabs >}}
 
-## Response ##
+### Response
 
 The response structure contains metered license consumption information:
 
@@ -57,13 +57,13 @@ The response structure contains metered license consumption information:
 |Credit|decimal|Amount of used credits.
 |Quantity|decimal|Amount of MBs processed.
 
-## SDKs ##
+### SDK examples
 
 Our API is completely independent of your operating system, database system or development language. You can use any language and platform that supports HTTP to interact with our API. However, manually writing client code can be difficult, error-prone and time-consuming. Therefore, we have provided and support API [SDKs](https://github.com/groupdocs-annotation-cloud) in many development languages in order to make it easier to integrate with us.
 
-### SDK Examples ###
 
-{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
+
+{{< tabs "example2">}} {{< tab "C#" >}}
 
 ```csharp
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet-samples
@@ -81,7 +81,7 @@ Console.WriteLine($"Credits: {response.Credit}");
 Console.WriteLine($"Quantity: {response.Quantity}");
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Java" >}}
 
 ```java
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-java-samples
@@ -98,7 +98,7 @@ System.out.println("Credit: " + response.getCredit());
 System.out.println("Quantity: " + response.getQuantity());
 ```
 
-{{< /tab >}} {{< tab tabNum="3" >}}
+{{< /tab >}} {{< tab "PHP" >}}
 
 ```php
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-php-samples
@@ -125,7 +125,7 @@ $result = $apiInstance->getConsumptionCredit();
 echo "Credit: " . $result->getCredit();
 ```
 
-{{< /tab >}} {{< tab tabNum="4" >}}
+{{< /tab >}} {{< tab "Node.js" >}}
 
 ```node
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-node-samples
@@ -140,7 +140,7 @@ let response = await licenseApi.getConsumptionCredit();
 console.log("GetLicenseConsumption: Credit = " + response.credit);
 ```
 
-{{< /tab >}} {{< tab tabNum="5" >}}
+{{< /tab >}} {{< tab "Python" >}}
 
 ```python
 # For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-python-samples
@@ -158,7 +158,7 @@ result = apiInstance.get_consumption_credit()
 print("Credit: " + result.credit)
 ```
 
-{{< /tab >}} {{< tab tabNum="6" >}}
+{{< /tab >}} {{< tab "Ruby" >}}
 
 ```ruby
 # For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-ruby-samples

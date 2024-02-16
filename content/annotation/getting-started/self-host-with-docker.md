@@ -6,6 +6,7 @@ productName: "GroupDocs.Annotation Cloud"
 weight: 9
 description: ""
 keywords: ""
+toc: True
 ---
 
 [Docker](https://docs.docker.com/get-started/overview/) is an open platform that effectively solves three main tasks development, deployment, and running the applications. With Docker, you can isolate your applications from the infrastructure that simplifies software development and delivery. The main building blocs are images and containers. The image includes everything you need to run the application: code or binaries, runtime dependencies, file system. The container is an isolated process with additional features that you can interact with. The use of containers to deploy applications is called *containerization*.
@@ -36,7 +37,7 @@ To run GroupDocs.Annotation Cloud in Docker type one of the following commands:
 In case you don't have license keys you can omit LICENSE_PUBLIC_KEY and LICENSE_PRIVATE_KEY parameters. Without license GroupDocs.Annotation will work in evaluation mode.
 {{< /alert >}}
 
-{{< tabs tabTotal="2" tabID="1" tabName1="Windows (PowerShell)" tabName2="Linux (bash)" >}} {{< tab tabNum="1" >}}
+{{< tabs "example1">}} {{< tab "Windows (PowerShell)" >}}
 
 ```powershell
 
@@ -50,7 +51,7 @@ docker run `
 
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Linux (bash)" >}}
 
 ```bash
 
@@ -72,11 +73,11 @@ The Docker would download GroupDocs.Annotation Cloud image from Docker Hub and s
 I'm running Docker on Windows and will be using PowerShell to run the commands but the experience would be the same in case you're on Linux.
 {{< /alert >}}
 
-![Docker image downloading process](annotation/images/docker_download.png)
+![Docker image downloading process](/annotation/images/docker_download.png)
 
 After the container is started you'll see the following messages that indicate that GroupDocs.Annotation Cloud service up and running.
 
-![Docker container started](annotation/images/docker_start.png)
+![Docker container started](/annotation/images/docker_start.png)
 
 Now you can work with GroupDocs.Annotation Cloud which is hosted on your machine.
 
@@ -84,13 +85,13 @@ Now you can work with GroupDocs.Annotation Cloud which is hosted on your machine
 
 When the container and GroupDocs.Annotation Cloud started you can check service status by calling GET [http://localhost:8080/](http://localhost:8080/). The successful response status (200) will indicate that the service is up and running.
 
-{{< tabs tabTotal="2" tabID="2" tabName1="Windows (PowerShell)" tabName2="Linux (bash)" >}} {{< tab tabNum="1" >}}
+{{< tabs "example2">}} {{< tab "Windows (PowerShell)" >}}
 
 ```powershell
 Invoke-WebRequest -Uri http://localhost:8080/
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Linux (bash)" >}}
 
 ```bash
 curl -i http://localhost:8080/
@@ -100,13 +101,13 @@ curl -i http://localhost:8080/
 
 At the following screenshot, I'm calling [http://localhost:8080/](http://localhost:8080/) in a separate Powershell window and response indicates that service is alive:
 
-![Health check](annotation/images/docker_check.png)
+![Health check](/annotation/images/docker_check.png)
 
 ### Using UI
 
 After starting, you can use Swagger UI at [http://localhost:8080/swagger/](http://localhost:8080/swagger/) and explore the API. With Swagger UI you can call API methods in your browser.
 
-![Swagger UI](annotation/images/docker_ui.png)
+![Swagger UI](/annotation/images/docker_ui.png)
 
 ### Using SDK
 
@@ -118,7 +119,7 @@ If you don't find your language in the SKD list, feel free to request for it on 
 
 The authentication is required in case you're going to use SDK. To enable authentication set CLIENT_ID/CLIENT_SECRET parameters as it shown below.
 
-{{< tabs tabTotal="2" tabID="3" tabName1="Windows (PowerShell)" tabName2="Linux (bash)" >}} {{< tab tabNum="1" >}}
+{{< tabs "example3">}} {{< tab "Windows (PowerShell)" >}}
 
 ```powershell
 docker run `
@@ -132,7 +133,7 @@ docker run `
     groupdocs/annotation-cloud
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Linux (bash)" >}}
 
 ```bash
 docker run \
@@ -150,7 +151,7 @@ docker run \
 
 Then, when using SDK, setup the api base url, as shown in examples below:
 
-{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java & Android" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
+{{< tabs "example4">}} {{< tab "C#" >}}
 
 ```csharp
 
@@ -167,7 +168,7 @@ var response = apiInstance.GetSupportedFileFormats();
 
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Java & Android" >}}
 
 ```java
 
@@ -183,7 +184,7 @@ FormatsResult response = apiInstance.getSupportedFileFormats();
 
 ```
 
-{{< /tab >}} {{< tab tabNum="3" >}}
+{{< /tab >}} {{< tab "PHP" >}}
 
 ```php
 
@@ -205,7 +206,7 @@ $response = $infoApi->getSupportedFileFormats();
 
 ```
 
-{{< /tab >}} {{< tab tabNum="4" >}}
+{{< /tab >}} {{< tab "Node.js" >}}
 
 ```javascript
 
@@ -222,7 +223,7 @@ let response = await infoApi.getSupportedFileFormats();
 
 ```
 
-{{< /tab >}} {{< tab tabNum="5" >}}
+{{< /tab >}} {{< tab "Python" >}}
 
 ```python
 
@@ -241,7 +242,7 @@ result = infoApi.get_supported_file_formats()
 
 ```
 
-{{< /tab >}} {{< tab tabNum="6" >}}
+{{< /tab >}} {{< tab "Ruby" >}}
 
 ```ruby
 
@@ -283,7 +284,7 @@ You can find more information about evaluation at [Evaluate GroupDocs.Annotation
 
 By default, a local storage used inside container for file operations. It's possible to connect a Google Cloud storage by setting GOOGLE_APPLICATION_CREDENTIALS and GOOGLE_STORAGE_BUCKET environment variables.
 
-{{< tabs tabTotal="2" tabID="3" tabName1="Windows (PowerShell)" tabName2="Linux (bash)" >}} {{< tab tabNum="1" >}}
+{{< tabs "example5">}} {{< tab "Windows (PowerShell)" >}}
 
 ```powershell
 docker run `
@@ -295,7 +296,7 @@ docker run `
     groupdocs/annotation-cloud
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Linux (bash)" >}}
 
 ```bash
 docker run \
@@ -321,7 +322,7 @@ environment variables:
 |S3_STORAGE_SECRET_KEY|S3 API Secret Key                                    |
 |S3_STORAGE_REGION   |AWS S3 Region                                         |
 
-{{< tabs tabTotal="2" tabID="3" tabName1="Windows (PowerShell)" tabName2="Linux (bash)" >}} {{< tab tabNum="1" >}}
+{{< tabs "example6">}} {{< tab "Windows (PowerShell)" >}}
 
 ```powershell
 docker run `
@@ -335,7 +336,7 @@ docker run `
     groupdocs/annotation-cloud
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Linux (bash)" >}}
 
 ```bash
 docker run \

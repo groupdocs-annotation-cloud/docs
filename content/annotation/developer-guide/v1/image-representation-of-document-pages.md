@@ -6,29 +6,28 @@ productName: "GroupDocs.Annotation Cloud"
 weight: 3
 description: ""
 keywords: ""
+toc: True
 ---
 {{< alert style="info" >}}
 Note:  The features listed in this page are working only with GroupDocs.Annotation Cloud V1
 {{< /alert >}}
 
-## Introduction ##
-
 GroupDocs.Annotation Cloud API supports to render the document pages to images and retrieves images link. Following APIs are provided for the purpose.
 
-## Generate Images of Document Pages ##
+## Generate Images of Document Pages
 
 This API generates images of the document pages and returns links to generated images.
 
-### Resource ###
+### Resource
 
 The following GroupDocs.Annotation Cloud REST API resource has been used to generate [images of document pages](https://apireference.groupdocs.cloud/annotation/#!/ImagePages/PostPages).
 
-### cURL REST Example ###
+### cURL example
 
-{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example1">}}
+{{< tab "Request" >}}
 
-```html
+```bash
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages" \
 -X POST \
 -H "Content-Type: application/json" -H "Accept: application/json" \
@@ -37,9 +36,9 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages" \
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
-```html
+```json
 {
   "totalCount": 2,
   "entries": [
@@ -68,29 +67,27 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages" \
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDKs ##
+### SDK examples
 
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here]({{< ref "/annotation/getting-started/available-sdks.md" >}}).
 
-### Generate Images of Document Pages ###
-
-{{< tabs tabTotal="6" tabID="2" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Ruby" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example2">}}
+{{< tab "C#" >}}
 
 {{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Post_Generate_Image_Pages.cs >}}
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Java" >}}
 
 {{< gist groupdocscloud dd069ea3659b158b48e2239356aea189 Annotation_Java_Post_Generate_Image_Pages.java >}}
 
 {{< /tab >}}
-{{< tab tabNum="3" >}}
+{{< tab "PHP" >}}
 
 {{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Post_Generate_Image_Pages.php >}}
 
 {{< /tab >}}
-{{< tab tabNum="4" >}}
+{{< tab "Ruby" >}}
 
 {{< gist groupdocscloud 6a14ecd45b4278c014689b688ec34d21 Annotation_Ruby_Generate_Pages.rb >}}
 
@@ -98,20 +95,20 @@ The API is completely independent of your operating system, database system or d
 {{< /tabs >}}
 
 
-## Get Links to Images of Document Pages ##
+## Get Links to Images of Document Pages
 
 This API retrieves links to previously generated images of document pages.
 
-### Resource ###
+### Resource
 
 The following GroupDocs.Annotation Cloud REST API resource has been used to get [links to previously generated images of document pages](https://apireference.groupdocs.cloud/annotation/#!/ImagePages/GetPages).
 
-### cURL REST Example ###
+### cURL example
 
-{{< tabs tabTotal="2" tabID="3" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example3">}}
+{{< tab "Request" >}}
 
-```html
+```bash
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages" \
 -X GET \
 -H "Content-Type: application/json" \
@@ -119,9 +116,9 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages" \
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
-```html
+```json
 {
   "totalCount": 2,
   "entries": [
@@ -150,50 +147,47 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages" \
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDKs ##
+### SDK examples
 
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here]({{< ref "/annotation/getting-started/available-sdks.md" >}}).
 
-### Get Links to Images of Document Pages ###
-
-
-{{< tabs tabTotal="6" tabID="4" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Ruby" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example4">}}
+{{< tab "C#" >}}
 
 {{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Get_Image_Pages.cs >}}
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Java" >}}
 
 {{< gist groupdocscloud dd069ea3659b158b48e2239356aea189 Annotation_Java_Get_Image_Pages.java >}}
 
 {{< /tab >}}
-{{< tab tabNum="3" >}}
+{{< tab "PHP" >}}
 
 {{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Get_Image_Pages.php >}}
 
 {{< /tab >}}
-{{< tab tabNum="4" >}}
+{{< tab "Ruby" >}}
 
 {{< gist groupdocscloud 6a14ecd45b4278c014689b688ec34d21 Annotation_Ruby_Get_Image_Pages.rb >}}
 
 {{< /tab >}}
 {{< /tabs >}}
 
-## Get Link to Image of Specific Page ##
+## Get Link to Image of Specific Page
 
 This API retrieves the link to previously generated image by page number of the document pages
 
-### Resource ###
+### Resource
 
 The following GroupDocs.Annotation Cloud REST API resource has been used to get [link to image of specific page of the document](https://apireference.groupdocs.cloud/annotation/#!/ImagePages/GetPages).
 
-### cURL REST Example ###
+### cURL example
 
-{{< tabs tabTotal="2" tabID="5" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example5">}}
+{{< tab "Request" >}}
 
-```html
+```bash
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages/1" \
 -X GET \
 -H "Content-Type: application/json" \
@@ -201,9 +195,9 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages/1" 
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
-```html
+```json
 {
   "number": 1,
   "link": {
@@ -218,49 +212,46 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages/1" 
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDKs ##
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
+### SDK examples
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here]({{< ref "/annotation/getting-started/available-sdks.md" >}}).
 
-### Get Link to Specific Page of the Document ###
-
-
-{{< tabs tabTotal="6" tabID="6" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Ruby" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example6">}}
+{{< tab "C#" >}}
 
 {{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Get_Image_Page.cs >}}
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Java" >}}
 
 {{< gist groupdocscloud dd069ea3659b158b48e2239356aea189 Annotation_Java_Get_Image_Page.java >}}
 
 {{< /tab >}}
-{{< tab tabNum="3" >}}
+{{< tab "PHP" >}}
 
 {{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Get_Image_Page.php >}}
 
 {{< /tab >}}
-{{< tab tabNum="4" >}}
+{{< tab "Ruby" >}}
 
 {{< gist groupdocscloud 6a14ecd45b4278c014689b688ec34d21 Annotation_Ruby_Get_Image_Page.rb >}}
 
 {{< /tab >}}
 {{< /tabs >}}
 
-## Clear Document Image Pages Cache ##
+## Clear Document Image Pages Cache
 
 This API clears the previously generated images of document pages. It returns 204 code when it successfully removes the cache images.
 
-### Resource ###
+### Resource
 
 The following GroupDocs.Annotation Cloud REST API resource has been used to clear [images cache of document pages](https://apireference.groupdocs.cloud/annotation/#!/ImagePages/DeletePages).
 
-### cURL REST Example ###
+### cURL example
 
-{{< tabs tabTotal="2" tabID="7" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example7">}}
+{{< tab "Request" >}}
 
-```html
+```bash
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages?folder#Output" \
 -X DELETE \
 -H "Content-Type: application/json" \
@@ -268,40 +259,38 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/image/pages?fol
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
-```html
+```json
 204 No Content
 ```
 
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDKs ##
+### SDK examples
 
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here]({{< ref "/annotation/getting-started/available-sdks.md" >}}).
 
-### Clear Images Cache of Document Pages ###
+### Clear Images Cache of Document Pages
 
-
-
-{{< tabs tabTotal="6" tabID="8" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Ruby" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example8">}}
+{{< tab "C#" >}}
 
 {{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Delete_Image_Pages.cs >}}
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Java" >}}
 
 {{< gist groupdocscloud dd069ea3659b158b48e2239356aea189 Annotation_Java_Delete_Image_Pages.java >}}
 
 {{< /tab >}}
-{{< tab tabNum="3" >}}
+{{< tab "PHP" >}}
 
 {{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Delete_Image_Pages.php >}}
 
 {{< /tab >}}
-{{< tab tabNum="4" >}}
+{{< tab "Ruby" >}}
 
 {{< gist groupdocscloud 6a14ecd45b4278c014689b688ec34d21 Annotation_Ruby_Get_Delete_Annotation.rb >}}
 

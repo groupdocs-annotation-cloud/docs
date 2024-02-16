@@ -6,11 +6,12 @@ productName: "GroupDocs.Annotation Cloud"
 weight: 1
 description: ""
 keywords: ""
+toc: True
 ---
 
 Area annotation allows to mark up an area within the document page with a rectangle.
 
-### API Usage ###
+## API usage
 
 There are steps that usage of GroupDocs.Annotation Cloud consists of:
 
@@ -24,10 +25,10 @@ HTTP POST ~/annotation/add
 
 [Swagger UI](https://apireference.groupdocs.cloud/annotation/) lets you call this REST API directly from the browser.
 
-### cURL REST Example ###
+## cURL example
 
-{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example1">}}
+{{< tab "Request" >}}
 
 ```javascript
 // First get JSON Web Token
@@ -89,9 +90,9 @@ curl -v "https://api.groupdocs.cloud/v2.0/annotation/add" \
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
-```html
+```bash
 {
   "href": "https://api.groupdocs.cloud/v2.0/annotation/storage/file/Output/output.docx",
   "rel": "self",
@@ -103,13 +104,11 @@ curl -v "https://api.groupdocs.cloud/v2.0/annotation/add" \
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDKs ##
+## SDK examples
 
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here]({{< ref "/annotation/getting-started/available-sdks.md" >}}).
 
-### SDK Examples ###
-
-{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java  & Android" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
+{{< tabs "example2">}} {{< tab "C#" >}}
 
 ```csharp
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet-samples
@@ -162,7 +161,7 @@ var link = apiInstance.Annotate(new AnnotateRequest(options));
 Console.WriteLine("AddAreaAnnotation: Area Annotation added: " + link.Title);
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Java  & Android" >}}
 
 ```java
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-java-samples
@@ -217,7 +216,7 @@ AnnotationApiLink result = apiInstance.annotate(request);
 System.out.println("AddAreaAnnotation: Area Annotation added: " + result.getTitle());
 ```
 
-{{< /tab >}} {{< tab tabNum="3" >}}
+{{< /tab >}} {{< tab "PHP" >}}
 
 ```php
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-php-samples
@@ -267,7 +266,7 @@ $result = $apiInstance->annotate($request);
 echo "AddAreaAnnotation: Area Annotation added: " . $result->getHref();
 ```
 
-{{< /tab >}} {{< tab tabNum="4" >}}
+{{< /tab >}} {{< tab "Node.js" >}}
 
 ```javascript
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-node-samples
@@ -306,7 +305,7 @@ let result = await annotateApi.annotate(new annotation_cloud.AnnotateRequest(opt
 console.log("AddAreaAnnotation: Area Annotation added: " + result.href);
 ```
 
-{{< /tab >}} {{< tab tabNum="5" >}}
+{{< /tab >}} {{< tab "Python" >}}
 
 ```python
 # For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-python-samples
@@ -348,7 +347,7 @@ result = api.annotate(request)
 print("AddAreaAnnotation: Area Annotation added: " + result['href'])
 ```
 
-{{< /tab >}} {{< tab tabNum="6" >}}
+{{< /tab >}} {{< tab "Ruby" >}}
 
 ```ruby
 # For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-ruby-samples

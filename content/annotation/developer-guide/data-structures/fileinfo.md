@@ -6,12 +6,12 @@ productName: "GroupDocs.Annotation Cloud"
 weight: 5
 description: ""
 keywords: ""
----
-FileInfo data structure describes input file
+toc: True
+---FileInfo data structure describes input file
 
-## FileInfo example ##
+## FileInfo example
 
-```html
+```json
 {
     "FilePath": "string",
     "StorageName": "string",
@@ -20,7 +20,7 @@ FileInfo data structure describes input file
 }
 ```
 
-## FileInfo fields ###
+## FileInfo fields
 
 |Name|Description
 |---|---

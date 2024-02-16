@@ -5,5 +5,5 @@ title: "GroupDocs.Annotation Cloud"
 productName: "GroupDocs.Annotation Cloud"
 description: ""
 keywords: ""
+toc: True
 ---
-

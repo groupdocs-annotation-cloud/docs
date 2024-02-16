@@ -7,6 +7,7 @@ weight: 7
 description: ""
 keywords: ""
 ---
+
 GroupDocs.Annotation Cloud is a REST API and universal document annotator that supports almost all common business document and image file formats.
 
 |File Format|Description|Annotate

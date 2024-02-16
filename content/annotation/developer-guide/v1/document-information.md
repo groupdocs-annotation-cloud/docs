@@ -6,6 +6,7 @@ productName: "GroupDocs.Annotation Cloud"
 weight: 1
 description: ""
 keywords: ""
+toc: True
 ---
 {{< alert style="info" >}}
 Note:  The features listed in this page are working only with GroupDocs.Annotation Cloud V1
@@ -13,7 +14,7 @@ Note:  The features listed in this page are working only with GroupDocs.Annotat
 
 This API retrieves document information. It returns an object that contains the document description with meta data and coordinates of text on pages.
 
-### DocumentInfo object fields ###
+## DocumentInfo object fields
 
 |Field Name|Type|Description
 |---|---|---
@@ -25,7 +26,7 @@ This API retrieves document information. It returns an object that contains the
 |dateModified|DateTime|The file last modification date.
 |pages|List\<PageInfo\>|The file pages list.
 
-### PageInfo object fields ###
+## PageInfo object fields
 
 |Field Name|Type|Description
 |---|---|---
@@ -35,7 +36,7 @@ This API retrieves document information. It returns an object that contains the
 |visible|bool|If page is visible.
 |rows|List\<RowInfo\>|The page rows list.
 
-### RowInfo object fields ###
+## RowInfo object fields
 
 |Field Name|Type|Description
 |---|---|---
@@ -47,16 +48,16 @@ This API retrieves document information. It returns an object that contains the
 |text|string|The row text.
 |texCoordinates|List\<double\>|The text line coordinates.
 
-### Resource ###
+## Resource
 
 The following GroupDocs.Annotation Cloud REST API resource has been used to get [document information(Image representation)](https://apireference.groupdocs.cloud/annotation/#!/ImageInfo/GetInfo).
 
-### cURL REST Example ###
+## cURL example
 
-{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example1">}}
+{{< tab "Request" >}}
 
-```html
+```bash
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated_docx.docx/image/info" \
 -X GET \
 -H "Content-Type: application/json" \
@@ -64,9 +65,9 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated_docx.docx/image/inf
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
-```html
+```json
 {
    "name":"Annotated_docx.docx",
    "folder":null,
@@ -147,30 +148,28 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated_docx.docx/image/inf
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDKs ##
+## SDK examples
 
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here]({{< ref "/annotation/getting-started/available-sdks.md" >}}).
 
-### Get Document Information ###
+{{< tabs "example2">}}
 
-{{< tabs tabTotal="6" tabID="2" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Ruby" >}}
-
-{{< tab tabNum="1" >}}
+{{< tab "C#" >}}
 
 {{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Get_Document_Info.cs >}}
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Java" >}}
 
 {{< gist groupdocscloud dd069ea3659b158b48e2239356aea189 Annotation_Java_Get_Document_Info.java >}}
 
 {{< /tab >}}
-{{< tab tabNum="3" >}}
+{{< tab "PHP" >}}
 
 {{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Get_Document_Info.php >}}
 
 {{< /tab >}}
-{{< tab tabNum="4" >}}
+{{< tab "Ruby" >}}
 
 {{< gist groupdocscloud 6a14ecd45b4278c014689b688ec34d21 Annotation_Ruby_Get_Info.rb >}}
 

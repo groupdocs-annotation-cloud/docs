@@ -6,12 +6,12 @@ productName: "GroupDocs.Annotation Cloud"
 weight: 5
 description: ""
 keywords: ""
----
-PreviewOptions structure defines options for creating documents preview
+toc: True
+---PreviewOptions structure defines options for creating documents preview
 
-## FileInfo example ##
+## FileInfo example
 
-```html
+```json
 {
   "FileInfo": {
     "FilePath": "string",
@@ -27,11 +27,11 @@ PreviewOptions structure defines options for creating documents preview
 }
 ```
 
-## FileInfo fields ###
+## FileInfo fields
 
 |Name|Description
 |---|---
-|FileInfo|Input file path and password. See [FileInfo](annotation/fileinfo) structure
+|FileInfo|Input file path and password. See [FileInfo](/annotation/fileinfo) structure
 |AnnotationIds|Array of IDs of annotations to remove from the document.
 |Format|Preview format. Supported values are: PNG, JPEG or BMP. Default value is PNG.
 |PageNumbers|Page numbers to create preview for

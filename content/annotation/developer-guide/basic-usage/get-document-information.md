@@ -6,19 +6,19 @@ productName: "GroupDocs.Annotation Cloud"
 weight: 10
 description: ""
 keywords: ""
----
-This API retrieves document information. It returns an object that contains the document description with metadata and coordinates of text on pages.
+toc: True
+---This API retrieves document information. It returns an object that contains the document description with metadata and coordinates of text on pages.
 
-### Resource ###
+## Resource
 
 The following GroupDocs.Annotation Cloud REST API resource has been used to get [document information](https://apireference.groupdocs.cloud/annotation/#/Info/GetInfo).
 
-### cURL REST Example ###
+## cURL example
 
-{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example1">}}
+{{< tab "Request" >}}
 
-```html
+```bash
 curl -v "https://api.groupdocs.cloud/v2.0/annotation/info" \
 -X POST \
 -H "Content-Type: application/json" \
@@ -28,9 +28,9 @@ curl -v "https://api.groupdocs.cloud/v2.0/annotation/info" \
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
-```html
+```json
 {
   "name": "one-page.docx",
   "path": "annotationdocs/one-page.docx",
@@ -51,13 +51,11 @@ curl -v "https://api.groupdocs.cloud/v2.0/annotation/info" \
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDKs ##
+## SDK examples
 
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here]({{< ref "/annotation/getting-started/available-sdks.md" >}}).
 
-## Get Document Information In Code ##
-
-{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java  & Android" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
+{{< tabs "example2">}} {{< tab "C#" >}}
 
 ```csharp
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet-samples
@@ -70,7 +68,7 @@ var apiInstance = new InfoApi(configuration);
 var response = apiInstance.GetSupportedFileFormats();
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Java  & Android" >}}
 
 ```java
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-java-samples
@@ -83,7 +81,7 @@ InfoApi apiInstance = new InfoApi(configuration);
 FormatsResult response = apiInstance.getSupportedFileFormats();
 ```
 
-{{< /tab >}} {{< tab tabNum="3" >}}
+{{< /tab >}} {{< tab "PHP" >}}
 
 ```php
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-php-samples
@@ -102,7 +100,7 @@ $infoApi= new GroupDocs\Annotation\InfoApi($configuration);
 $response = $infoApi->getSupportedFileFormats();
 ```
 
-{{< /tab >}} {{< tab tabNum="4" >}}
+{{< /tab >}} {{< tab "Node.js" >}}
 
 ```javascript
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-node-samples
@@ -116,7 +114,7 @@ global.infoApi = annotation_cloud.InfoApi.fromKeys(appSid, appKey);
 let response = await infoApi.getSupportedFileFormats();
 ```
 
-{{< /tab >}} {{< tab tabNum="5" >}}
+{{< /tab >}} {{< tab "Python" >}}
 
 ```python
 # For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-python-samples
@@ -130,7 +128,7 @@ infoApi = groupdocs_annotation_cloud.InfoApi.from_keys(app_sid, app_key)
 result = infoApi.get_supported_file_formats()
 ```
 
-{{< /tab >}} {{< tab tabNum="6" >}}
+{{< /tab >}} {{< tab "Ruby" >}}
 
 ```ruby
 # For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-ruby-samples

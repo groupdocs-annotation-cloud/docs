@@ -6,12 +6,12 @@ productName: "GroupDocs.Annotation Cloud"
 weight: 5
 description: ""
 keywords: ""
----
-AnnotationApiLink describes output file link
+toc: True
+---AnnotationApiLink describes output file link
 
-## FileInfo example ##
+## FileInfo example
 
-```html
+```json
 {
   "Href": "string",
   "Rel": "string",
@@ -20,7 +20,7 @@ AnnotationApiLink describes output file link
 }
 ```
 
-## FileInfo fields ###
+## FileInfo fields
 
 |Name|Description
 |---|---

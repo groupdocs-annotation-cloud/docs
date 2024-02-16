@@ -6,36 +6,36 @@ productName: "GroupDocs.Annotation Cloud"
 weight: 6
 description: ""
 keywords: ""
+toc: True
 ---
-
-## Storage existence API ##
+## Storage existence API
 
 This API intended for checking existence of cloud storage with given name from [GroupDocs Cloud Storage](https://dashboard.groupdocs.cloud/storages).
 
-## API Explorer ##
+### API Explorer
 
 [GroupDocs.Annotation Cloud API Reference](https://apireference.groupdocs.cloud/annotation/#/) lets you to try out [Storage existence API](https://apireference.groupdocs.cloud/annotation/#/Storage/StorageExists) right away in your browser!\
 It allows you to effortlessly interact and try out every single operation our APIs exposes.
 
-### Request parameters ###
+### Request parameters
 
 |Parameter|Description
 |---|---
 |**storageName**|Storage name
 
-## cURL Example ##
+### cURL example
 
-{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example1">}}
+{{< tab "Request" >}}
 
-```html
+```bash
 curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/storage/MyStorage/exist" -H  "accept: application/json" -H  "authorization: Bearer  [Access Token]"
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
-```html
+```json
 {
   "exists": true
 }
@@ -44,54 +44,52 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/storage/MyStorage/exist
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDKs ##
+### SDK examples
 
 Our API is completely independent of your operating system, database system or development language. You can use any language and platform that supports HTTP to interact with our API. However, manually writing client code can be difficult, error-prone and time-consuming. Therefore, we have provided and support API [SDKs](https://github.com/groupdocs-annotation-cloud) in many development languages in order to make it easier to integrate with us. If you use [SDK](https://github.com/groupdocs-annotation-cloud), it hides the [Storage existence](https://apireference.groupdocs.cloud/annotation/#/Storage/StorageExists) calls and lets you use GroupDocs Cloud features in a native way for your preferred language.
 
-### SDK Examples ###
-
-{{< tabs tabTotal="6" tabID="2" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Python" tabName6="Ruby" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example2">}}
+{{< tab "C#" >}}
 
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Storage_Exist.cs >}}
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Java" >}}
 
 {{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Storage_Exist.java >}}
 
 {{< /tab >}}
-{{< tab tabNum="3" >}}
+{{< tab "PHP" >}}
 
 {{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Storage_Exist.php >}}
 
 {{< /tab >}}
-{{< tab tabNum="4" >}}
+{{< tab "Node.Js" >}}
 
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Storage_Exist.js >}}
 
 {{< /tab >}}
-{{< tab tabNum="5" >}}
+{{< tab "Python" >}}
 
 {{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Storage_Exist.py >}}
 
 {{< /tab >}}
-{{< tab tabNum="6" >}}
+{{< tab "Ruby" >}}
 
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Storage_Exist.rb >}}
 
 {{< /tab >}}
 {{< /tabs >}}
 
-## Storage object existence API ##
+## Storage object existence API
 
 This API intended for checking existence of file or folder in [GroupDocs Cloud Storage](https://dashboard.groupdocs.cloud/storages).
 
-## API Explorer ##
+### API Explorer
 
 [GroupDocs.Annotation Cloud API Reference](https://apireference.groupdocs.cloud/annotation/#/) lets you to try out [Storage existence API](https://apireference.groupdocs.cloud/annotation/#/Storage/StorageExists) right away in your browser! It allows you to effortlessly interact and try out every single operation our APIs exposes.
 
-### Request parameters ###
+### Request parameters
 
 |Parameter|Description
 |---|---
@@ -99,19 +97,19 @@ This API intended for checking existence of file or folder in [GroupDocs Cloud S
 |storageName|Name of the storage. If not set, then the API will use the default storage of the Application used to authenticate with
 |versionId|File version id
 
-## cURL Example ##
+### cURL example
 
-{{< tabs tabTotal="2" tabID="3" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example3">}}
+{{< tab "Request" >}}
 
-```html
+```bash
 curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/storage/exist/annotationdocs?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
-```html
+```json
 {
   "exists": true,
   "isFolder": true
@@ -121,72 +119,70 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/storage/exist/annotatio
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDKs ##
+### SDK examples
 
 Our API is completely independent of your operating system, database system or development language. You can use any language and platform that supports HTTP to interact with our API. However, manually writing client code can be difficult, error-prone and time-consuming. Therefore, we have provided and support API [SDKs](https://github.com/groupdocs-annotation-cloud) in many development languages in order to make it easier to integrate with us. If you use [SDK](https://github.com/groupdocs-annotation-cloud), it hides the [Storage Object existence](https://apireference.groupdocs.cloud/annotation/#/Storage/ObjectExists) calls and lets you use GroupDocs Cloud features in a native way for your preferred language.
 
-### SDK Examples ###
-
-{{< tabs tabTotal="6" tabID="4" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Python" tabName6="Ruby" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example4">}}
+{{< tab "C#" >}}
 
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Object_Exists.cs >}}
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Java" >}}
 
 {{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Object_Exists.java >}}
 
 {{< /tab >}}
-{{< tab tabNum="3" >}}
+{{< tab "PHP" >}}
 
 {{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Object_Exists.php >}}
 
 {{< /tab >}}
-{{< tab tabNum="4" >}}
+{{< tab "Node.Js" >}}
 
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Object_Exists.js >}}
 
 {{< /tab >}}
-{{< tab tabNum="5" >}}
+{{< tab "Python" >}}
 
 {{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Object_Exists.py >}}
 
 {{< /tab >}}
-{{< tab tabNum="6" >}}
+{{< tab "Ruby" >}}
 
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Object_Exists.rb >}}
 
 {{< /tab >}}
 {{< /tabs >}}
 
-## Storage Space Usage API ##
+## Storage Space Usage API
 
 This API intended for getting total and used space of the[ GroupDocs Cloud Storage](https://dashboard.groupdocs.cloud)
 
-## API Explorer ##
+### API Explorer
 
 [GroupDocs.Annotation Cloud API Reference](https://apireference.groupdocs.cloud/annotation/#/) lets you to try out [storage space usage API](https://apireference.groupdocs.cloud/annotation/#/Storage/GetDiscUsage) right away in your browser! It allows you to effortlessly interact and try out every single operation our APIs exposes.
 
-### Request parameters ###
+### Request parameters
 
 |Parameter|Description
 |---|---
 |storageName|Name of the storage. If not set, then the API will use the default storage of the Application used to authenticate with
 
-## cURL Example ##
+### cURL example
 
-{{< tabs tabTotal="2" tabID="5" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example5">}}
+{{< tab "Request" >}}
 
-```html
+```bash
 curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/storage/disc?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
-```html
+```json
 {
   "usedSize": 31032368,
   "totalSize": 3221225472
@@ -197,73 +193,71 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/storage/disc?storageNam
 {{< /tabs >}}
 
 
-## SDKs ##
+### SDK examples
 
 Our API is completely independent of your operating system, database system or development language. You can use any language and platform that supports HTTP to interact with our API. However, manually writing client code can be difficult, error-prone and time-consuming. Therefore, we have provided and support API [SDKs](https://github.com/groupdocs-annotation-cloud) in many development languages in order to make it easier to integrate with us. If you use [SDK](https://github.com/groupdocs-annotation-cloud), it hides the [storage space usage API](https://apireference.groupdocs.cloud/annotation/#/Storage/GetDiscUsage) calls and lets you use GroupDocs Cloud features in a native way for your preferred language.
 
-### SDK Examples ###
-
-{{< tabs tabTotal="6" tabID="6" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Python" tabName6="Ruby" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example6">}}
+{{< tab "C#" >}}
 
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Get_Disc_Usage.cs >}}
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Java" >}}
 
 {{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Get_Disc_Usage.java >}}
 
 {{< /tab >}}
-{{< tab tabNum="3" >}}
+{{< tab "PHP" >}}
 
 {{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Get_Disc_Usage.php >}}
 
 {{< /tab >}}
-{{< tab tabNum="4" >}}
+{{< tab "Node.Js" >}}
 
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Get_Disc_Usage.js >}}
 
 {{< /tab >}}
-{{< tab tabNum="5" >}}
+{{< tab "Python" >}}
 
 {{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Get_Disc_Usage.py >}}
 
 {{< /tab >}}
-{{< tab tabNum="6" >}}
+{{< tab "Ruby" >}}
 
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Get_Disc_Usage.rb >}}
 
 {{< /tab >}}
 {{< /tabs >}}
 
-# Storage File Versions API #
+## Storage File Versions API #
 
 This API intended for getting the list of file versions, stored in the [GroupDocs Cloud Storage](https://dashboard.groupdocs.cloud/storages)
 
-## API Explorer ##
+### API Explorer
 
 [GroupDocs.Annotation Cloud API Reference](https://apireference.groupdocs.cloud/annotation/#/) lets you to try out [Storage File Versions API](https://apireference.groupdocs.cloud/annotation/#/Storage/GetFileVersions) right away in your browser! It allows you to effortlessly interact and try out every single operation our APIs exposes.
 
-### Request parameters ###
+### Request parameters
 
 |Parameter|Description
 |---|---
 |**path**|Path of the file including file name and extension e.g. */Folder1/file.ext*. Required. Can be passed as query string parameter or as part of the URL
 |storageName|Name of the storage. If not set, then the API will use the default storage of the Application used to authenticate with
 
-## cURL Example ##
+### cURL example
 
-{{< tabs tabTotal="2" tabID="7" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example7">}}
+{{< tab "Request" >}}
 
-```html
+```bash
 curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/storage/version/one-page.docx?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
-```html
+```json
 {
   "value": [
     {
@@ -282,39 +276,37 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/storage/version/one-pag
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDKs ##
+### SDK examples
 
 Our API is completely independent of your operating system, database system or development language. You can use any language and platform that supports HTTP to interact with our API. However, manually writing client code can be difficult, error-prone and time-consuming. Therefore, we have provided and support API [SDKs](https://github.com/groupdocs-annotation-cloud) in many development languages in order to make it easier to integrate with us. If you use [SDK](https://github.com/groupdocs-annotation-cloud), it hides the [Storage File Versions API](https://apireference.groupdocs.cloud/annotation/#/Storage/GetFileVersions) calls and lets you use GroupDocs Cloud features in a native way for your preferred language.
 
-### SDK Examples ###
-
-{{< tabs tabTotal="6" tabID="8" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.Js" tabName5="Python" tabName6="Ruby" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example8">}}
+{{< tab "C#" >}}
 
 {{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Get_File_Versions.cs >}}
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Java" >}}
 
 {{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Get_File_Versions.java >}}
 
 {{< /tab >}}
-{{< tab tabNum="3" >}}
+{{< tab "PHP" >}}
 
 {{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Get_File_Versions.php >}}
 
 {{< /tab >}}
-{{< tab tabNum="4" >}}
+{{< tab "Node.Js" >}}
 
 {{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Get_File_Versions.js >}}
 
 {{< /tab >}}
-{{< tab tabNum="5" >}}
+{{< tab "Python" >}}
 
 {{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Get_File_Versions.py >}}
 
 {{< /tab >}}
-{{< tab tabNum="6" >}}
+{{< tab "Ruby" >}}
 
 {{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Get_File_Versions.rb >}}
 

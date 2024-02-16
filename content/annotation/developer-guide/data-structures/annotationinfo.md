@@ -6,12 +6,12 @@ productName: "GroupDocs.Annotation Cloud"
 weight: 5
 description: ""
 keywords: ""
----
-AnnotationInfo data structure describes annotation properties.
+toc: True
+---AnnotationInfo data structure describes annotation properties.
 
-## AnnotationInfo example ##
+## AnnotationInfo example
 
-```html
+```json
 {
     "Id": 0,
     "Type": "string",
@@ -63,7 +63,7 @@ AnnotationInfo data structure describes annotation properties.
   }
 ```
 
-## AnnotationInfo fields ###
+## AnnotationInfo fields
 
 |Name|Description
 |---|---
@@ -90,7 +90,7 @@ AnnotationInfo data structure describes annotation properties.
 |Text|Gets or sets the annotation text
 |Type|Gets or sets the annotation type
 
-## AnnotationReplyInfo ##
+## AnnotationReplyInfo
 
 AnnotationReplyInfo data structure describes annotation reply properties.
 
@@ -107,7 +107,7 @@ AnnotationReplyInfo data structure describes annotation reply properties.
 }
 ```
 
-## AnnotationReplyInfo fields ##
+## AnnotationReplyInfo fields
 
 |Name|Description
 |---|---

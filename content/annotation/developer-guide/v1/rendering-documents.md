@@ -6,29 +6,27 @@ productName: "GroupDocs.Annotation Cloud"
 weight: 4
 description: ""
 keywords: ""
----
-{{< alert style="info" >}}
+toc: True
+---{{< alert style="info" >}}
 Note:  The features listed in this page are working only with GroupDocs.Annotation Cloud V1
 {{< /alert >}}
 
-## Introduction ##
-
 GroupDocs.Annotation Cloud API supports to render documents to PDF and saves output to storage or stream.
 
-## Render Document to PDF with Storage URL Output ##
+## Render Document to PDF with Storage URL Output
 
 This API renders document to PDF and saves resulted document to storage. It also returns the link of rendered document.
 
-### Resource ###
+### Resource
 
 The following GroupDocs.Annotation Cloud REST API resource has been used to render [document to PDF and save to storage](https://apireference.groupdocs.cloud/annotation/#!/PdfFile/GetPdf).
 
-### cURL REST Example ###
+### cURL example
 
-{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example1">}}
+{{< tab "Request" >}}
 
-```html
+```bash
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/pdf" \
 -X GET \
 -H "Content-Type: application/json" \
@@ -36,9 +34,9 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/pdf" \
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
-```html
+```json
 {
   "fileName": "Annotated.pdf.pdf",
   "link": {
@@ -53,49 +51,49 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/pdf" \
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDKs ##
+### SDK examples
 
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here]({{< ref "/annotation/getting-started/available-sdks.md" >}}).
 
-### Render Document to PDF with Storage URL Ouput ###
+### Render Document to PDF with Storage URL Ouput
 
-{{< tabs tabTotal="6" tabID="2" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Ruby" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example2">}}
+{{< tab "C#" >}}
 
 {{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Get_Render_PDF_Storage.cs >}}
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Java" >}}
 
 {{< gist groupdocscloud dd069ea3659b158b48e2239356aea189 Annotation_Java_Get_Render_PDF_Storage.java >}}
 
 {{< /tab >}}
-{{< tab tabNum="3" >}}
+{{< tab "PHP" >}}
 
 {{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Get_Render_PDF_Storage.php >}}
 
 {{< /tab >}}
-{{< tab tabNum="4" >}}
+{{< tab "Ruby" >}}
 
 {{< gist groupdocscloud 6a14ecd45b4278c014689b688ec34d21 Annotation_Ruby_Get_Render_Storage.rb >}}
 
 {{< /tab >}}
 {{< /tabs >}}
 
-## Render Document to PDF with Stream Output ##
+## Render Document to PDF with Stream Output
 
 This API renders document to PDF and save resulted document to storage.
 
-### Resource ###
+### Resource
 
 The following GroupDocs.Annotation Cloud REST API resource has been used to render [document to PDF with stream output](https://apireference.groupdocs.cloud/annotation/#!/PdfFile/GetPdfStream).
 
-### cURL REST Example ###
+### cURL example
 
-{{< tabs tabTotal="2" tabID="3" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example3">}}
+{{< tab "Request" >}}
 
-```html
+```bash
 curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/pdf/stream" \
 -X GET \
 -H "Content-Type: application/json" \
@@ -103,38 +101,36 @@ curl -v "https://api.groupdocs.cloud/v1/annotation/Annotated.pdf/pdf/stream" \
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
-```html
+```json
 Binary Data
 ```
 
 {{< /tab >}}
 {{< /tabs >}}
 
-### SDKs ###
+### SDK examples
 
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here]({{< ref "/annotation/getting-started/available-sdks.md" >}}).
 
-### Render Document to PDF with Stream Output ###
-
-{{< tabs tabTotal="6" tabID="4" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Ruby" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example4">}}
+{{< tab "C#" >}}
 
 {{< gist groupdocscloud 024c8d6fda257f009f47dd55141c959f Annotation_CSharp_Get_Render_PDF_Stream.cs >}}
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Java" >}}
 
 {{< gist groupdocscloud dd069ea3659b158b48e2239356aea189 Annotation_Java_Get_Render_PDF_Stream.java >}}
 
 {{< /tab >}}
-{{< tab tabNum="3" >}}
+{{< tab "PHP" >}}
 
 {{< gist groupdocscloud 91cf9bb641d8b967c65ee1f2eb626f2e Annotation_PHP_Get_Render_PDF_Stream.php >}}
 
 {{< /tab >}}
-{{< tab tabNum="4" >}}
+{{< tab "Ruby" >}}
 
 {{< gist groupdocscloud 6a14ecd45b4278c014689b688ec34d21 Annotation_Ruby_Get_Render_Stream.rb >}}
 

@@ -6,4 +6,5 @@ productName: "GroupDocs.Annotation Cloud"
 weight: 20
 description: ""
 keywords: ""
+toc: True
 ---

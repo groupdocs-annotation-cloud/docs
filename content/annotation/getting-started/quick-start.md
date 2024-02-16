@@ -6,26 +6,28 @@ productName: "GroupDocs.Annotation Cloud"
 weight: 2
 description: ""
 keywords: ""
+toc: True
 ---
-## Create an account ##
+
+## Create an account
 
 Creating an account is very simple. Go to [Dashboard](https://dashboard.groupdocs.cloud) to create a free account.\
 We're using Single Sign On across our websites, therefore, if you already have an account with our services, you can use it to also acccess the [Dashboard](https://dashboard.groupdocs.cloud).
 
-## Create an API client app ##
+## Create an API client app
 
 Before you can make any requests to GroupDocs Cloud API you need to get a **Client Id** and a **Client Secret**.
 This will will be used to invoke GroupDocs Cloud API. You can get it by creating a new [Application](https://dashboard.groupdocs.cloud/applications).
 
-## Install the SDK of your choice ##
+## Install the SDK of your choice
 
 GroupDocs Cloud SDK is written in different languages, all you need to get started is adding our [SDK]({{< ref "annotation/getting-started/available-sdks.md" >}}) to your existing project.
 
-## Make an API request from the SDK of your choice ##
+## Make an API request from the SDK of your choice
 
 Use the **Client Id** and the **Client Secret** from the API app client you have created previously and replace in the corresponding code. Below is an example demonstrating using Formats API to get all supported file formats in GroupDocs.Annotation Cloud using SDKs for supported languages.
 
-{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java & Android" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
+{{< tabs "example1">}} {{< tab "C#" >}}
 
 ```csharp
 
@@ -40,7 +42,7 @@ var response = apiInstance.GetSupportedFileFormats();
 
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Java & Android" >}}
 
 ```java
 
@@ -55,7 +57,7 @@ FormatsResult response = apiInstance.getSupportedFileFormats();
 
 ```
 
-{{< /tab >}} {{< tab tabNum="3" >}}
+{{< /tab >}} {{< tab "PHP" >}}
 
 ```php
 
@@ -76,7 +78,7 @@ $response = $infoApi->getSupportedFileFormats();
 
 ```
 
-{{< /tab >}} {{< tab tabNum="4" >}}
+{{< /tab >}} {{< tab "Node.js" >}}
 
 ```javascript
 
@@ -92,7 +94,7 @@ let response = await infoApi.getSupportedFileFormats();
 
 ```
 
-{{< /tab >}} {{< tab tabNum="5" >}}
+{{< /tab >}} {{< tab "Python" >}}
 
 ```python
 
@@ -108,7 +110,7 @@ result = infoApi.get_supported_file_formats()
 
 ```
 
-{{< /tab >}} {{< tab tabNum="6" >}}
+{{< /tab >}} {{< tab "Ruby" >}}
 
 ```ruby
 

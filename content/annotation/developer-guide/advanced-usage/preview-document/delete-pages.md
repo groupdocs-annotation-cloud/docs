@@ -6,11 +6,11 @@ productName: "GroupDocs.Annotation Cloud"
 weight: 2
 description: ""
 keywords: ""
+toc: True
 ---
-
 Delete Pages method allows to delete pages in the cloud storage, created by get pages method.  
 
-### API Usage ###
+## API usage
 
 There are steps that usage of GroupDocs.Annotation Cloud consists of:
 
@@ -26,10 +26,10 @@ HTTP POST ~/annotation/preview/remove
 
 [Swagger UI](https://apireference.groupdocs.cloud/annotation/) lets you call this REST API directly from the browser.
 
-### cURL REST Example ###
+## cURL example
 
-{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}}
-{{< tab tabNum="1" >}}
+{{< tabs "example1">}}
+{{< tab "Request" >}}
 
 ```javascript
 // First get JSON Web Token
@@ -50,7 +50,7 @@ curl -v "https://api.groupdocs.cloud/v2.0/annotation/preview/remove" \
 ```
 
 {{< /tab >}}
-{{< tab tabNum="2" >}}
+{{< tab "Response" >}}
 
 ```javascript
 200 OK
@@ -59,13 +59,13 @@ curl -v "https://api.groupdocs.cloud/v2.0/annotation/preview/remove" \
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDKs ##
+## SDK examples
 
-The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](annotation/available-sdks).
+The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here]({{< ref "/annotation/getting-started/available-sdks.md" >}}).
 
-### SDK Examples ###
 
-{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java  & Android" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
+
+{{< tabs "example2">}} {{< tab "C#" >}}
 
 ```csharp
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-dotnet-samples
@@ -83,7 +83,7 @@ apiInstance.DeletePages(request);
 Console.WriteLine("DeletePages: pages deleted.");
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Java  & Android" >}}
 
 ```java
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-java-samples
@@ -105,7 +105,7 @@ apiInstance.deletePages(request);
 System.out.println("DeletePages: pages deleted.");
 ```
 
-{{< /tab >}} {{< tab tabNum="3" >}}
+{{< /tab >}} {{< tab "PHP" >}}
 
 ```php
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-php-samples
@@ -130,7 +130,7 @@ $apiInstance->deletePages($request);
 echo "DeletePages: pages deleted.";
 ```
 
-{{< /tab >}} {{< tab tabNum="4" >}}
+{{< /tab >}} {{< tab "Node.js" >}}
 
 ```javascript
 // For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-node-samples
@@ -149,7 +149,7 @@ await previewApi.deletePages(request)
 console.log("DeletePages: pages deleted.");
 ```
 
-{{< /tab >}} {{< tab tabNum="5" >}}
+{{< /tab >}} {{< tab "Python" >}}
 
 ```python
 # For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-python-samples
@@ -169,7 +169,7 @@ api.delete_pages(request)
 print("DeletePages: pages deleted")
 ```
 
-{{< /tab >}} {{< tab tabNum="6" >}}
+{{< /tab >}} {{< tab "Ruby" >}}
 
 ```ruby
 # For complete examples and data files, please go to https://github.com/groupdocs-annotation-cloud/groupdocs-annotation-cloud-ruby-samples
