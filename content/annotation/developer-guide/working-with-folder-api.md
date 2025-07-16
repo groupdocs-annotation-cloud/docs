@@ -110,32 +110,165 @@ Our API is completely independent of your operating system, database system or d
 {{< tabs "example2">}}
 {{< tab "C#" >}}
 
-{{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Get_Files_List.cs >}}
+```csharp
+using System;
+using GroupDocs.Annotation.Cloud.Sdk.Api;
+using GroupDocs.Annotation.Cloud.Sdk.Client;
+using GroupDocs.Annotation.Cloud.Sdk.Model.Requests;
+
+namespace GroupDocs.Annotation.Cloud.Examples.CSharp
+{
+	// Get Files List
+	class Get_Files_List
+	{
+		public static void Run()
+		{
+			var configuration = new Configuration(Common.MyAppSid, Common.MyAppKey);
+			var apiInstance = new FolderApi(configuration);
+
+			try
+			{
+				var request = new GetFilesListRequest("Annotationdocs", Common.MyStorage);
+
+				var response = apiInstance.GetFilesList(request);
+				Console.WriteLine("Expected response type is FilesList: " + response.Value.Count.ToString());
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Exception while calling FolderApi: " + e.Message);
+			}
+		}
+	}
+}
+```
 
 {{< /tab >}}
 {{< tab "Java" >}}
 
-{{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Get_Files_List.java >}}
+```java
+package examples.Working_With_Folder;
+
+import com.groupdocs.cloud.annotation.api.*;
+import com.groupdocs.cloud.annotation.client.ApiException;
+import com.groupdocs.cloud.annotation.model.FilesList;
+import com.groupdocs.cloud.annotation.model.*;
+import com.groupdocs.cloud.annotation.model.requests.*;
+import examples.Utils;
+
+public class Annotation_Java_Get_Files_List {
+
+	public static void main(String[] args) {
+
+		FolderApi apiInstance = new FolderApi(Utils.AppSID, Utils.AppKey);
+		try {
+			GetFilesListRequest request = new GetFilesListRequest("annotations", Utils.MYStorage);
+			FilesList response = apiInstance.getFilesList(request);
+			System.out.println("Expected response type is FilesList.");
+			for (StorageFile storageFile : response.getValue()) {
+				System.out.println("Files: " + storageFile.getPath());
+			}
+		} catch (ApiException e) {
+			System.err.println("Exception while calling FolderApi:");
+			e.printStackTrace();
+		}
+	}
+}
+```
 
 {{< /tab >}}
 {{< tab "PHP" >}}
 
-{{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Get_Files_List.php >}}
+```php
+<?php
+
+include(dirname(__DIR__) . '\CommonUtils.php');
+
+	try {
+		$apiInstance = CommonUtils::GetFolderApiInstance();
+
+		$request = new GroupDocs\Annotation\Model\Requests\GetFilesListRequest("annotationdocs", CommonUtils::$MyStorage);
+		$response = $apiInstance->getFilesList($request);
+		
+		echo "Expected response type is FilesList.", "<br />";
+
+		foreach($response->getValue() as $storageFile) {
+          echo "Files: ", $storageFile->getPath(), "<br />";
+		}
+	} catch (Exception $e) {
+		echo "Something went wrong: ", $e->getMessage(), "\n";
+	}
+?>
+```
 
 {{< /tab >}}
-{{< tab "Node.Js" >}}
+{{< tab "Node.js" >}}
 
-{{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Get_Files_List.js >}}
+```js
+"use strict";
+class Annotation_Node_Get_Files_List {
+	static Run() {
+		// retrieve supported file-formats
+		var request = new groupdocs_annotation_cloud_1.GetFilesListRequest("Annotationdocs/sample.docx", myStorage);
+		folderApi.getFilesList(request)
+			.then(function (response) {
+				console.log("Expected response type is FilesList: " + response.value.length);
+			})
+			.catch(function (error) {
+				console.log("Error: " + error.message);
+			});
+	}
+}
+module.exports = Annotation_Node_Get_Files_List;
+
+```
 
 {{< /tab >}}
 {{< tab "Python" >}}
 
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Get_Files_List.py >}}
+```python
+# Import modules
+import groupdocs_annotation_cloud
+
+from Common_Utilities.Utils import Common_Utilities
+
+
+class Annotation_Python_Get_Files_List:
+    
+    @classmethod
+    def Run(self):
+        # Create instance of the API
+        api = Common_Utilities.Get_FolderApi_Instance()
+        
+        try:
+            request = groupdocs_annotation_cloud.GetFilesListRequest("annotationdocs\\sample.docx", Common_Utilities.myStorage)
+            response = api.get_files_list(request)
+            
+            print("Expected response type is FilesList: " + str(response))
+        except groupdocs_annotation_cloud.ApiException as e:
+            print("Exception while calling API: {0}".format(e.message))
+```
 
 {{< /tab >}}
 {{< tab "Ruby" >}}
 
-{{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Get_Files_List.rb >}}
+```ruby
+# Load the gem
+require 'groupdocs_annotation_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Folder
+  def self.Annotation_Ruby_Get_Files_List()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FolderApi_Instance()
+    
+    $request = GroupDocsAnnotationCloud::GetFilesListRequest.new("annotationdocs/sample.docx", $myStorage)
+    $response = $api.get_files_list($request)
+
+    puts("Expected response type is FilesList: " + ($response).to_s)
+  end
+end
+```
 
 {{< /tab >}}
 {{< /tabs >}}
@@ -184,32 +317,156 @@ Our API is completely independent of your operating system, database system or d
 {{< tabs "example4">}}
 {{< tab "C#" >}}
 
-{{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Create_Folder.cs >}}
+```csharp
+using System;
+using GroupDocs.Annotation.Cloud.Sdk.Api;
+using GroupDocs.Annotation.Cloud.Sdk.Client;
+using GroupDocs.Annotation.Cloud.Sdk.Model.Requests;
+
+namespace GroupDocs.Annotation.Cloud.Examples.CSharp
+{
+	// Create Folder
+	class Create_Folder
+	{
+		public static void Run()
+		{
+			var configuration = new Configuration(Common.MyAppSid, Common.MyAppKey);
+			var apiInstance = new FolderApi(configuration);
+
+			try
+			{
+				var request = new CreateFolderRequest("", Common.MyStorage);
+
+				apiInstance.CreateFolder(request);
+				Console.WriteLine("Expected response type is Void: 'Annotationdocs' folder created.");
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Exception while calling FolderApi: " + e.Message);
+			}
+		}
+	}
+}
+```
 
 {{< /tab >}}
 {{< tab "Java" >}}
 
-{{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Create_Folder.java >}}
+```java
+package examples.Working_With_Folder;
+
+import com.groupdocs.cloud.annotation.api.*;
+import com.groupdocs.cloud.annotation.client.ApiException;
+import com.groupdocs.cloud.annotation.model.requests.*;
+import examples.Utils;
+
+public class Annotation_Java_Create_Folder {
+
+	public static void main(String[] args) {
+
+		FolderApi apiInstance = new FolderApi(Utils.AppSID, Utils.AppKey);
+		try {
+			CreateFolderRequest request = new CreateFolderRequest("annotations", Utils.MYStorage);
+			apiInstance.createFolder(request);
+			System.out.println("Expected response type is Void: 'annotations' folder created.");
+		} catch (ApiException e) {
+			System.err.println("Exception while calling FolderApi:");
+			e.printStackTrace();
+		}
+	}
+}
+```
 
 {{< /tab >}}
 {{< tab "PHP" >}}
 
-{{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Create_Folder.php >}}
+```php
+<?php
+
+include(dirname(__DIR__) . '\CommonUtils.php');
+
+	try {
+		$apiInstance = CommonUtils::GetFolderApiInstance();
+
+		$request = new GroupDocs\Annotation\Model\Requests\CreateFolderRequest("annotationdocs", CommonUtils::$MyStorage);
+		$apiInstance->createFolder($request);
+		
+		echo "Expected response type is Void: 'annotationdocs' folder created.", "<br />";
+	} catch (Exception $e) {
+		echo "Something went wrong: ", $e->getMessage(), "\n";
+	}
+?>
+```
 
 {{< /tab >}}
-{{< tab "Node.Js" >}}
+{{< tab "Node.js" >}}
 
-{{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Create_Folder.js >}}
+```js
+"use strict";
+class Annotation_Node_Create_Folder {
+	static Run() {
+		// retrieve supported file-formats
+		var request = new groupdocs_annotation_cloud_1.CreateFolderRequest("annotations", myStorage);
+		folderApi.createFolder(request)
+			.then(function () {
+				console.log("Expected response type is Void: 'Annotationdocs' folder created.");
+			})
+			.catch(function (error) {
+				console.log("Error: " + error.message);
+			});
+	}
+}
+module.exports = Annotation_Node_Create_Folder;
+
+```
 
 {{< /tab >}}
 {{< tab "Python" >}}
 
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Create_Folder.py >}}
+```python
+# Import modules
+import groupdocs_annotation_cloud
+
+from Common_Utilities.Utils import Common_Utilities
+
+
+class Annotation_Python_Create_Folder:
+    
+    @classmethod
+    def Run(self):
+        # Create instance of the API
+        api = Common_Utilities.Get_FolderApi_Instance()
+        
+        try:
+            request = groupdocs_annotation_cloud.CreateFolderRequest("Assembler", Common_Utilities.myStorage)
+            api.create_folder(request)
+            
+            print("Expected response type is Void: 'Assembler' folder created.")
+        except groupdocs_annotation_cloud.ApiException as e:
+            print("Exception while calling API: {0}".format(e.message))
+```
 
 {{< /tab >}}
 {{< tab "Ruby" >}}
 
-{{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Create_Folder.rb >}}
+```ruby
+# Load the gem
+require 'groupdocs_annotation_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Folder
+  def self.Annotation_Ruby_Create_Folder()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FolderApi_Instance()
+    
+    $request = GroupDocsAnnotationCloud::CreateFolderRequest.new("annotationdocs", $myStorage)
+    $response = $api.create_folder($request)
+
+    puts("Expected response type is Void: 'annotationdocs' folder created.")
+  end
+end
+```
 
 {{< /tab >}}
 {{< /tabs >}}
@@ -258,32 +515,157 @@ Our API is completely independent of your operating system, database system or d
 {{< tabs "example6">}}
 {{< tab "C#" >}}
 
-{{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Delete_Folder.cs >}}
+```csharp
+using System;
+using GroupDocs.Annotation.Cloud.Sdk.Api;
+using GroupDocs.Annotation.Cloud.Sdk.Client;
+using GroupDocs.Annotation.Cloud.Sdk.Model.Requests;
+
+namespace GroupDocs.Annotation.Cloud.Examples.CSharp
+{
+	// Delete Folder
+	class Delete_Folder
+	{
+		public static void Run()
+		{
+			var configuration = new Configuration(Common.MyAppSid, Common.MyAppKey);
+			var apiInstance = new FolderApi(configuration);
+
+			try
+			{
+				var request = new DeleteFolderRequest("Annotationdocs/Annotationdocs1", Common.MyStorage, true);
+
+				apiInstance.DeleteFolder(request);
+				Console.WriteLine("Expected response type is Void: 'Annotationdocs/Annotationdocs1' folder deleted recusrsively.");
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Exception while calling FolderApi: " + e.Message);
+			}
+		}
+	}
+}
+```
 
 {{< /tab >}}
 {{< tab "Java" >}}
 
-{{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Delete_Folder.java >}}
+```java
+package examples.Working_With_Folder;
+
+import com.groupdocs.cloud.annotation.api.*;
+import com.groupdocs.cloud.annotation.client.ApiException;
+import com.groupdocs.cloud.annotation.model.requests.*;
+import examples.Utils;
+
+public class Annotation_Java_Delete_Folder {
+
+	public static void main(String[] args) {
+
+		FolderApi apiInstance = new FolderApi(Utils.AppSID, Utils.AppKey);
+		try {
+			DeleteFolderRequest request = new DeleteFolderRequest("annotations\\annotations1", Utils.MYStorage, true);
+			apiInstance.deleteFolder(request);
+			System.out
+					.println("Expected response type is Void: 'annotations/annotations1' folder deleted recusrsively.");
+		} catch (ApiException e) {
+			System.err.println("Exception while calling FolderApi:");
+			e.printStackTrace();
+		}
+	}
+}
+```
 
 {{< /tab >}}
 {{< tab "PHP" >}}
 
-{{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Delete_Folder.php >}}
+```php
+<?php
+
+include(dirname(__DIR__) . '\CommonUtils.php');
+
+	try {
+		$apiInstance = CommonUtils::GetFolderApiInstance();
+
+		$request = new GroupDocs\Annotation\Model\Requests\DeleteFolderRequest("annotationdocs1\\annotationdocs1", CommonUtils::$MyStorage, true);
+		$apiInstance->deleteFolder($request);
+		
+		echo "Expected response type is Void: 'annotationdocs1/annotationdocs1' folder deleted recursively.", "<br />";
+	} catch (Exception $e) {
+		echo "Something went wrong: ", $e->getMessage(), "\n";
+	}
+?>
+```
 
 {{< /tab >}}
-{{< tab "Node.Js" >}}
+{{< tab "Node.js" >}}
 
-{{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Delete_Folder.js >}}
+```js
+"use strict";
+class Annotation_Node_Delete_Folder {
+	static Run() {
+		// retrieve supported file-formats
+		var request = new groupdocs_annotation_cloud_1.DeleteFolderRequest("Annotationdocs/annotations1", myStorage, true);
+		folderApi.deleteFolder(request)
+			.then(function () {
+				console.log("Expected response type is Void: 'Annotationdocs/annotations1' folder deleted recursively.");
+			})
+			.catch(function (error) {
+				console.log("Error: " + error.message);
+			});
+	}
+}
+module.exports = Annotation_Node_Delete_Folder;
+
+```
 
 {{< /tab >}}
 {{< tab "Python" >}}
 
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Delete_Folder.py >}}
+```python
+# Import modules
+import groupdocs_annotation_cloud
+
+from Common_Utilities.Utils import Common_Utilities
+
+
+class Annotation_Python_Delete_Folder:
+    
+    @classmethod
+    def Run(self):
+        # Create instance of the API
+        api = Common_Utilities.Get_FolderApi_Instance()
+        
+        try:
+            request = groupdocs_annotation_cloud.DeleteFolderRequest("annotationdocs\\annotationdocs1", Common_Utilities.myStorage, True)
+            api.delete_folder(request)
+            
+            print("Expected response type is Void: 'annotationdocs/annotationdocs1' folder deleted recursively.")
+        except groupdocs_annotation_cloud.ApiException as e:
+            print("Exception while calling API: {0}".format(e.message))
+```
 
 {{< /tab >}}
 {{< tab "Ruby" >}}
 
-{{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Delete_Folder.rb >}}
+```ruby
+# Load the gem
+require 'groupdocs_annotation_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Folder
+  def self.Annotation_Ruby_Delete_Folder()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FolderApi_Instance()
+    
+    $request = GroupDocsAnnotationCloud::DeleteFolderRequest.new("annotationdocs1", $myStorage, true)
+    $response = $api.delete_folder($request)
+
+    puts("Expected response type is Void: 'annotationdocs/annotationdocs1' folder deleted recursively.")
+  end
+end
+```
 
 {{< /tab >}}
 {{< /tabs >}}
@@ -334,32 +716,157 @@ Our API is completely independent of your operating system, database system or d
 {{< tabs "example8">}}
 {{< tab "C#" >}}
 
-{{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Copy_Folder.cs >}}
+```csharp
+using System;
+using GroupDocs.Annotation.Cloud.Sdk.Api;
+using GroupDocs.Annotation.Cloud.Sdk.Client;
+using GroupDocs.Annotation.Cloud.Sdk.Model.Requests;
+
+namespace GroupDocs.Annotation.Cloud.Examples.CSharp
+{
+	// Copy Folder
+	class Copy_Folder
+	{
+		public static void Run()
+		{
+			var configuration = new Configuration(Common.MyAppSid, Common.MyAppKey);
+			var apiInstance = new FolderApi(configuration);
+
+			try
+			{
+				var request = new CopyFolderRequest("Annotationdocs", "Annotationdocs1", Common.MyStorage, Common.MyStorage);
+
+				apiInstance.CopyFolder(request);
+				Console.WriteLine("Expected response type is Void: 'Annotationdocs' folder copied as 'Annotationdocs1'.");
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Exception while calling FolderApi: " + e.Message);
+			}
+		}
+	}
+}
+```
 
 {{< /tab >}}
 {{< tab "Java" >}}
 
-{{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Copy_Folder.java >}}
+```java
+package examples.Working_With_Folder;
+
+import com.groupdocs.cloud.annotation.api.*;
+import com.groupdocs.cloud.annotation.client.ApiException;
+import com.groupdocs.cloud.annotation.model.requests.*;
+import examples.Utils;
+
+public class Annotation_Java_Copy_Folder {
+
+	public static void main(String[] args) {
+
+		FolderApi apiInstance = new FolderApi(Utils.AppSID, Utils.AppKey);
+		try {
+			CopyFolderRequest request = new CopyFolderRequest("annotations", "annotations1", Utils.MYStorage,
+					Utils.MYStorage);
+			apiInstance.copyFolder(request);
+			System.out.println("Expected response type is Void: 'annotations' folder copied as 'annotations1'.");
+		} catch (ApiException e) {
+			System.err.println("Exception while calling FolderApi:");
+			e.printStackTrace();
+		}
+	}
+}
+```
 
 {{< /tab >}}
 {{< tab "PHP" >}}
 
-{{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Copy_Folder.php >}}
+```php
+<?php
+
+include(dirname(__DIR__) . '\CommonUtils.php');
+
+	try {
+		$apiInstance = CommonUtils::GetFolderApiInstance();
+
+		$request = new GroupDocs\Annotation\Model\Requests\CopyFolderRequest("annotationdocs", "annotationdocs1", CommonUtils::$MyStorage, CommonUtils::$MyStorage);
+		$apiInstance->copyFolder($request);
+		
+		echo "Expected response type is Void: 'annotationdocs' folder copied as 'annotationdocs1'.", "<br />";
+	} catch (Exception $e) {
+		echo "Something went wrong: ", $e->getMessage(), "\n";
+	}
+?>
+```
 
 {{< /tab >}}
-{{< tab "Node.Js" >}}
+{{< tab "Node.js" >}}
 
-{{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Copy_Folder.js >}}
+```js
+"use strict";
+class Annotation_Node_Copy_Folder {
+	static Run() {
+		// retrieve supported file-formats
+		var request = new groupdocs_annotation_cloud_1.CopyFolderRequest("annotations", "annotations1", myStorage, myStorage);
+		folderApi.copyFolder(request)
+			.then(function () {
+				console.log("Expected response type is Void: 'Annotationdocs' folder copied as 'Annotationdocs1'.");
+			})
+			.catch(function (error) {
+				console.log("Error: " + error.message);
+			});
+	}
+}
+module.exports = Annotation_Node_Copy_Folder;
+
+```
 
 {{< /tab >}}
 {{< tab "Python" >}}
 
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Copy_Folder.py >}}
+```python
+# Import modules
+import groupdocs_annotation_cloud
+
+from Common_Utilities.Utils import Common_Utilities
+
+
+class Annotation_Python_Copy_Folder:
+    
+    @classmethod
+    def Run(self):
+        # Create instance of the API
+        api = Common_Utilities.Get_FolderApi_Instance()
+        
+        try:
+            request = groupdocs_annotation_cloud.CopyFolderRequest("annotationdocs", "annotationdocs1", Common_Utilities.myStorage, Common_Utilities.myStorage)
+            api.copy_folder(request)
+            
+            print("Expected response type is Void: 'annotationdocs' folder copied as 'annotationdocs1'.")
+        except groupdocs_annotation_cloud.ApiException as e:
+            print("Exception while calling API: {0}".format(e.message))
+```
 
 {{< /tab >}}
 {{< tab "Ruby" >}}
 
-{{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Copy_Folder.rb >}}
+```ruby
+# Load the gem
+require 'groupdocs_annotation_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Folder
+  def self.Annotation_Ruby_Copy_Folder()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FolderApi_Instance()
+    
+    $request = GroupDocsAnnotationCloud::CopyFolderRequest.new("annotationdocs", "annotationdocs1", $myStorage, $myStorage)
+    $response = $api.copy_folder($request)
+
+    puts("Expected response type is Void: 'annotationdocs' folder copied as 'annotationdocs1'.")
+  end
+end
+```
 
 {{< /tab >}}
 {{< /tabs >}}
@@ -410,32 +917,158 @@ Our API is completely independent of your operating system, database system or d
 {{< tabs "example10">}}
 {{< tab "C#" >}}
 
-{{< gist groupdocscloud 9cff9e42173d5964e88b2ee989ce4a83 Annotation_CSharp_Move_Folder.cs >}}
+```csharp
+using GroupDocs.Annotation.Cloud.Sdk.Api;
+using GroupDocs.Annotation.Cloud.Sdk.Client;
+using GroupDocs.Annotation.Cloud.Sdk.Model.Requests;
+using System;
+
+namespace GroupDocs.Annotation.Cloud.Examples.CSharp
+{
+	// Move Folder
+	class Move_Folder
+	{
+		public static void Run()
+		{
+			var configuration = new Configuration(Common.MyAppSid, Common.MyAppKey);
+			var apiInstance = new FolderApi(configuration);
+
+			try
+			{
+				var request = new MoveFolderRequest("Annotationdocs1", "Annotationdocs\\Annotationdocs1", Common.MyStorage, Common.MyStorage);
+
+				apiInstance.MoveFolder(request);
+				Console.WriteLine("Expected response type is Void: 'Annotationdocs1' folder moved to 'Annotationdocs/Annotationdocs1'.");
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Exception while calling FolderApi: " + e.Message);
+			}
+		}
+	}
+}
+```
 
 {{< /tab >}}
 {{< tab "Java" >}}
 
-{{< gist groupdocscloud 7e00ab6ab1a8faab84ca2edd2edc30db Annotation_Java_Move_Folder.java >}}
+```java
+package examples.Working_With_Folder;
+
+import com.groupdocs.cloud.annotation.api.*;
+import com.groupdocs.cloud.annotation.client.ApiException;
+import com.groupdocs.cloud.annotation.model.requests.*;
+import examples.Utils;
+
+public class Annotation_Java_Move_Folder {
+
+	public static void main(String[] args) {
+
+		FolderApi apiInstance = new FolderApi(Utils.AppSID, Utils.AppKey);
+		try {
+			MoveFolderRequest request = new MoveFolderRequest("annotations1", "annotations\\annotations1",
+					Utils.MYStorage, Utils.MYStorage);
+			apiInstance.moveFolder(request);
+			System.out.println(
+					"Expected response type is Void: 'annotations1' folder moved to 'annotations/annotations1'.");
+		} catch (ApiException e) {
+			System.err.println("Exception while calling FolderApi:");
+			e.printStackTrace();
+		}
+	}
+}
+```
 
 {{< /tab >}}
 {{< tab "PHP" >}}
 
-{{< gist groupdocscloud 9d23670221e0b7b3882f3f3bab9baf9e Annotation_Php_Move_Folder.php >}}
+```php
+<?php
+
+include(dirname(__DIR__) . '\CommonUtils.php');
+
+	try {
+		$apiInstance = CommonUtils::GetFolderApiInstance();
+
+		$request = new GroupDocs\Annotation\Model\Requests\MoveFolderRequest("annotationdocs1", "annotationdocs1\\annotationdocs1", CommonUtils::$MyStorage, CommonUtils::$MyStorage, true);
+		$apiInstance->moveFolder($request);
+		
+		echo "Expected response type is Void: 'annotationdocs1' folder moved to 'annotationdocs1/annotationdocs1'.", "<br />";
+	} catch (Exception $e) {
+		echo "Something went wrong: ", $e->getMessage(), "\n";
+	}
+?>
+```
 
 {{< /tab >}}
-{{< tab "Node.Js" >}}
+{{< tab "Node.js" >}}
 
-{{< gist groupdocscloud 18dbfb11660d5c7555df9b7886856763 Annotation_Node_Move_Folder.js >}}
+```js
+"use strict";
+class Annotation_Node_Move_Folder {
+	static Run() {
+		// retrieve supported file-formats
+		var request = new groupdocs_annotation_cloud_1.MoveFolderRequest("annotations1", "Annotationdocs/annotations1", myStorage, myStorage);
+		folderApi.moveFolder(request)
+			.then(function () {
+				console.log("Expected response type is Void: 'Annotationdocs1' folder moved to 'Annotationdocs/annotations1'.");
+			})
+			.catch(function (error) {
+				console.log("Error: " + error.message);
+			});
+	}
+}
+module.exports = Annotation_Node_Move_Folder;
+
+```
 
 {{< /tab >}}
 {{< tab "Python" >}}
 
-{{< gist groupdocscloud adf9db2b064fbf397457fa83429d9efa Annotation_Python_Move_Folder.py >}}
+```python
+# Import modules
+import groupdocs_annotation_cloud
+
+from Common_Utilities.Utils import Common_Utilities
+
+
+class Annotation_Python_Move_Folder:
+    
+    @classmethod
+    def Run(self):
+        # Create instance of the API
+        api = Common_Utilities.Get_FolderApi_Instance()
+        
+        try:
+            request = groupdocs_annotation_cloud.MoveFolderRequest("annotationdocs1", "annotationdocs1\\annotationdocs", Common_Utilities.myStorage, Common_Utilities.myStorage)
+            api.move_folder(request)
+            
+            print("Expected response type is Void: 'annotationdocs1' folder moved to 'annotationdocs/annotationdocs1'.")
+        except groupdocs_annotation_cloud.ApiException as e:
+            print("Exception while calling API: {0}".format(e.message))
+```
 
 {{< /tab >}}
 {{< tab "Ruby" >}}
 
-{{< gist groupdocscloud 13003090505393ddeb57a01bf8b5a823 Annotation_Ruby_Move_Folder.rb >}}
+```ruby
+# Load the gem
+require 'groupdocs_annotation_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Folder
+  def self.Annotation_Ruby_Move_Folder()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FolderApi_Instance()
+
+    $request = GroupDocsAnnotationCloud::MoveFolderRequest.new("annotationdocs1", "annotationdocs/annotationdocs1", $myStorage, $myStorage)
+    $response = $api.move_folder($request)
+
+    puts("Expected response type is Void: 'annotationdocs1' folder moved to 'annotationdocs/annotationdocs1'.")
+  end
+end
+```
 
 {{< /tab >}}
 {{< /tabs >}}
