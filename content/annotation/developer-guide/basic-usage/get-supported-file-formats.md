@@ -17,12 +17,30 @@ The following GroupDocs.Comparison Cloud REST API resource has been used in the 
 ## cURL example
 
 {{< tabs "example1">}}
-{{< tab "Request" >}}
-
+{{< tab "Linux/MacOS/Bash" >}}
 ```bash
-curl -X GET "https://api.groupdocs.cloud/v2.0/annotation/formats" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
+curl -X GET 'https://api.groupdocs.cloud/v2.0/annotation/formats' \
+  -H 'accept: application/json' \
+  -H "authorization: Bearer $JWT_TOKEN"
 ```
+{{< /tab >}}
 
+{{< tab "Windows PowerShell" >}}
+```powershell
+curl.exe -X GET `
+  "https://api.groupdocs.cloud/v2.0/annotation/formats" `
+  -H "accept: application/json" `
+  -H "authorization: Bearer $env:JWT_TOKEN"
+```
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+```cmd
+curl -X GET ^
+  "https://api.groupdocs.cloud/v2.0/annotation/formats" ^
+  -H "accept: application/json" ^
+  -H "authorization: Bearer %JWT_TOKEN%"
+```
 {{< /tab >}}
 {{< tab "Response" >}}
 

@@ -16,15 +16,41 @@ The following GroupDocs.Annotation Cloud REST API resource has been used to getÂ
 ## cURL example
 
 {{< tabs "example1">}}
-{{< tab "Request" >}}
+{{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
 curl -v "https://api.groupdocs.cloud/v2.0/annotation/info" \
 -X POST \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
--H "Authorization: Bearer <jwt token>" \
--d "{ 'FilePath': 'annotationdocs/one-page.docx'}
+-H "Authorization: Bearer $JWT_TOKEN" \
+-d '{ "FilePath": "annotationdocs/one-page.docx" }'
+```
+
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+curl.exe -v "https://api.groupdocs.cloud/v2.0/annotation/info" `
+-X POST `
+-H "Content-Type: application/json" `
+-H "Accept: application/json" `
+-H "Authorization: Bearer $env:JWT_TOKEN" `
+-d "{ 'FilePath': 'annotationdocs/one-page.docx' }"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+curl -v "https://api.groupdocs.cloud/v2.0/annotation/info" ^ 
+-X POST ^ 
+-H "Content-Type: application/json" ^ 
+-H "Accept: application/json" ^ 
+-H "Authorization: Bearer %JWT_TOKEN%" ^ 
+-d "{\"FilePath\":\"annotationdocs/one-page.docx\"}"
 ```
 
 {{< /tab >}}

@@ -26,10 +26,32 @@ This API allows you to get a list of all files of a specific folder from the 
 ### cURL example
 
 {{< tabs "example1">}}
-{{< tab "Request" >}}
+{{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-curl -X GET "https://api.groupdocs.cloud/v2.0/conversion/storage/folder/annotationdocs?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
+curl -X GET "https://api.groupdocs.cloud/v2.0/conversion/storage/folder/annotationdocs?storageName#MyStorage" \
+  -H "accept: application/json" \
+  -H "authorization: Bearer $JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+curl.exe -X GET "https://api.groupdocs.cloud/v2.0/conversion/storage/folder/annotationdocs?storageName#MyStorage" `
+  -H "accept: application/json" `
+  -H "authorization: Bearer $env:JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+curl -X GET "https://api.groupdocs.cloud/v2.0/conversion/storage/folder/annotationdocs?storageName#MyStorage" ^
+  -H "accept: application/json" ^
+  -H "authorization: Bearer %JWT_TOKEN%"
 ```
 
 {{< /tab >}}
@@ -291,10 +313,32 @@ This API allows you to create a new Folder in the specified Cloud Storage. If yo
 ### cURL example
 
 {{< tabs "example3">}}
-{{< tab "Request" >}}
+{{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-curl -X POST "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/annotationdocs?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
+curl -X POST "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/annotationdocs?storageName#MyStorage" \
+  -H "accept: application/json" \
+  -H "authorization: Bearer $JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+curl.exe -X POST "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/annotationdocs?storageName#MyStorage" `
+  -H "accept: application/json" `
+  -H "authorization: Bearer $env:JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+curl -X POST "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/annotationdocs?storageName#MyStorage" ^
+  -H "accept: application/json" ^
+  -H "authorization: Bearer %JWT_TOKEN%"
 ```
 
 {{< /tab >}}
@@ -489,10 +533,32 @@ This API allows you to delete a particular Folder in the specified Cloud Storage
 ## cURL example
 
 {{< tabs "example5">}}
-{{< tab "Request" >}}
+{{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-curl -X DELETE "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/annotationdocs?storageName#MyStorage&#x26;recursive#true" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
+curl -X DELETE "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/annotationdocs?storageName#MyStorage&#x26;recursive#true" \
+  -H "accept: application/json" \
+  -H "authorization: Bearer $JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+curl.exe -X DELETE "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/annotationdocs?storageName#MyStorage&#x26;recursive#true" `
+  -H "accept: application/json" `
+  -H "authorization: Bearer $env:JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+curl -X DELETE "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/annotationdocs?storageName#MyStorage&#x26;recursive#true" ^
+  -H "accept: application/json" ^
+  -H "authorization: Bearer %JWT_TOKEN%"
 ```
 
 {{< /tab >}}
@@ -690,10 +756,32 @@ This API allows you to copy a Folder to another location in the GroupDocs Cloud 
 ### cURL example
 
 {{< tabs "example7">}}
-{{< tab "Request" >}}
+{{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-curl -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/copy/annotationdocs?destPath#conversiondocs1&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
+curl -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/copy/annotationdocs?destPath#conversiondocs1&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" \
+  -H "accept: application/json" \
+  -H "authorization: Bearer $JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+curl.exe -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/copy/annotationdocs?destPath#conversiondocs1&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" `
+  -H "accept: application/json" `
+  -H "authorization: Bearer $env:JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+curl -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/copy/annotationdocs?destPath#conversiondocs1&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" ^
+  -H "accept: application/json" ^
+  -H "authorization: Bearer %JWT_TOKEN%"
 ```
 
 {{< /tab >}}
@@ -891,10 +979,32 @@ This API allows you to move a Folder to another location in the GroupDocs Cloud 
 ### cURL example
 
 {{< tabs "example9">}}
-{{< tab "Request" >}}
+{{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-curl -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/move/annotationdocs?destPath#annotationdocs&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
+curl -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/move/annotationdocs?destPath#annotationdocs&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" \
+  -H "accept: application/json" \
+  -H "authorization: Bearer $JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+curl.exe -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/move/annotationdocs?destPath#annotationdocs&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" `
+  -H "accept: application/json" `
+  -H "authorization: Bearer $env:JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+curl -X PUT "https://api.groupdocs.cloud/v2.0/annotation/storage/folder/move/annotationdocs?destPath#annotationdocs&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" ^
+  -H "accept: application/json" ^
+  -H "authorization: Bearer %JWT_TOKEN%"
 ```
 
 {{< /tab >}}

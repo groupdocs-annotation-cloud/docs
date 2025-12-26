@@ -27,68 +27,125 @@ HTTP POST ~/annotation/add
 ## cURL example
 
 {{< tabs "example1">}}
-{{< tab "Request" >}}
+{{< tab "Linux/MacOS/Bash" >}}
 
-```javascript
-// First get JSON Web Token
-// Please get your Client Id and Client Secret from https://dashboard.groupdocs.cloud/applications. Kindly place Client Id in the "client_id" and Client Secret in the "client_secret" arguments.
+```bash
+# 1. Get JSON Web Token
+#    Replace $CLIENT_ID and $CLIENT_SECRET with your actual credentials (or set them as environment variables).
 curl -v "https://api.groupdocs.cloud/connect/token" \
--X POST \
--d "grant_type=client_credentials&client_id=xxxx&client_secret=xxxx" \
--H "Content-Type: application/x-www-form-urlencoded" \
--H "Accept: application/json"
+  -X POST \
+  -d "grant_type=client_credentials&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -H "Accept: application/json"
 
-// cURL example to add annotation into document
+# 2. Add annotation into a document
+#    $JWT_TOKEN should contain the token obtained from the previous request.
 curl -v "https://api.groupdocs.cloud/v2.0/annotation/add" \
--X POST \
--H "Content-Type: application/json" \
--H "Accept: application/json" \
--H "Authorization: Bearer <jwt token>" \
--d "
-{
-  'FileInfo': {
-    'FilePath': 'annotationdocs/one-page.docx'
-  },
-  'OutputPath': "Output/output.docx",
-  'Annotations': [
-  {
-    'Type': 'TextReplacement',
-    'Text': 'This is text replacement annotation',
-    'TextToReplace': 'replaced text',
-    'CreatorName': 'Anonym A.',
-    'Points': [ {
-      'X': 80,
-      'Y': 730
-     },
-     {
-      'X': 240,
-      'Y': 730
-     },
-     {
-      'X': 80,
-      'Y': 760
-     },
-     {
-      'X': 240,
-      'Y': 650
-     }
-    ],
-    'PageNumber': 0,
-    'Replies': [
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -H "Authorization: Bearer $JWT_TOKEN" \
+  -d '{
+    "FileInfo": {
+      "FilePath": "annotationdocs/one-page.docx"
+    },
+    "OutputPath": "Output/output.docx",
+    "Annotations": [
       {
-        'Comment': 'First comment',
-        'RepliedOn': '2020-10-02T06:52:01.376Z'
-      },
-      {
-        'Comment': 'Second comment',
-        'RepliedOn': '2020-10-02T06:52:01.376Z'
+        "Type": "TextReplacement",
+        "Text": "This is text replacement annotation",
+        "TextToReplace": "replaced text",
+        "CreatorName": "Anonym A.",
+        "Points": [
+          { "X": 80,  "Y": 730 },
+          { "X": 240, "Y": 730 },
+          { "X": 80,  "Y": 760 },
+          { "X": 240, "Y": 650 }
+        ],
+        "PageNumber": 0,
+        "Replies": [
+          {
+            "Comment": "First comment",
+            "RepliedOn": "2020-10-02T06:52:01.376Z"
+          },
+          {
+            "Comment": "Second comment",
+            "RepliedOn": "2020-10-02T06:52:01.376Z"
+          }
+        ],
+        "CreatedOn": "2020-10-02T06:52:01.376Z"
       }
-    ],
-    'CreatedOn': '2020-10-02T06:52:01.376Z'
-  }
-]
-}
-"
+    ]
+  }'
+```
+
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+# 1. Get JSON Web Token
+#    Ensure $env:CLIENT_ID and $env:CLIENT_SECRET are set in your environment.
+curl.exe -v "https://api.groupdocs.cloud/connect/token" `
+  -X POST `
+  -d "grant_type=client_credentials&client_id=$env:CLIENT_ID&client_secret=$env:CLIENT_SECRET" `
+  -H "Content-Type: application/x-www-form-urlencoded" `
+  -H "Accept: application/json"
+
+# 2. Add annotation into a document
+#    $env:JWT_TOKEN must contain the JWT returned from the previous call.
+curl.exe -v "https://api.groupdocs.cloud/v2.0/annotation/add" `
+  -X POST `
+  -H "Content-Type: application/json" `
+  -H "Accept: application/json" `
+  -H "Authorization: Bearer $env:JWT_TOKEN" `
+  -d "{ 
+    'FileInfo': { 'FilePath': 'annotationdocs/one-page.docx' }, 
+    'OutputPath': 'Output/output.docx', 
+    'Annotations': [ 
+      { 
+        'Type': 'TextReplacement', 
+        'Text': 'This is text replacement annotation', 
+        'TextToReplace': 'replaced text', 
+        'CreatorName': 'Anonym A.', 
+        'Points': [ 
+          { 'X': 80, 'Y': 730 }, 
+          { 'X': 240, 'Y': 730 }, 
+          { 'X': 80, 'Y': 760 }, 
+          { 'X': 240, 'Y': 650 } 
+        ], 
+        'PageNumber': 0, 
+        'Replies': [ 
+          { 'Comment': 'First comment', 'RepliedOn': '2020-10-02T06:52:01.376Z' }, 
+          { 'Comment': 'Second comment', 'RepliedOn': '2020-10-02T06:52:01.376Z' } 
+        ], 
+        'CreatedOn': '2020-10-02T06:52:01.376Z' 
+      } 
+    ] 
+  }"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+rem 1. Get JSON Web Token
+rem    Set CLIENT_ID, CLIENT_SECRET and JWT_TOKEN in the CMD environment before running.
+curl -v "https://api.groupdocs.cloud/connect/token" ^
+  -X POST ^
+  -d "grant_type=client_credentials&client_id=%CLIENT_ID%&client_secret=%CLIENT_SECRET%" ^
+  -H "Content-Type: application/x-www-form-urlencoded" ^
+  -H "Accept: application/json"
+
+rem 2. Add annotation into a document
+rem    Use %JWT_TOKEN% obtained from the previous request.
+curl -v "https://api.groupdocs.cloud/v2.0/annotation/add" ^
+  -X POST ^
+  -H "Content-Type: application/json" ^
+  -H "Accept: application/json" ^
+  -H "Authorization: Bearer %JWT_TOKEN%" ^
+  -d "{\"FileInfo\":{\"FilePath\":\"annotationdocs/one-page.docx\"},\"OutputPath\":\"Output/output.docx\",\"Annotations\":[{\"Type\":\"TextReplacement\",\"Text\":\"This is text replacement annotation\",\"TextToReplace\":\"replaced text\",\"CreatorName\":\"Anonym A.\",\"Points\":[{\"X\":80,\"Y\":730},{\"X\":240,\"Y\":730},{\"X\":80,\"Y\":760},{\"X\":240,\"Y\":650}],\"PageNumber\":0,\"Replies\":[{\"Comment\":\"First comment\",\"RepliedOn\":\"2020-10-02T06:52:01.376Z\"},{\"Comment\":\"Second comment\",\"RepliedOn\":\"2020-10-02T06:52:01.376Z\"}],\"CreatedOn\":\"2020-10-02T06:52:01.376Z\"}]}"
 ```
 
 {{< /tab >}}
