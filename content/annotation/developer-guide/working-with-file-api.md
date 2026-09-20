@@ -260,9 +260,11 @@ This API allows you to upload files to the [GroupDocs Cloud Storage](https://
 {{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-curl -X POST 'https://api.groupdocs.cloud/v2.0/annotation/storage/file/annotationdocs/Fone-page2.docx?storageName#MyStorage' \
-  -H 'accept: application/json' \
-  -H "authorization: Bearer $JWT_TOKEN"
+curl -X PUT \
+  "https://api.groupdocs.cloud/v2.0/annotation/storage/file/annotationdocs/one-page.docx?storageName=MyStorage" \
+  -H "Authorization: Bearer $JWT_TOKEN" \
+  -H "Accept: application/json" \
+  -F "File=@one-page.docx"
 ```
 
 {{< /tab >}}
@@ -270,10 +272,11 @@ curl -X POST 'https://api.groupdocs.cloud/v2.0/annotation/storage/file/annotatio
 {{< tab "Windows PowerShell" >}}
 
 ```powershell
-curl.exe -X POST `
-  'https://api.groupdocs.cloud/v2.0/annotation/storage/file/annotationdocs/Fone-page2.docx?storageName#MyStorage' `
-  -H 'accept: application/json' `
-  -H "authorization: Bearer $env:JWT_TOKEN"
+curl.exe -X PUT `
+  "https://api.groupdocs.cloud/v2.0/annotation/storage/file/annotationdocs/one-page.docx?storageName=MyStorage" `
+  -H "Authorization: Bearer $env:JWT_TOKEN" `
+  -H "Accept: application/json" `
+  -F "File=@one-page.docx"
 ```
 
 {{< /tab >}}
@@ -281,10 +284,11 @@ curl.exe -X POST `
 {{< tab "Windows CMD" >}}
 
 ```cmd
-curl -X POST ^
-  "https://api.groupdocs.cloud/v2.0/annotation/storage/file/annotationdocs/Fone-page2.docx?storageName#MyStorage" ^
-  -H "accept: application/json" ^
-  -H "authorization: Bearer %JWT_TOKEN%"
+curl -X PUT ^
+  "https://api.groupdocs.cloud/v2.0/annotation/storage/file/annotationdocs/one-page.docx?storageName=MyStorage" ^
+  -H "Authorization: Bearer %JWT_TOKEN%" ^
+  -H "Accept: application/json" ^
+  -F "File=@one-page.docx"
 ```
 
 {{< /tab >}}
